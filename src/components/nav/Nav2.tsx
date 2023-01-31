@@ -30,7 +30,7 @@ const Nav = (props: any) => {
         </Link>
       </aside>
       <ul className="nav-bar2">
-        <li>500-000-000</li>
+      <li className="phone-box">500-000-000</li>
         <li
           onMouseEnter={(e) => {
             setIsBuyActive(true);

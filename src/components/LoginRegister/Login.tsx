@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { MdExitToApp, MdPerson } from "react-icons/md";
 import "./loginregister.scss";
 import { AccountContext } from "../Account";
+import { toast } from "react-toastify";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -45,17 +46,15 @@ export default function Login() {
           setLoading(true);
           handleClose();
           setMessage("Pomyślnie zalogowano!");
+          toast.success("Pomyślnie zalogowano!", { theme: "colored" });
           navigate("/");
-        } catch {
-          setError("Sprawdź adres email lub hasło");
-        }
+        } catch {}
         setLoading(false);
       })
       .catch((err: any) => {
-        console.log("Failed to login", err.message);
-        err.message.includes("Incorrect")&& 
-        setError("Nieprawidłowy email lub hasło");
-        console.log(error)
+        err.message.includes("Incorrect") &&
+          setError("Nieprawidłowy email lub hasło");
+        toast.error("Sprawdź adres email lub hasło", { theme: "colored" });
       });
   }
 
@@ -72,7 +71,6 @@ export default function Login() {
     setLoading(false);
   }
 
-
   async function handleLogout() {
     try {
       setError("");
@@ -80,30 +78,41 @@ export default function Login() {
       setMessage("Pomyślnie wylogowano!");
       navigate("/");
       window.location.reload();
-
     } catch {
       setError("Failed to log out");
     }
-
   }
 
   return (
     <>
       {status ? (
-        <li onClick={() => handleLogout()}>
+        <li onClick={() => handleLogout()}  className="desktop">
           <MdExitToApp style={{ marginRight: "5px" }} />
           Wyloguj się
         </li>
       ) : (
-        <li onClick={handleClickOpen}>
-          <MdPerson style={{ marginRight: "5px" }} />
+        <li onClick={handleClickOpen}  className="desktop" >
+          <MdPerson style={{ marginRight: "5px" }}/>
           Logowanie
         </li>
       )}
+
+      {status ? (
+        <li onClick={() => handleLogout()} className="small">
+          <MdExitToApp />
+        </li>
+      ) : (
+        <li onClick={handleClickOpen} className="small">
+          <MdPerson />
+        </li>
+      )}
+
       <Dialog
         open={open}
         onClose={handleClose}
         aria-labelledby="form-dialog-title"
+        sx={{ overflowX: "visible" }}
+
       >
         <div className="login-box">
           <h2>Logowanie</h2>
@@ -153,8 +162,8 @@ export default function Login() {
               value={email}
               onChange={(event) => setEmail(event.target.value)}
             />
-            {passError && <h3 >{passError}</h3>}
-            {message && <h3 >{message}</h3>}
+            {passError && <h3>{passError}</h3>}
+            {message && <h3>{message}</h3>}
             <button disabled={loading} type="submit">
               Wyślij
             </button>

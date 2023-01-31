@@ -1,10 +1,11 @@
-import Dialog from '@mui/material/Dialog';
-import React, {  useContext, useState } from "react";
+import Dialog from "@mui/material/Dialog";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { MdPersonAdd } from "react-icons/md";
 import "./loginregister.scss";
 import user from "../../UserPool";
-import { AccountContext } from '../Account';
+import { AccountContext } from "../Account";
+import { toast } from "react-toastify";
 
 export default function Signup() {
   const [email, setEmail] = useState("");
@@ -14,7 +15,7 @@ export default function Signup() {
   const [loading, setLoading] = useState(false);
   const [open, setOpen] = React.useState(false);
   const navigate = useNavigate();
-  const { getSession, status  } = useContext(AccountContext);
+  const { getSession, status } = useContext(AccountContext);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -24,10 +25,10 @@ export default function Signup() {
     setOpen(false);
   };
 
-  async function handleSubmit(e:any) {
+  async function handleSubmit(e: any) {
     e.preventDefault();
-    user.signUp(email, password, [], [], (err:any, data: any) => {
-      if(err) {
+    user.signUp(email, password, [], [], (err: any, data: any) => {
+      if (err) {
         console.error(err);
         setError(err.message);
       } else {
@@ -36,33 +37,39 @@ export default function Signup() {
           setError("");
           setLoading(true);
           handleClose();
-          // setMessage("Pomyślnie założono konto!");
+          toast.success("Pomyślnie założono konto!", { theme: "colored" });
           navigate("/");
         } catch {
-          setError("Failed to create an account");
+          toast.error("Problem z założeniem konta!", { theme: "colored" });
         }
-        setLoading(false);  
+        setLoading(false);
       }
     });
-
   }
-  console.log(getSession())
+  console.log(getSession());
   return (
     <>
-     {!status && <li onClick={handleClickOpen} >
-        <MdPersonAdd style={{ marginRight: "5px" }} />
-        Rejestracja
-      </li>}
+      {!status && (
+        <li onClick={handleClickOpen} className="desktop">
+          <MdPersonAdd style={{ marginRight: "5px" }} />
+          Rejestracja
+        </li>
+      )}
+      {!status && (
+        <li onClick={handleClickOpen} className="small">
+          <MdPersonAdd />
+        </li>
+      )}
 
       <Dialog
         open={open}
         onClose={handleClose}
         aria-labelledby="form-dialog-title"
       >
-        <div className="login-box register-box" >
+        <div className="login-box register-box">
           <h2>Rejestracja</h2>
           {error && <h3>{error}</h3>}
-          <form onSubmit={handleSubmit} >
+          <form onSubmit={handleSubmit}>
             <label>Email</label>
             <input
               required
@@ -88,11 +95,7 @@ export default function Signup() {
               id="password-confirm"
               name="password-confirm"
             />
-            <button
-              disabled={loading}
-     
-              type="submit"
-            >
+            <button disabled={loading} type="submit">
               Zarejestruj się
             </button>
           </form>

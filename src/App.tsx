@@ -33,6 +33,9 @@ import PropertyDetails from "./components/buy/propertyDetails/PropertyDetails";
 import UpcomingEvents from "./components/resources/findevents/upcomingevents/UpcomingEvents"
 import AddOffer from "./components/AddOffer/AddOffer";
 import { Account } from "./components/Account";
+import 'react-toastify/dist/ReactToastify.css';
+import {ToastContainer} from 'react-toastify'
+
 
 const App = () => {
   let nav;
@@ -49,6 +52,7 @@ const App = () => {
   return (
     <Account>
       {nav}
+      <ToastContainer/>
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/add-new-offer" element={<AddOffer />} />
