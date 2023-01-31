@@ -26,7 +26,7 @@ export default function Signup() {
 
   async function handleSubmit(e:any) {
     e.preventDefault();
-    user.signUp(email, password, [], [], (err:any, data: {}) => {
+    user.signUp(email, password, [], [], (err:any, data: any) => {
       if(err) {
         console.error(err);
         setError(err.message);
