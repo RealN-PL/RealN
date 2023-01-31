@@ -1,0 +1,844 @@
+[
+  {
+    "id": 1,
+    "title": "Mieszkanie 55m2 bez czynszu",
+    "subtitle": "Inwestycyjne mieszkanie z widokiem na Marinę",
+    "img": [
+      {
+        "url": "https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+        "id": 1,
+        "name": "House"
+      },
+
+      {
+        "url": "https://images.unsplash.com/photo-1554995207-c18c203602cb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+        "id": 2,
+        "name": "House"
+      },
+      {
+        "url": "https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "id": 2,
+        "name": "House"
+      }
+    ],
+    "type": "Dom",
+    "city": "Sopot",
+    "distriction": "Morena",
+    "transactionType": "Wynajem",
+    "rooms": 4,
+    "area": 80,
+    "rent" : "",
+    "form-prop": "",
+    "condition" : "Po remoncie",
+    "balcony" : "balkon",
+    "parking" : "darmowe",
+    "heat" : "centralne",
+    "price": 160000,
+    "price-m" : 3618,
+    "year": 2011,
+    "offer": "RS61782836",
+    "floor": 2,
+    "market" : "pierwotny",
+    "ad-type" : "osoba prywatna",
+    "avaible" : "",
+    "house-type" : "Mieszkanie w bloku",
+    "windows" : "plastikowe",
+    "elevator" : "brak",
+    "media" : "",
+    "security" : "",
+    "equipment" : "",
+    "additional-info" : "",
+    "material" : "",
+    "features": [
+      "Blisko morza",
+      "Widok",
+      "Las",
+      "Balkon",
+      "Cicho",
+      "Parking",
+      "Taras",
+      "Wysoki standart budynku"
+    ],
+    "descriptionTitle": "Penthouse z tarasem na dachu budynku z oszałamiającym widokiem na morze",
+    "description": "Mieszkanie ok 55m2 znajdujące sie na osiedlu budynków w zabudowie bliźniaczej. Mieszkanie swieżo po remoncie. Mieszkanie jest bezczynszowe. Opłaty wynikają jedynie ze zużycia mediów.",
+    "agent": {
+      "name": "John Doe",
+      "agency": "Real Estate Agency",
+      "photo": "https://r-scale-b1.dcs.redcdn.pl/scale/o2/tvn/web-content/m/p145/i/04df4d434d481c5bb723be1b6df1ee65/4719da4c-df7f-450d-b663-868a58afe698.jpg?type=1&srcmode=3&srcx=1%2F2&srcy=1%2F2&srcw=743&srch=417.9375&dstw=743&dsth=417.9375&quality=75",
+      "phone": 929934123,
+      "email": "johndoe@mail.com"
+    }
+  },
+  {
+    "id": 2,
+    "title": "Dom przy Gubałówce / Lider House Deweloper / 78m2",
+    "subtitle": "Inwestycyjne dwa mieszkania z widokiem na Marinę",
+    "img": [
+      {
+        "url": "https://images.unsplash.com/photo-1554995207-c18c203602cb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+        "id": 1,
+        "name": "House"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1605146769289-440113cc3d00?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDJ8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60",
+        "id": 2,
+        "name": "House"
+      },
+      {
+        "url": "https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "id": 2,
+        "name": "House"
+      }
+    ],
+    "type": "Dom",
+    "city": "Sopot",
+    "distriction": "Morena",
+    "transactionType": "Wynajem",
+    "rooms": 4,
+    "area": 80,
+    "rent" : "",
+    "form-prop": "",
+    "condition" : "Po remoncie",
+    "balcony" : "balkon",
+    "parking" : "darmowe",
+    "heat" : "centralne",
+    "price": 160000,
+    "price-m" : 3618,
+    "year": 2011,
+    "offer": "RS61782836",
+    "floor": 2,
+    "market" : "pierwotny",
+    "ad-type" : "osoba prywatna",
+    "avaible" : "",
+    "house-type" : "Mieszkanie w bloku",
+    "windows" : "plastikowe",
+    "elevator" : "brak",
+    "media" : "",
+    "security" : "",
+    "equipment" : "",
+    "additional-info" : "",
+    "material" : "",
+    "features": [
+      "Blisko morza",
+      "Widok",
+      "Las",
+      "Balkon",
+      "Cicho",
+      "Parking",
+      "Taras",
+      "Wysoki standart budynku"
+    ],
+    "descriptionTitle": "Penthouse z tarasem na dachu budynku z oszałamiającym widokiem na morze",
+    "description": "Mieszkanie ok 55m2 znajdujące sie na osiedlu budynków w zabudowie bliźniaczej. Mieszkanie swieżo po remoncie. Mieszkanie jest bezczynszowe. Opłaty wynikają jedynie ze zużycia mediów.",
+    "agent": {
+      "name": "John Doe",
+      "agency": "Real Estate Agency",
+      "photo": "https://r-scale-b1.dcs.redcdn.pl/scale/o2/tvn/web-content/m/p145/i/04df4d434d481c5bb723be1b6df1ee65/4719da4c-df7f-450d-b663-868a58afe698.jpg?type=1&srcmode=3&srcx=1%2F2&srcy=1%2F2&srcw=743&srch=417.9375&dstw=743&dsth=417.9375&quality=75",
+      "phone": 929934123,
+      "email": "johndoe@mail.com"
+    }
+  },
+  {
+    "id": 3,
+    "title": "Mieszkanie 72,6 m2/ Świecie ul. Krausego",
+    "subtitle": "Inwestycyjne dwa mieszkania z widokiem na Marinę",
+    "img": [
+      {
+        "url": "https://images.pexels.com/photos/1029599/pexels-photo-1029599.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "id": 1,
+        "name": "House"
+      },
+
+      {
+        "url": "https://images.unsplash.com/photo-1605146769289-440113cc3d00?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDJ8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60",
+
+        "id": 2,
+        "name": "House"
+      },
+      {
+        "url": "https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "id": 2,
+        "name": "House"
+      }
+    ],
+    "type": "Dom",
+    "city": "Sopot",
+    "distriction": "Morena",
+    "transactionType": "Wynajem",
+    "rooms": 4,
+    "area": 80,
+    "rent" : "",
+    "form-prop": "",
+    "condition" : "Po remoncie",
+    "balcony" : "balkon",
+    "parking" : "darmowe",
+    "heat" : "centralne",
+    "price": 160000,
+    "price-m" : 3618,
+    "year": 2011,
+    "offer": "RS61782836",
+    "floor": 2,
+    "market" : "pierwotny",
+    "ad-type" : "osoba prywatna",
+    "avaible" : "",
+    "house-type" : "Mieszkanie w bloku",
+    "windows" : "plastikowe",
+    "elevator" : "brak",
+    "media" : "",
+    "security" : "",
+    "equipment" : "",
+    "additional-info" : "",
+    "material" : "",
+    "features": [
+      "Blisko morza",
+      "Widok",
+      "Las",
+      "Balkon",
+      "Cicho",
+      "Parking",
+      "Taras",
+      "Wysoki standart budynku"
+    ],
+    "descriptionTitle": "Penthouse z tarasem na dachu budynku z oszałamiającym widokiem na morze",
+    "description": "Mieszkanie ok 55m2 znajdujące sie na osiedlu budynków w zabudowie bliźniaczej. Mieszkanie swieżo po remoncie. Mieszkanie jest bezczynszowe. Opłaty wynikają jedynie ze zużycia mediów.",
+    "agent": {
+      "name": "John Doe",
+      "agency": "Real Estate Agency",
+      "photo": "https://r-scale-b1.dcs.redcdn.pl/scale/o2/tvn/web-content/m/p145/i/04df4d434d481c5bb723be1b6df1ee65/4719da4c-df7f-450d-b663-868a58afe698.jpg?type=1&srcmode=3&srcx=1%2F2&srcy=1%2F2&srcw=743&srch=417.9375&dstw=743&dsth=417.9375&quality=75",
+      "phone": 929934123,
+      "email": "johndoe@mail.com"
+    }
+  },
+  {
+    "id": 4,
+    "title": "Mieszkanie 72,6 m2/ Świecie ul. Krausego",
+    "subtitle": "Inwestycyjne dwa mieszkania z widokiem na Marinę",
+    "img": [
+      {
+        "url": "https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "id": 1,
+        "name": "House"
+      },
+
+      {
+        "url": "https://images.unsplash.com/photo-1605146769289-440113cc3d00?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDJ8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60",
+        "id": 2,
+        "name": "House"
+      },
+      {
+        "url": "https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "id": 2,
+        "name": "House"
+      }
+    ],
+    "type": "Dom",
+    "city": "Sopot",
+    "distriction": "Morena",
+    "transactionType": "Wynajem",
+    "rooms": 4,
+    "area": 80,
+    "rent" : "",
+    "form-prop": "",
+    "condition" : "Po remoncie",
+    "balcony" : "balkon",
+    "parking" : "darmowe",
+    "heat" : "centralne",
+    "price": 160000,
+    "price-m" : 3618,
+    "year": 2011,
+    "offer": "RS61782836",
+    "floor": 2,
+    "market" : "pierwotny",
+    "ad-type" : "osoba prywatna",
+    "avaible" : "",
+    "house-type" : "Mieszkanie w bloku",
+    "windows" : "plastikowe",
+    "elevator" : "brak",
+    "media" : "",
+    "security" : "",
+    "equipment" : "",
+    "additional-info" : "",
+    "material" : "",
+    "features": [
+      "Blisko morza",
+      "Widok",
+      "Las",
+      "Balkon",
+      "Cicho",
+      "Parking",
+      "Taras",
+      "Wysoki standart budynku"
+    ],
+    "descriptionTitle": "Penthouse z tarasem na dachu budynku z oszałamiającym widokiem na morze",
+    "description": "Mieszkanie ok 55m2 znajdujące sie na osiedlu budynków w zabudowie bliźniaczej. Mieszkanie swieżo po remoncie. Mieszkanie jest bezczynszowe. Opłaty wynikają jedynie ze zużycia mediów.",
+    "agent": {
+      "name": "John Doe",
+      "agency": "Real Estate Agency",
+      "photo": "https://r-scale-b1.dcs.redcdn.pl/scale/o2/tvn/web-content/m/p145/i/04df4d434d481c5bb723be1b6df1ee65/4719da4c-df7f-450d-b663-868a58afe698.jpg?type=1&srcmode=3&srcx=1%2F2&srcy=1%2F2&srcw=743&srch=417.9375&dstw=743&dsth=417.9375&quality=75",
+      "phone": 929934123,
+      "email": "johndoe@mail.com"
+    }
+  },
+  {
+    "id": 5,
+    "title": "Mieszkanie 72,6 m2/ Świecie ul. Krausego",
+    "subtitle": "Inwestycyjne dwa mieszkania z widokiem na Marinę",
+    "img": [
+      {
+        "url": "https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "id": 1,
+        "name": "House"
+      },
+
+      {
+        "url": "https://images.unsplash.com/photo-1554995207-c18c203602cb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+        "id": 2,
+        "name": "House"
+      },
+      {
+        "url": "https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "id": 2,
+        "name": "House"
+      }
+    ],
+    "type": "Dom",
+    "city": "Sopot",
+    "distriction": "Morena",
+    "transactionType": "Wynajem",
+    "rooms": 4,
+    "area": 80,
+    "rent" : "",
+    "form-prop": "",
+    "condition" : "Po remoncie",
+    "balcony" : "balkon",
+    "parking" : "darmowe",
+    "heat" : "centralne",
+    "price": 160000,
+    "price-m" : 3618,
+    "year": 2011,
+    "offer": "RS61782836",
+    "floor": 2,
+    "market" : "pierwotny",
+    "ad-type" : "osoba prywatna",
+    "avaible" : "",
+    "house-type" : "Mieszkanie w bloku",
+    "windows" : "plastikowe",
+    "elevator" : "brak",
+    "media" : "",
+    "security" : "",
+    "equipment" : "",
+    "additional-info" : "",
+    "material" : "",
+    "features": [
+      "Blisko morza",
+      "Widok",
+      "Las",
+      "Balkon",
+      "Cicho",
+      "Parking",
+      "Taras",
+      "Wysoki standart budynku"
+    ],
+    "descriptionTitle": "Penthouse z tarasem na dachu budynku z oszałamiającym widokiem na morze",
+    "description": "Mieszkanie ok 55m2 znajdujące sie na osiedlu budynków w zabudowie bliźniaczej. Mieszkanie swieżo po remoncie. Mieszkanie jest bezczynszowe. Opłaty wynikają jedynie ze zużycia mediów.",
+    "agent": {
+      "name": "John Doe",
+      "agency": "Real Estate Agency",
+      "photo": "https://r-scale-b1.dcs.redcdn.pl/scale/o2/tvn/web-content/m/p145/i/04df4d434d481c5bb723be1b6df1ee65/4719da4c-df7f-450d-b663-868a58afe698.jpg?type=1&srcmode=3&srcx=1%2F2&srcy=1%2F2&srcw=743&srch=417.9375&dstw=743&dsth=417.9375&quality=75",
+      "phone": 929934123,
+      "email": "johndoe@mail.com"
+    }
+  },
+  {
+    "id": 6,
+    "title": "Mieszkanie 72,6 m2/ Świecie ul. Krausego",
+    "subtitle": "Inwestycyjne dwa mieszkania z widokiem na Marinę",
+    "img": [
+      {
+        "url": "https://images.pexels.com/photos/259962/pexels-photo-259962.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "id": 1,
+        "name": "House"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1605146769289-440113cc3d00?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDJ8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60",
+        "id": 2,
+        "name": "House"
+      },
+      {
+        "url": "https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "id": 2,
+        "name": "House"
+      }
+    ],
+    "type": "Dom",
+    "city": "Sopot",
+    "distriction": "Morena",
+    "transactionType": "Wynajem",
+    "rooms": 4,
+    "area": 80,
+    "rent" : "",
+    "form-prop": "",
+    "condition" : "Po remoncie",
+    "balcony" : "balkon",
+    "parking" : "darmowe",
+    "heat" : "centralne",
+    "price": 160000,
+    "price-m" : 3618,
+    "year": 2011,
+    "offer": "RS61782836",
+    "floor": 2,
+    "market" : "pierwotny",
+    "ad-type" : "osoba prywatna",
+    "avaible" : "",
+    "house-type" : "Mieszkanie w bloku",
+    "windows" : "plastikowe",
+    "elevator" : "brak",
+    "media" : "",
+    "security" : "",
+    "equipment" : "",
+    "additional-info" : "",
+    "material" : "",
+    "features": [
+      "Blisko morza",
+      "Widok",
+      "Las",
+      "Balkon",
+      "Cicho",
+      "Parking",
+      "Taras",
+      "Wysoki standart budynku"
+    ],
+    "descriptionTitle": "Penthouse z tarasem na dachu budynku z oszałamiającym widokiem na morze",
+    "description": "Mieszkanie ok 55m2 znajdujące sie na osiedlu budynków w zabudowie bliźniaczej. Mieszkanie swieżo po remoncie. Mieszkanie jest bezczynszowe. Opłaty wynikają jedynie ze zużycia mediów.",
+    "agent": {
+      "name": "John Doe",
+      "agency": "Real Estate Agency",
+      "photo": "https://r-scale-b1.dcs.redcdn.pl/scale/o2/tvn/web-content/m/p145/i/04df4d434d481c5bb723be1b6df1ee65/4719da4c-df7f-450d-b663-868a58afe698.jpg?type=1&srcmode=3&srcx=1%2F2&srcy=1%2F2&srcw=743&srch=417.9375&dstw=743&dsth=417.9375&quality=75",
+      "phone": 929934123,
+      "email": "johndoe@mail.com"
+    }
+  },
+  {
+    "id": 7,
+    "title": "Mieszkanie 72,6 m2/ Świecie ul. Krausego",
+    "subtitle": "Inwestycyjne dwa mieszkania z widokiem na Marinę",
+    "img": [
+      {
+        "url": "https://images.pexels.com/photos/2251247/pexels-photo-2251247.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "id": 1,
+        "name": "House"
+      },
+
+      {
+        "url": "https://images.unsplash.com/photo-1605146769289-440113cc3d00?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDJ8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60",
+
+        "id": 2,
+        "name": "House"
+      },
+      {
+        "url": "https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "id": 2,
+        "name": "House"
+      }
+    ],
+    "type": "Dom",
+    "city": "Sopot",
+    "distriction": "Morena",
+    "transactionType": "Wynajem",
+    "rooms": 4,
+    "area": 80,
+    "rent" : "",
+    "form-prop": "",
+    "condition" : "Po remoncie",
+    "balcony" : "balkon",
+    "parking" : "darmowe",
+    "heat" : "centralne",
+    "price": 160000,
+    "price-m" : 3618,
+    "year": 2011,
+    "offer": "RS61782836",
+    "floor": 2,
+    "market" : "pierwotny",
+    "ad-type" : "osoba prywatna",
+    "avaible" : "",
+    "house-type" : "Mieszkanie w bloku",
+    "windows" : "plastikowe",
+    "elevator" : "brak",
+    "media" : "",
+    "security" : "",
+    "equipment" : "",
+    "additional-info" : "",
+    "material" : "",
+    "features": [
+      "Blisko morza",
+      "Widok",
+      "Las",
+      "Balkon",
+      "Cicho",
+      "Parking",
+      "Taras",
+      "Wysoki standart budynku"
+    ],
+    "descriptionTitle": "Penthouse z tarasem na dachu budynku z oszałamiającym widokiem na morze",
+    "description": "Mieszkanie ok 55m2 znajdujące sie na osiedlu budynków w zabudowie bliźniaczej. Mieszkanie swieżo po remoncie. Mieszkanie jest bezczynszowe. Opłaty wynikają jedynie ze zużycia mediów.",
+    "agent": {
+      "name": "John Doe",
+      "agency": "Real Estate Agency",
+      "photo": "https://r-scale-b1.dcs.redcdn.pl/scale/o2/tvn/web-content/m/p145/i/04df4d434d481c5bb723be1b6df1ee65/4719da4c-df7f-450d-b663-868a58afe698.jpg?type=1&srcmode=3&srcx=1%2F2&srcy=1%2F2&srcw=743&srch=417.9375&dstw=743&dsth=417.9375&quality=75",
+      "phone": 929934123,
+      "email": "johndoe@mail.com"
+    }
+  },
+  {
+    "id": 8,
+    "title": "Mieszkanie 72,6 m2/ Świecie ul. Krausego",
+    "subtitle": "Inwestycyjne dwa mieszkania z widokiem na Marinę",
+    "img": [
+      {
+        "url": "https://images.pexels.com/photos/2121120/pexels-photo-2121120.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "id": 1,
+        "name": "House"
+      },
+
+      {
+        "url": "https://images.unsplash.com/photo-1605146769289-440113cc3d00?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDJ8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60",
+
+        "id": 2,
+        "name": "House"
+      },
+      {
+        "url": "https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "id": 2,
+        "name": "House"
+      }
+    ],
+    "type": "Dom",
+    "city": "Sopot",
+    "distriction": "Morena",
+    "transactionType": "Wynajem",
+    "rooms": 4,
+    "area": 80,
+    "rent" : "",
+    "form-prop": "",
+    "condition" : "Po remoncie",
+    "balcony" : "balkon",
+    "parking" : "darmowe",
+    "heat" : "centralne",
+    "price": 160000,
+    "price-m" : 3618,
+    "year": 2011,
+    "offer": "RS61782836",
+    "floor": 2,
+    "market" : "pierwotny",
+    "ad-type" : "osoba prywatna",
+    "avaible" : "",
+    "house-type" : "Mieszkanie w bloku",
+    "windows" : "plastikowe",
+    "elevator" : "brak",
+    "media" : "",
+    "security" : "",
+    "equipment" : "",
+    "additional-info" : "",
+    "material" : "",
+    "features": [
+      "Blisko morza",
+      "Widok",
+      "Las",
+      "Balkon",
+      "Cicho",
+      "Parking",
+      "Taras",
+      "Wysoki standart budynku"
+    ],
+    "descriptionTitle": "Penthouse z tarasem na dachu budynku z oszałamiającym widokiem na morze",
+    "description": "Mieszkanie ok 55m2 znajdujące sie na osiedlu budynków w zabudowie bliźniaczej. Mieszkanie swieżo po remoncie. Mieszkanie jest bezczynszowe. Opłaty wynikają jedynie ze zużycia mediów.",
+    "agent": {
+      "name": "John Doe",
+      "agency": "Real Estate Agency",
+      "photo": "https://r-scale-b1.dcs.redcdn.pl/scale/o2/tvn/web-content/m/p145/i/04df4d434d481c5bb723be1b6df1ee65/4719da4c-df7f-450d-b663-868a58afe698.jpg?type=1&srcmode=3&srcx=1%2F2&srcy=1%2F2&srcw=743&srch=417.9375&dstw=743&dsth=417.9375&quality=75",
+      "phone": 929934123,
+      "email": "johndoe@mail.com"
+    }
+  },
+  {
+    "id": 9,
+    "title": "Mieszkanie 72,6 m2/ Świecie ul. Krausego",
+    "subtitle": "Inwestycyjne dwa mieszkania z widokiem na Marinę",
+    "img": [
+      {
+        "url": "https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "id": 1,
+        "name": "House"
+      },
+
+      {
+        "url": "https://images.unsplash.com/photo-1554995207-c18c203602cb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+        "id": 2,
+        "name": "House"
+      },
+      {
+        "url": "https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "id": 2,
+        "name": "House"
+      }
+    ],
+    "type": "Dom",
+    "city": "Sopot",
+    "distriction": "Morena",
+    "transactionType": "Wynajem",
+    "rooms": 4,
+    "area": 80,
+    "rent" : "",
+    "form-prop": "",
+    "condition" : "Po remoncie",
+    "balcony" : "balkon",
+    "parking" : "darmowe",
+    "heat" : "centralne",
+    "price": 160000,
+    "price-m" : 3618,
+    "year": 2011,
+    "offer": "RS61782836",
+    "floor": 2,
+    "market" : "pierwotny",
+    "ad-type" : "osoba prywatna",
+    "avaible" : "",
+    "house-type" : "Mieszkanie w bloku",
+    "windows" : "plastikowe",
+    "elevator" : "brak",
+    "media" : "",
+    "security" : "",
+    "equipment" : "",
+    "additional-info" : "",
+    "material" : "",
+    "features": [
+      "Blisko morza",
+      "Widok",
+      "Las",
+      "Balkon",
+      "Cicho",
+      "Parking",
+      "Taras",
+      "Wysoki standart budynku"
+    ],
+    "descriptionTitle": "Penthouse z tarasem na dachu budynku z oszałamiającym widokiem na morze",
+    "description": "Mieszkanie ok 55m2 znajdujące sie na osiedlu budynków w zabudowie bliźniaczej. Mieszkanie swieżo po remoncie. Mieszkanie jest bezczynszowe. Opłaty wynikają jedynie ze zużycia mediów.",
+    "agent": {
+      "name": "John Doe",
+      "agency": "Real Estate Agency",
+      "photo": "https://r-scale-b1.dcs.redcdn.pl/scale/o2/tvn/web-content/m/p145/i/04df4d434d481c5bb723be1b6df1ee65/4719da4c-df7f-450d-b663-868a58afe698.jpg?type=1&srcmode=3&srcx=1%2F2&srcy=1%2F2&srcw=743&srch=417.9375&dstw=743&dsth=417.9375&quality=75",
+      "phone": 929934123,
+      "email": "johndoe@mail.com"
+    }
+  },
+  {
+    "id": 10,
+    "title": "Mieszkanie 72,6 m2/ Świecie ul. Krausego",
+    "subtitle": "Inwestycyjne dwa mieszkania z widokiem na Marinę",
+    "img": [
+      {
+        "url": "https://images.pexels.com/photos/275484/pexels-photo-275484.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "id": 1,
+        "name": "House"
+      },
+
+      {
+        "url": "https://images.unsplash.com/photo-1605146769289-440113cc3d00?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDJ8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60",
+        "id": 2,
+        "name": "House"
+      },
+      {
+        "url": "https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "id": 2,
+        "name": "House"
+      }
+    ],
+    "type": "Dom",
+    "city": "Sopot",
+    "distriction": "Morena",
+    "transactionType": "Wynajem",
+    "rooms": 4,
+    "area": 80,
+    "rent" : "",
+    "form-prop": "",
+    "condition" : "Po remoncie",
+    "balcony" : "balkon",
+    "parking" : "darmowe",
+    "heat" : "centralne",
+    "price": 160000,
+    "price-m" : 3618,
+    "year": 2011,
+    "offer": "RS61782836",
+    "floor": 2,
+    "market" : "pierwotny",
+    "ad-type" : "osoba prywatna",
+    "avaible" : "",
+    "house-type" : "Mieszkanie w bloku",
+    "windows" : "plastikowe",
+    "elevator" : "brak",
+    "media" : "",
+    "security" : "",
+    "equipment" : "",
+    "additional-info" : "",
+    "material" : "",
+    "features": [
+      "Blisko morza",
+      "Widok",
+      "Las",
+      "Balkon",
+      "Cicho",
+      "Parking",
+      "Taras",
+      "Wysoki standart budynku"
+    ],
+    "descriptionTitle": "Penthouse z tarasem na dachu budynku z oszałamiającym widokiem na morze",
+    "description": "Mieszkanie ok 55m2 znajdujące sie na osiedlu budynków w zabudowie bliźniaczej. Mieszkanie swieżo po remoncie. Mieszkanie jest bezczynszowe. Opłaty wynikają jedynie ze zużycia mediów.",
+    "agent": {
+      "name": "John Doe",
+      "agency": "Real Estate Agency",
+      "photo": "https://r-scale-b1.dcs.redcdn.pl/scale/o2/tvn/web-content/m/p145/i/04df4d434d481c5bb723be1b6df1ee65/4719da4c-df7f-450d-b663-868a58afe698.jpg?type=1&srcmode=3&srcx=1%2F2&srcy=1%2F2&srcw=743&srch=417.9375&dstw=743&dsth=417.9375&quality=75",
+      "phone": 929934123,
+      "email": "johndoe@mail.com"
+    }
+  },
+  {
+    "id": 11,
+    "title": "Mieszkanie 72,6 m2/ Świecie ul. Krausego",
+    "subtitle": "Inwestycyjne dwa mieszkania z widokiem na Marinę",
+    "img": [
+      {
+        "url": "https://images.pexels.com/photos/2988860/pexels-photo-2988860.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "id": 1,
+        "name": "House"
+      },
+
+      {
+        "url": "https://images.unsplash.com/photo-1605146769289-440113cc3d00?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDJ8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60",
+
+        "id": 2,
+        "name": "House"
+      },
+      {
+        "url": "https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "id": 2,
+        "name": "House"
+      }
+    ],
+    "type": "Dom",
+    "city": "Sopot",
+    "distriction": "Morena",
+    "transactionType": "Wynajem",
+    "rooms": 4,
+    "area": 80,
+    "rent" : "",
+    "form-prop": "",
+    "condition" : "Po remoncie",
+    "balcony" : "balkon",
+    "parking" : "darmowe",
+    "heat" : "centralne",
+    "price": 160000,
+    "price-m" : 3618,
+    "year": 2011,
+    "offer": "RS61782836",
+    "floor": 2,
+    "market" : "pierwotny",
+    "ad-type" : "osoba prywatna",
+    "avaible" : "",
+    "house-type" : "Mieszkanie w bloku",
+    "windows" : "plastikowe",
+    "elevator" : "brak",
+    "media" : "",
+    "security" : "",
+    "equipment" : "",
+    "additional-info" : "",
+    "material" : "",
+    "features": [
+      "Blisko morza",
+      "Widok",
+      "Las",
+      "Balkon",
+      "Cicho",
+      "Parking",
+      "Taras",
+      "Wysoki standart budynku"
+    ],
+    "descriptionTitle": "Penthouse z tarasem na dachu budynku z oszałamiającym widokiem na morze",
+    "description": "Mieszkanie ok 55m2 znajdujące sie na osiedlu budynków w zabudowie bliźniaczej. Mieszkanie swieżo po remoncie. Mieszkanie jest bezczynszowe. Opłaty wynikają jedynie ze zużycia mediów.",
+    "agent": {
+      "name": "John Doe",
+      "agency": "Real Estate Agency",
+      "photo": "https://r-scale-b1.dcs.redcdn.pl/scale/o2/tvn/web-content/m/p145/i/04df4d434d481c5bb723be1b6df1ee65/4719da4c-df7f-450d-b663-868a58afe698.jpg?type=1&srcmode=3&srcx=1%2F2&srcy=1%2F2&srcw=743&srch=417.9375&dstw=743&dsth=417.9375&quality=75",
+      "phone": 929934123,
+      "email": "johndoe@mail.com"
+    }
+  },
+  {
+    "id": 12,
+    "title": "Mieszkanie 72,6 m2/ Świecie ul. Krausego",
+    "subtitle": "Inwestycyjne dwa mieszkania z widokiem na Marinę",
+    "img": [
+      {
+        "url": "https://images.unsplash.com/photo-1554995207-c18c203602cb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+        "id": 1,
+        "name": "House"
+      },
+
+      {
+        "url": "https://images.unsplash.com/photo-1605146769289-440113cc3d00?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDJ8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60",
+        "id": 2,
+        "name": "House"
+      },
+      {
+        "url": "https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "id": 2,
+        "name": "House"
+      }
+    ],
+    "type": "Dom",
+    "city": "Sopot",
+    "distriction": "Morena",
+    "transactionType": "Wynajem",
+    "rooms": 4,
+    "area": 80,
+    "rent" : "",
+    "form-prop": "",
+    "condition" : "Po remoncie",
+    "balcony" : "balkon",
+    "parking" : "darmowe",
+    "heat" : "centralne",
+    "price": 160000,
+    "price-m" : 3618,
+    "year": 2011,
+    "offer": "RS61782836",
+    "floor": 2,
+    "market" : "pierwotny",
+    "ad-type" : "osoba prywatna",
+    "avaible" : "",
+    "house-type" : "Mieszkanie w bloku",
+    "windows" : "plastikowe",
+    "elevator" : "brak",
+    "media" : "",
+    "security" : "",
+    "equipment" : "",
+    "additional-info" : "",
+    "material" : "",
+    "features": [
+      "Blisko morza",
+      "Widok",
+      "Las",
+      "Balkon",
+      "Cicho",
+      "Parking",
+      "Taras",
+      "Wysoki standart budynku"
+    ],
+    "descriptionTitle": "Penthouse z tarasem na dachu budynku z oszałamiającym widokiem na morze",
+    "description": "Mieszkanie ok 55m2 znajdujące sie na osiedlu budynków w zabudowie bliźniaczej. Mieszkanie swieżo po remoncie. Mieszkanie jest bezczynszowe. Opłaty wynikają jedynie ze zużycia mediów.",
+    "agent": {
+      "name": "John Doe",
+      "agency": "Real Estate Agency",
+      "photo": "https://r-scale-b1.dcs.redcdn.pl/scale/o2/tvn/web-content/m/p145/i/04df4d434d481c5bb723be1b6df1ee65/4719da4c-df7f-450d-b663-868a58afe698.jpg?type=1&srcmode=3&srcx=1%2F2&srcy=1%2F2&srcw=743&srch=417.9375&dstw=743&dsth=417.9375&quality=75",
+      "phone": 929934123,
+      "email": "johndoe@mail.com"
+    }
+  }
+]

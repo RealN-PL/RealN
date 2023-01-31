@@ -1,0 +1,59 @@
+@import "../../../index.scss";
+.search-holder{
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-around;
+    input, select, option{
+        height: 40px;
+        width: 300px;
+        font-size: 14px;
+        
+        border: 1px solid $mid-gray;
+        background-color: white;
+        margin: 0px;
+        -webkit-box-shadow: 1px 12px 38px -9px rgba(66, 68, 90, 0.2);
+        -moz-box-shadow: 1px 12px 38px -9px rgba(66, 68, 90, 0.2);
+        z-index: 1;
+        border-radius: 5px;
+
+        box-shadow: 1px 12px 38px -9px rgba(66, 68, 90, 0.2);
+    }
+}
+.offers-container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: center;
+}
+
+.offercard{
+    width: 400px;
+    height: 400px;
+    padding: 20px;
+    margin: 20px 0px;
+    -webkit-box-shadow: 1px 12px 38px -9px rgba(66, 68, 90, 0.2);
+    -moz-box-shadow: 1px 12px 38px -9px rgba(66, 68, 90, 0.2);
+    box-shadow: 1px 12px 38px -9px rgba(66, 68, 90, 0.2);
+    img{
+        height: 200px;
+        object-fit: cover;
+    }
+    h1{
+        font-size: 22px;
+    }
+    p{
+        margin: 4px 0px;
+        line-height: 1.4;
+    }
+button{
+    background-color: $blue;
+    color: white;
+    padding: 10px 30px;
+    font-size: 17px;
+    font-weight: 600;
+    margin-top: 20px;   
+    cursor: pointer;
+}
+
+}
