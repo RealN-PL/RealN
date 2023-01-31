@@ -35,7 +35,6 @@ export default function Signup() {
         console.log(data);
         try {
           setError("");
-          // setMessage("");
           setLoading(true);
           handleClose();
           // setMessage("Pomyślnie założono konto!");
