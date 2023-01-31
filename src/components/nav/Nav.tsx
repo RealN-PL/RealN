@@ -1,10 +1,8 @@
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import Login from "../LoginRegister/Login";
 import Signup from "../LoginRegister/Signup";
 import { Link } from "react-router-dom";
 import logo from "../../images/logorealn.png";
-import Status from "../Status";
-
 import "./nav.scss";
 import { AccountContext } from "../Account";
 
@@ -16,7 +14,6 @@ const Nav = () => {
   return (
     <nav>
       <Link to="/">
-        {" "}
         <img src={logo} alt="logo"></img>
       </Link>
       <ul className="nav-bar">

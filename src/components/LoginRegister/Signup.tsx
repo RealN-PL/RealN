@@ -1,6 +1,5 @@
 import Dialog from '@mui/material/Dialog';
 import React, {  useContext, useState } from "react";
-import { Alert } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { MdPersonAdd } from "react-icons/md";
 import "./loginregister.scss";
@@ -62,7 +61,7 @@ export default function Signup() {
       >
         <div className="login-box register-box" >
           <h2>Rejestracja</h2>
-          {error && <Alert variant="danger">{error}</Alert>}
+          {error && <h3>{error}</h3>}
           <form onSubmit={handleSubmit} >
             <label>Email</label>
             <input

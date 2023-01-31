@@ -3,18 +3,18 @@
 .login-box {
   display: flex;
   flex-direction: column;
-  h2{
+  width: 350px;
+  h2 {
     padding: 20px 0px 0px 35px;
     font-size: 30px;
   }
   form {
-    display: flex; 
+    display: flex;
     padding: 35px;
     flex-direction: column;
     input {
       padding: 10px;
       margin: 10px 0px;
-
     }
     button {
       padding: 10px;
@@ -24,52 +24,55 @@
       border: none;
       margin: 15px 0px;
       cursor: pointer;
-      &:hover{
-            background-color: $dark-blue
-      };
+      &:hover {
+        background-color: $dark-blue;
+      }
     }
-    p{
-        color: $dark-gray;
-        cursor: pointer;
-        transition: 0.2s ease-in-out;
-        &:hover{
-            text-decoration: underline;
-        }
+    p {
+      color: $dark-gray;
+      cursor: pointer;
+      transition: 0.2s ease-in-out;
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }
 
-.reset-box{
+.reset-box {
+  display: flex;
+  flex-direction: column;
+  h2 {
+    font-size: 25px;
+    text-align: center;
+    padding: 15px 0px 0px 0px;
+  }
+  form {
     display: flex;
     flex-direction: column;
-    h2{
-        font-size: 25px;
-        text-align: center;
-        padding: 15px 0px 0px 0px;
+    padding: 20px 40px 40px 40px;
+    input {
+      padding: 10px;
+      margin: 10px 0px;
     }
-    form{
-        display: flex;
-        flex-direction: column;
-        padding: 20px 40px 40px 40px;
-        input {
-            padding: 10px;
-            margin: 10px 0px;
-      
-          }
-          button {
-            padding: 10px;
-            background-color: $blue;
-            color: white;
-            font-weight: 700;
-            border: none;
-            margin: 15px 0px;
-            cursor: pointer;
-            &:hover{
-                  background-color: $dark-blue
-            };
-          }
+    button {
+      padding: 10px;
+      background-color: $blue;
+      color: white;
+      font-weight: 700;
+      border: none;
+      margin: 15px 0px;
+      cursor: pointer;
+      &:hover {
+        background-color: $dark-blue;
+      }
     }
+  }
 }
-.register-box{
-    width: 380px;
+.register-box {
+  width: 380px;
+}
+.login-error {
+  align-self: center;
+  color: rgb(107, 3, 3);
 }

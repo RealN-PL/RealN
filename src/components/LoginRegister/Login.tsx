@@ -1,6 +1,5 @@
 import Dialog from "@mui/material/Dialog";
-import React, { useState, useContext, useEffect } from "react";
-import { Alert } from "react-bootstrap";
+import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { MdExitToApp, MdPerson } from "react-icons/md";
 import "./loginregister.scss";
@@ -16,9 +15,8 @@ export default function Login() {
   const [openPassword, setOpenPassword] = React.useState(false);
   const [message, setMessage] = useState("");
   const navigate = useNavigate();
-  // const [status, setStatus] = useState(false);
 
-  const { authenticate, getSession, logout, status } = useContext(AccountContext);
+  const { authenticate, logout, status } = useContext(AccountContext);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -54,8 +52,10 @@ export default function Login() {
         setLoading(false);
       })
       .catch((err: any) => {
-        console.error("Failed to login", err);
-        setError(err.message);
+        console.log("Failed to login", err.message);
+        err.message.includes("Incorrect")&& 
+        setError("Nieprawidłowy email lub hasło");
+        console.log(error)
       });
   }
 
@@ -107,7 +107,7 @@ export default function Login() {
       >
         <div className="login-box">
           <h2>Logowanie</h2>
-          {error && <Alert variant="danger">{error}</Alert>}
+          {error && <h3 className="login-error">{error}</h3>}
           <form onSubmit={handleSubmit}>
             <label>Email</label>
             <input
@@ -153,8 +153,8 @@ export default function Login() {
               value={email}
               onChange={(event) => setEmail(event.target.value)}
             />
-            {passError && <Alert variant="danger">{passError}</Alert>}
-            {message && <Alert variant="success">{message}</Alert>}
+            {passError && <h3 >{passError}</h3>}
+            {message && <h3 >{message}</h3>}
             <button disabled={loading} type="submit">
               Wyślij
             </button>

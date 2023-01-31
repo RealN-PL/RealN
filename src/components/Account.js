@@ -4,6 +4,8 @@ import Pool from "../UserPool";
 
 const AccountContext = createContext();
 
+
+
 const Account = (props) => {
   const getSession = async () => {
     return await new Promise((resolve, reject) => {
@@ -20,7 +22,13 @@ const Account = (props) => {
         reject();
       }
     });
-  };
+}
+useEffect(() => {
+    getSession().then((session) => {
+      console.log("Session: ", session);
+      setStatus(true);
+    });
+  }, []);
 
   const authenticate = async (Username, Password) => {
     return await new Promise((resolve, reject) => {
@@ -44,14 +52,7 @@ const Account = (props) => {
       });
     });
   };
-  const [status, setStatus] = useState(false)
-
-  useEffect(() => {
-    getSession().then((session) => {
-      console.log("Session: ", session);
-      setStatus(true);
-    });
-  }, [getSession]);
+  const [status, setStatus] = useState(false);
 
   const logout = () => {
     const user = Pool.getCurrentUser();
@@ -61,7 +62,9 @@ const Account = (props) => {
   };
 
   return (
-    <AccountContext.Provider value={{ authenticate, getSession, logout, status }}>
+    <AccountContext.Provider
+      value={{ authenticate, getSession, logout, status }}
+    >
       {props.children}
     </AccountContext.Provider>
   );
