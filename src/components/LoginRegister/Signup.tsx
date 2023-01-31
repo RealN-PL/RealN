@@ -3,7 +3,7 @@ import React, {  useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { MdPersonAdd } from "react-icons/md";
 import "./loginregister.scss";
-import UserPool from "../../UserPool";
+import user from "../../UserPool";
 import { AccountContext } from '../Account';
 
 export default function Signup() {
@@ -26,7 +26,7 @@ export default function Signup() {
 
   async function handleSubmit(e:any) {
     e.preventDefault();
-    UserPool.signUp(email, password, [], [], (err, data) => {
+    user.signUp(email, password, [], [], (err:any, data: {}) => {
       if(err) {
         console.error(err);
         setError(err.message);
