@@ -61,3 +61,19 @@
   padding: 10px;
 
 }
+@media (max-width: 500px){
+  .main-slider-container{
+    width: 96%;
+    padding: 20px 2% 0px;
+    .info{
+      .details-box{
+        padding: 0px;
+        .btn{
+          padding: 5px 10px;
+          font-size: 10px;
+        }
+
+      }
+    }
+  }
+}

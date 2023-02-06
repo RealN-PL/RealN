@@ -1,8 +1,8 @@
 import React from "react";
 import SmallContact from "../../utils/SmallContact";
 import "./findevents.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { HiOutlineMagnifyingGlass } from "react-icons/hi2";
+
 import { Link } from "react-router-dom";
 
 const FindEvents = () => {
@@ -30,8 +30,7 @@ const FindEvents = () => {
       <article className="event-searcher">
         <aside className="event-input-holder">
           <input type="text" placeholder="Miasto, ulica, kod pocztowy"></input>{" "}
-       <Link to="/upcoming-events">    <FontAwesomeIcon
-            icon={faMagnifyingGlass}
+       <Link to="/upcoming-events">    <HiOutlineMagnifyingGlass
             className="main-glass-icon"
           /></Link>
         </aside>

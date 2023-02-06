@@ -6,6 +6,7 @@ import "./loginregister.scss";
 import user from "../../UserPool";
 import { AccountContext } from "../Account";
 import { toast } from "react-toastify";
+import { Divider } from "@mui/material";
 
 export default function Signup() {
   const [email, setEmail] = useState("");
@@ -68,6 +69,7 @@ export default function Signup() {
       >
         <div className="login-box register-box">
           <h2>Rejestracja</h2>
+          <Divider/>
           {error && <h3>{error}</h3>}
           <form onSubmit={handleSubmit}>
             <label>Email</label>

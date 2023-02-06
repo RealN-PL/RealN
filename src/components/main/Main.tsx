@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./main.scss";
 import EstateSlider from "../utils/EstateSlider";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { HiOutlineMagnifyingGlass } from "react-icons/hi2";
+
 import pic2 from "../../images/pic4.jpg";
 import pic5 from "../../images/pic5.jpg";
 import SmallContact from "../utils/SmallContact";
@@ -55,10 +55,7 @@ const Main = () => {
               type="text"
               placeholder="Miasto, adres, kod pocztowy"
             ></input>
-            <FontAwesomeIcon
-              icon={faMagnifyingGlass}
-              className="main-glass-icon"
-            />
+            <HiOutlineMagnifyingGlass className="main-glass-icon" />
           </div>{" "}
         </header>
       </div>
@@ -91,21 +88,16 @@ const Main = () => {
                 type="text"
                 placeholder="Miasto, adres, kod pocztowy"
               ></input>
-              <FontAwesomeIcon
-                icon={faMagnifyingGlass}
-                className="main-glass-icon"
-              />
+              <HiOutlineMagnifyingGlass className="main-glass-icon" />
             </aside>
           </aside>
           <img src={pic5} alt="home for rent"></img>
         </article>
-        
       </article>
       <article className="slider-title">
-
-       <h1> Sprawdź mieszkania w okolicy:</h1>
+        <h1> Sprawdź mieszkania w okolicy:</h1>
       </article>
-      <EstateSlider/>
+      <EstateSlider />
 
       <SmallContact />
     </>

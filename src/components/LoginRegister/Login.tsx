@@ -5,6 +5,7 @@ import { MdExitToApp, MdPerson } from "react-icons/md";
 import "./loginregister.scss";
 import { AccountContext } from "../Account";
 import { toast } from "react-toastify";
+import { Divider } from "@mui/material";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -46,6 +47,8 @@ export default function Login() {
           setLoading(true);
           handleClose();
           setMessage("Pomyślnie zalogowano!");
+          window.location.reload();
+
           toast.success("Pomyślnie zalogowano!", { theme: "colored" });
           navigate("/");
         } catch {}
@@ -86,13 +89,13 @@ export default function Login() {
   return (
     <>
       {status ? (
-        <li onClick={() => handleLogout()}  className="desktop">
+        <li onClick={() => handleLogout()} className="desktop">
           <MdExitToApp style={{ marginRight: "5px" }} />
           Wyloguj się
         </li>
       ) : (
-        <li onClick={handleClickOpen}  className="desktop" >
-          <MdPerson style={{ marginRight: "5px" }}/>
+        <li onClick={handleClickOpen} className="desktop">
+          <MdPerson style={{ marginRight: "5px" }} />
           Logowanie
         </li>
       )}
@@ -112,10 +115,10 @@ export default function Login() {
         onClose={handleClose}
         aria-labelledby="form-dialog-title"
         sx={{ overflowX: "visible" }}
-
       >
         <div className="login-box">
           <h2>Logowanie</h2>
+          <Divider/>
           {error && <h3 className="login-error">{error}</h3>}
           <form onSubmit={handleSubmit}>
             <label>Email</label>

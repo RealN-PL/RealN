@@ -1,7 +1,7 @@
 import React from "react";
 import "./chooseAgent.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { HiOutlineMagnifyingGlass } from "react-icons/hi2";
+
 
 const ChooseAgent = () => {
   return (
@@ -126,8 +126,7 @@ const ChooseAgent = () => {
       <h4>Zacznij szukać domów!</h4>
         <aside className="nav-searcher-box">
           <input type="text" placeholder="Miasto, adres, kod pocztowy"></input>
-          <FontAwesomeIcon
-            icon={faMagnifyingGlass}
+          <HiOutlineMagnifyingGlass
             className="nav-glass-icon"
           />
         </aside>

@@ -1,8 +1,7 @@
-import { Routes, Route, useLocation} from "react-router-dom";
+import { Routes, Route} from "react-router-dom";
 import "./App.css";
 import Nav from "./components/nav/Nav";
 import Footer from "./components/utils/Footer";
-import Nav2 from "./components/nav/Nav2";
 import Main from "./components/main/Main";
 import HouseNearby from "../src/components/buy/housenearby/HouseNearby";
 import HomeNearby from "../src/components/buy/homenearby/HomeNearby";
@@ -38,20 +37,10 @@ import {ToastContainer} from 'react-toastify'
 
 
 const App = () => {
-  let nav;
-  const location = useLocation();
-  if (location.pathname === "/") {
-    nav = <Nav />;
-  }
-  else if (location.pathname === "/why-buy") {
-    nav = <Nav />;
-  } else {
-    nav = <Nav2 />;
-  }
 
   return (
     <Account>
-      {nav}
+      <Nav/>
       <ToastContainer/>
       <Routes>
         <Route path="/" element={<Main />} />
