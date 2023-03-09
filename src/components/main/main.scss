@@ -234,6 +234,18 @@
       }
     }
   }
+  .main-contact{
+    width: 96%;
+    padding: 2%;
+    .main-contact-text{
+      h1{
+        font-size: 20px;
+      }
+    }
+    .main-contact-input{
+      width: 50%;
+    }
+  }
 }
 @media (max-width: 500px) {
   .main-header {

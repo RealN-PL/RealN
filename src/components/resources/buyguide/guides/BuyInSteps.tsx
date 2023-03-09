@@ -1,4 +1,3 @@
-import React from "react";
 import guidepoeple from "../../../../images/guidepeople.jpg";
 import bulb from "../../../../images/icons/bulb.png";
 import "./buyisteps.scss";
@@ -8,7 +7,6 @@ const BuyInSteps = () => {
     <>
       <header className="steps-header">
         <article className="steps-text-box">
-          {" "}
           <h1>Jak kupić dom w 7 krokach</h1>
           <p>
             Zrozumienie wszystkich kroków to świetny sposób, aby rozpocząć.{" "}

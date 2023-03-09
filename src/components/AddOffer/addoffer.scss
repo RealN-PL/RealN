@@ -26,6 +26,7 @@
     padding: 30px;
     margin-bottom: 15px;
     border-radius: 10px;
+
   }
 }
 h3 {
@@ -137,7 +138,26 @@ button {
     }
   }
 }
+.add-offer-button{
 
+    width: 50%;
+    align-self: center;
+    left: 25%;
+    right: 25%;
+    position: relative;
+    padding: 10px;
+    background-color: $blue;
+    color: white;
+    font-weight: 700;
+    border: none;
+    border-radius: 10px;
+    margin: 15px 0px;
+    cursor: pointer;
+    &:hover {
+      background-color: $dark-blue;
+    
+  }
+}
 @media (max-width: 1200px) {
   .add-offer_box {
     padding: 60px 4%;

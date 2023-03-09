@@ -6,12 +6,13 @@ import "./loginregister.scss";
 import user from "../../UserPool";
 import { AccountContext } from "../Account";
 import { toast } from "react-toastify";
-import { Divider } from "@mui/material";
 
 export default function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [phone, setPhone] = useState("")
   const [error, setError] = useState("");
+  const [username, setUsername] = useState("")
   // const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
   const [open, setOpen] = React.useState(false);
@@ -69,30 +70,47 @@ export default function Signup() {
       >
         <div className="login-box register-box">
           <h2>Rejestracja</h2>
-          <Divider/>
           {error && <h3>{error}</h3>}
           <form onSubmit={handleSubmit}>
-            <label>Email</label>
             <input
               required
+              placeholder="Email"
               type="email"
               id="fmail"
               name="fmail"
               value={email}
               onChange={(event) => setEmail(event.target.value)}
             />
-            <label>Hasło</label>
+             <input
+              required
+              placeholder="Numer telefonu"
+              type="number"
+              id="fphone"
+              name="fphone"
+              value={phone}
+              onChange={(event) => setPhone(event.target.value)}
+            />
             <input
               required
+              placeholder="Hasło"
               type="password"
               id="password"
               name="password"
               value={password}
               onChange={(event) => setPassword(event.target.value)}
             />
-            <label>Potwierdź hasło</label>
             <input
               required
+              placeholder="Nazwa użytkownika"
+              type="text"
+              id="username"
+              name="username"
+              value={username}
+              onChange={(event) => setUsername(event.target.value)}
+            />
+            <input
+              required
+              placeholder="Powtórz hasło"
               type="password"
               id="password-confirm"
               name="password-confirm"

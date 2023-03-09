@@ -58,11 +58,9 @@
     padding: 0px 15%;
     font-size: 32px;
     margin-bottom: -50px;
-
   }
   border-bottom: 1px solid $gray;
 }
-
 
 .search-bar {
   height: 100px;
@@ -84,4 +82,58 @@
       height: 40px;
       border: solid 1px $gray;
     }
+  }
+}
+@media (max-width: 1130px) {
+  .house-search-header {
+    width: 90%;
+    padding: 0px 5%;
+  }
+  .search-bar {
+    .search-price,
+    .search-location {
+      input {
+        width: 200px;
+      }
+    }
+    button {
+      width: 200px;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .search-bar {
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+    padding-bottom: 30px;
+
+    .search-price,
+    .search-location {
+      width: 100%;
+      align-items: center;
+      input {
+        width: 50%;
+        min-width: 250px;
+      }
+      .price-box {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+      }
+    }
+    button {
+      width: 50%;
+      min-width: 250px;
+    }
+  }
+}
+@media (max-width: 500px){
+  .house-search-header article h1{
+    font-size: 25px;
+  }
+  .houses-container h1{
+    margin-bottom: 0px;
   }}

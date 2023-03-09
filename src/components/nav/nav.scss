@@ -1,14 +1,6 @@
 @import "../../index.scss";
 
-.desktop {
-  display: flex;
-}
-.mobile-menu {
-  display: none;
-}
-.small {
-  display: none;
-}
+
 nav {
   position: absolute;
   top: 0;
@@ -378,11 +370,24 @@ nav {
 .phone-box {
   width: 90px;
 }
+.desktop {
+  display: flex;
+}
+ .mobile-menu {
+  display: none;
+}
+.nav2 .nav-bar2 .nav-login-bar2 li.mobile,
+nav .nav-bar .nav-login-bar li.mobile {
+  display: none;
+}
+.nav2 .nav-bar2 .nav-login-bar2 li.small{  display: none;
+}
 @media (max-width: 1500px) {
   .desktop {
     display: none;
   }
-  .small {
+  .nav2 .nav-bar2 .nav-login-bar2 li.small,
+  nav .nav-bar .nav-login-bar li.small{  
     display: block;
   }
   .nav2 .nav-bar2 .nav-login-bar2{
@@ -398,7 +403,10 @@ nav {
       display: none;
     }
   }
-
+  .nav2 .nav-bar2 .nav-login-bar2 li.mobile,
+  nav .nav-bar .nav-login-bar li.mobile {
+    display: block;
+}
   .mobile-menu {
     position: absolute;
     top: 70px;

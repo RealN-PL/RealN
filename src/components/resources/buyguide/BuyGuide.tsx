@@ -18,7 +18,7 @@ export default function BuyGuide() {
   }, [y])
 
   return (
-    <>
+    <div className="flex-container">
       <header className="guide-header">
         <aside>
           <h1>Twój kompletny przewodnik na zakup czy sprzedaż nieruchomości</h1>
@@ -109,6 +109,6 @@ export default function BuyGuide() {
           </div>
         </article>
     )}
-    </>
+    </div>
   );
 }

@@ -91,3 +91,29 @@
     }
   }
 }
+
+@media (max-width: 900px){
+  .buy-or-rent-header{
+    text-align: center;
+    h1{
+      width: 100%;
+      padding: 60px 2%;
+      font-size: 34px;
+    }
+  }
+  .buyorrent-box{
+    width: 90%;
+    margin: 20px 5%;
+    padding: 0px;
+    h1{
+      font-size: 24px;
+    }
+  }
+  .articles-box {
+    width: 90%;
+    padding: 5%;
+    h1{
+      margin: 20px 0px;
+    }
+  }
+}

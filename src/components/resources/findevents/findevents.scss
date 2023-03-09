@@ -77,3 +77,52 @@
         line-height: 1.7;
     }
 }
+
+@media (max-width: 900px){
+    .event-header h1{
+        padding: 50px 0px;
+        width: 100%;
+        font-size: 30px;
+    }
+    .event-container{
+        width: 96%;
+        padding: 20px 2%;
+        h3{
+            font-size: 24px;
+        }
+    }
+    .event-searcher{
+        width: 96%;
+        padding: 10px 2%;
+        .event-input-holder{
+            width: 90%;
+            input{
+                width: 80%;
+            }
+        }
+        h2{
+            font-size: 20px;
+        }
+    }
+    .bottom-event__text{
+        width: 96%;
+        padding: 20px 2%;
+        h1{
+            font-size: 24px;
+        }
+        p{
+            font-size: 16px;
+        }
+        margin-bottom: -40px;
+    }
+
+   
+}
+@media (max-width:500px){
+    .event-searcher{
+        flex-direction: column-reverse;
+        text-align: center;
+        height: 220px;
+    }
+
+}

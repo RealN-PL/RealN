@@ -235,7 +235,7 @@ export default function AddOffer() {
           <article>
             <h3>Podstawowe informacje </h3>
             <div className="flex-row">
-              <FormControl style={{ width: "49%", margin: "5px" }}>
+              <FormControl style={{ width: "48%", margin: "0px 1%", minWidth: "200px", alignSelf: "center" }}>
                 <InputLabel id="type">Typ transakcji</InputLabel>
                 <Select
                   labelId="type"
@@ -253,7 +253,7 @@ export default function AddOffer() {
                 id="marginoutlined-basic"
                 label="Powierzchnia w m2"
                 variant="outlined"
-                style={{ width: "49%", margin: "5px" }}
+                style={{ width: "48%", margin: "0px 1%", minWidth: "200px", alignSelf: "center" }}
                 onChange={(e) => setSize(e.target.value)}
               />
             </div>
@@ -263,7 +263,7 @@ export default function AddOffer() {
               label="Miejscowość"
               variant="outlined"
               value={city}
-              style={{ width: "49%", margin: "5px" }}
+              style={{ width: "48%", margin: "0px 1%", minWidth: "200px", alignSelf: "center" }}
               onChange={(e) => setCity(e.target.value)}
             />
             <TextField
@@ -271,14 +271,14 @@ export default function AddOffer() {
               label="Województwo"
               value={land}
               variant="outlined"
-              style={{ width: "49%", margin: "5px" }}
+              style={{ width: "48%", margin: "0px 1%", minWidth: "200px", alignSelf: "center" }}
               onChange={(e) => setLand(e.target.value)}
             />
             <TextField
               id="outlined-basic"
               label="Dzielnica"
               value={district}
-              style={{ width: "49%", margin: "5px" }}
+              style={{ width: "48%", margin: "0px 1%", minWidth: "200px", alignSelf: "center" }}
               variant="outlined"
               onChange={(e) => setDistrict(e.target.value)}
             />
@@ -286,7 +286,7 @@ export default function AddOffer() {
               id="outlined-basic"
               value={street}
               label="Ulica"
-              style={{ width: "49%", margin: "5px" }}
+              style={{ width: "48%", margin: "0px 1%", minWidth: "200px", alignSelf: "center" }}
               variant="outlined"
               onChange={(e) => setStreet(e.target.value)}
             />
@@ -294,7 +294,7 @@ export default function AddOffer() {
               id="outlined-basic"
               value={stnum}
               label="Numer budynku"
-              style={{ width: "49%", margin: "5px" }}
+              style={{ width: "48%", margin: "0px 1%", minWidth: "200px", alignSelf: "center" }}
               variant="outlined"
               onChange={(e) => setStnum(e.target.value)}
             />
@@ -315,7 +315,7 @@ export default function AddOffer() {
 
           <article>
             <h3>Dodatkowe informacje</h3>
-            <FormControl style={{ width: "49%", margin: "5px" }}>
+            <FormControl style={{ width: "48%", margin: "0px 1%", minWidth: "200px", alignSelf: "center" }}>
               <InputLabel id="type">Piętro</InputLabel>
               <Select
                 labelId="type"
@@ -334,7 +334,7 @@ export default function AddOffer() {
                 <MenuItem value={"8+"}>Więcej niż 7</MenuItem>*
               </Select>
             </FormControl>
-            <FormControl style={{ width: "49%", margin: "5px" }}>
+            <FormControl style={{ width: "48%", margin: "0px 1%", minWidth: "200px", alignSelf: "center" }}>
               <InputLabel id="type"> Liczba pokoi</InputLabel>
               <Select
                 labelId="type"
@@ -379,7 +379,7 @@ export default function AddOffer() {
                 <MenuItem value={"30+"}>Powyżej 30</MenuItem>*
               </Select>
             </FormControl>
-            <FormControl style={{ width: "49%", margin: "5px" }}>
+            <FormControl style={{ width: "48%", margin: "0px 1%", minWidth: "200px", alignSelf: "center" }}>
               <InputLabel id="type">Stan</InputLabel>
               <Select
                 labelId="type"
@@ -398,7 +398,7 @@ export default function AddOffer() {
                 <MenuItem value={"deweloperski"}>Stan deweloperski</MenuItem>
               </Select>
             </FormControl>
-            <FormControl style={{ width: "49%", margin: "5px" }}>
+            <FormControl style={{ width: "48%", margin: "0px 1%", minWidth: "200px", alignSelf: "center" }}>
               <InputLabel id="type">Parking</InputLabel>
               <Select
                 labelId="type"
@@ -418,7 +418,7 @@ export default function AddOffer() {
                 <MenuItem value={"do-remontu"}>Pod wiatą</MenuItem>
               </Select>
             </FormControl>
-            <FormControl style={{ width: "49%", margin: "5px" }}>
+            <FormControl style={{ width: "48%", margin: "0px 1%", minWidth: "200px", alignSelf: "center" }}>
               <InputLabel id="type">Typ zabudowy</InputLabel>
               <Select
                 labelId="type"
@@ -437,7 +437,7 @@ export default function AddOffer() {
                 <MenuItem value={"plomba"}>plomba</MenuItem>
               </Select>
             </FormControl>
-            <FormControl style={{ width: "49%", margin: "5px" }}>
+            <FormControl style={{ width: "48%", margin: "0px 1%", minWidth: "200px", alignSelf: "center" }}>
               <InputLabel id="type">Materiał budynku</InputLabel>
               <Select
                 labelId="type"
@@ -463,7 +463,7 @@ export default function AddOffer() {
               label="Opłaty (czynsz administracyjny, media)"
               variant="outlined"
               value={costs}
-              style={{ width: "49%", margin: "5px" }}
+              style={{ width: "48%", margin: "0px 1%", minWidth: "200px", alignSelf: "center" }}
               onChange={(e) => setCosts(e.target.value)}
             />
             <TextField
@@ -471,7 +471,7 @@ export default function AddOffer() {
               label="Rok budowy"
               variant="outlined"
               value={year}
-              style={{ width: "49%", margin: "5px" }}
+              style={{ width: "48%", margin: "0px 1%", minWidth: "200px", alignSelf: "center" }}
               onChange={(e) => setYear(e.target.value)}
             />
             {!showMore && (
@@ -865,7 +865,7 @@ export default function AddOffer() {
               <article>
                 <h3>Kuchnia</h3>
                 <div className="flex-row">
-                  <FormControl style={{ width: "49%", margin: "5px" }}>
+                  <FormControl style={{ width: "48%", margin: "0px 1%", minWidth: "200px", alignSelf: "center" }}>
                     <InputLabel id="type">Stan kuchni</InputLabel>
                     <Select
                       labelId="type"
@@ -880,7 +880,7 @@ export default function AddOffer() {
                       <MenuItem value={"do remontu"}>do remontu</MenuItem>
                     </Select>
                   </FormControl>
-                  <div style={{ width: "49%", margin: "5px" }}>
+                  <div style={{ width: "48%", margin: "0px 1%", minWidth: "200px", alignSelf: "center" }}>
                     <p>Forma kuchni</p>
                     <motion.button
                       whileTap={{ scale: 0.75 }}
@@ -916,7 +916,7 @@ export default function AddOffer() {
                 </div>
                 <h3>Łazienka</h3>
                 <div className="flex-row">
-                  <FormControl style={{ width: "49%", margin: "5px" }}>
+                  <FormControl style={{ width: "48%", margin: "0px 1%", minWidth: "200px", alignSelf: "center" }}>
                     <InputLabel id="type">Stan łazienki</InputLabel>
                     <Select
                       labelId="type"
@@ -931,7 +931,7 @@ export default function AddOffer() {
                       <MenuItem value={"do remontu"}>do remontu</MenuItem>
                     </Select>
                   </FormControl>
-                  <div style={{ width: "49%", margin: "5px" }}>
+                  <div style={{ width: "48%", margin: "0px 1%", minWidth: "200px", alignSelf: "center" }}>
                     <p>Forma / wyposażenie łazienki</p>
                     <motion.button
                       whileTap={{ scale: 0.75 }}
@@ -986,7 +986,7 @@ export default function AddOffer() {
                   </div>
                 </div>
                 <h3>Wnętrze</h3>
-                <FormControl style={{ width: "49%", margin: "5px" }}>
+                <FormControl style={{ width: "48%", margin: "0px 1%", minWidth: "200px", alignSelf: "center" }}>
                   <InputLabel id="type">Stan instalacji</InputLabel>
                   <Select
                     labelId="type"
@@ -1003,7 +1003,7 @@ export default function AddOffer() {
                     <MenuItem value={"do wymiany"}>do wymiany</MenuItem>
                   </Select>
                 </FormControl>
-                <FormControl style={{ width: "49%", margin: "5px" }}>
+                <FormControl style={{ width: "48%", margin: "0px 1%", minWidth: "200px", alignSelf: "center" }}>
                   <InputLabel id="type">Głośność</InputLabel>
                   <Select
                     labelId="type"
@@ -1021,7 +1021,7 @@ export default function AddOffer() {
                   </Select>
                 </FormControl>
                 <div className="flex-row">
-                  <FormControl style={{ width: "49%", margin: "5px" }}>
+                  <FormControl style={{ width: "48%", margin: "0px 1%", minWidth: "200px", alignSelf: "center" }}>
                     <InputLabel id="type">Okna</InputLabel>
                     <Select
                       labelId="type"
@@ -1331,6 +1331,8 @@ export default function AddOffer() {
               value={description}
             />
           </article>
+
+          <button className="add-offer-button">Dodaj ofertę</button>
         </form>
       </article>
  

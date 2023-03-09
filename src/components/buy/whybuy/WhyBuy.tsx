@@ -7,7 +7,9 @@ import pic2 from "../../../images/pic2.jpg";
 const whybuy = () => {
   return (
     <>
-      <article className="whybuy-header"></article>
+      <article className="whybuy-header">
+        Dlaczego warto kupić właśnie u nas?
+      </article>
 
       <article className="whybuy-top-box">
         <h1>Dlaczego warto kupić właśnie u nas?</h1>
@@ -89,7 +91,7 @@ const whybuy = () => {
             <li>prezentacje live, wideo</li>
             <li>cyfrowe kampanie marketingowe</li>
           </ul>
-          <h1>Jesteśmy skuteczni</h1>{" "}
+          <h1>Jesteśmy skuteczni!</h1>{" "}
         </aside>
       </article>
     </>

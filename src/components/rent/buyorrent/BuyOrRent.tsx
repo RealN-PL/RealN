@@ -263,7 +263,7 @@ const BuyOrRent = () => {
         <div>
         <Link to="/guides/how-to-buy-a-house">  <div>
             <h2>
-              Jak kupic dom w 7 krokach
+              Jak kupić dom w 7 krokach
 
             </h2>
             <p>Dowiedz się więcej</p>

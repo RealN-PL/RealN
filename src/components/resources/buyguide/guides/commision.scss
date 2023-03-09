@@ -15,6 +15,7 @@
   flex-direction: column;
   margin-top: 60px;
   align-items: center;
+  text-align: center;
   h1 {
     color: white;
     font-size: 45px;
@@ -56,3 +57,25 @@
     .text10 { grid-area: 3 / 3 / 4 / 4; }
     .text11 { grid-area: 4 / 3 / 5 / 4; }
     .text12 { grid-area: 5 / 3 / 6 / 4; }
+
+
+    @media (max-width: 900px){
+      .commision-header h1{
+        font-size: 25px;
+      }
+      .commision-table{
+        h3{
+          font-size: 12px;
+        }
+        p{
+          font-size: 10px;
+        }
+      }
+      .commmision-article{
+        width: 96%;
+        margin: 2%;
+        h1{
+          font-size: 18px;
+        }
+      }
+    }

@@ -1,5 +1,4 @@
 import { HiOutlineMagnifyingGlass } from "react-icons/hi2";
-
 const SmallContact = () => {
   return (
     <article className="main-contact">

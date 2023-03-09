@@ -11,6 +11,13 @@
   width: 100%;
   background-size: cover;
   background-position-y: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 35px;
+  font-weight: 600;
+  text-align: center;
 }
 .whybuy-top-box {
   display: flex;
@@ -89,4 +96,66 @@
         }
 
     }
+}
+
+@media (max-width: 900px){
+  .whybuy-top-box{
+    width: 96%;
+    padding: 2%;
+    flex-direction: column;
+    text-align: center;
+    height: auto;
+
+    h1{
+      width: 100%;
+    }
+    ul{
+      width: 80%;
+      padding: 0px;
+
+    }
+  }
+  .mockup-holder aside{
+    padding-right: 5%;
+  }
+  .ready-holder{
+    padding: 50px 2%;
+    aside{
+    h1{
+      font-size: 20px;
+    }
+  }}
+}
+@media (max-width: 500px){
+.whybuy-top-box{
+  height: auto;
+}
+.mockup-holder{
+  flex-direction: column;
+  align-items: center;
+  aside{
+    padding: 0px;
+    align-items: center;
+  }
+}
+.ready-holder{
+  height: auto;
+  img{
+    height: 430px;
+    width: 33%;
+
+  }
+  aside{
+    width: 66%;
+        height: 430px;
+h1{
+  font-size: 18px;
+  margin-bottom: 3px;
+}
+h2{
+  font-size: 20px;
+  margin-bottom: 3px;
+}
+  }
+}
 }

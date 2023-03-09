@@ -5,7 +5,7 @@ import { MdExitToApp, MdPerson } from "react-icons/md";
 import "./loginregister.scss";
 import { AccountContext } from "../Account";
 import { toast } from "react-toastify";
-import { Divider } from "@mui/material";
+import logo from "../../images/logo2.jpg";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -117,8 +117,9 @@ export default function Login() {
         sx={{ overflowX: "visible" }}
       >
         <div className="login-box">
-          <h2>Logowanie</h2>
-          <Divider/>
+          <img src={logo} alt="logo realn"/>
+          <h2>Witamy!</h2>
+          <p>Zaloguj się</p>
           {error && <h3 className="login-error">{error}</h3>}
           <form onSubmit={handleSubmit}>
             <label>Email</label>
@@ -126,6 +127,7 @@ export default function Login() {
               required
               type="email"
               id="fmail"
+              placeholder="Wpisz swój adres email."
               name="fmail"
               value={email}
               onChange={(event) => setEmail(event.target.value)}
@@ -136,6 +138,7 @@ export default function Login() {
               type="password"
               id="password"
               name="password"
+              placeholder="Wpisz swoje hasło"
               value={password}
               onChange={(event) => setPassword(event.target.value)}
             />

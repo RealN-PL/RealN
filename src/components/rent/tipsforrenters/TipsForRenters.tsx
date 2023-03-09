@@ -209,7 +209,7 @@ const TipsForRenters = () => {
         <div>
           <Link to="/guides/how-to-rent-a-house">
             <div>
-              <h2>Chcę wynając swoje mieszkanie</h2>
+              <h2>Chcę wynająć swoje mieszkanie</h2>
               <p>Dowiedz się więcej</p>
             </div>
           </Link>

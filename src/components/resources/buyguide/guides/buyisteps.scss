@@ -49,3 +49,23 @@
     position: center;
     object-fit: cover;
 }
+
+
+@media (max-width: 900px) {
+  .steps-header{
+    .steps-text-box{
+      padding: 20px 5px;
+      width: 100%;
+      h1{
+        font-size: 24px;
+      }
+    }
+  }
+  .steps-text{
+    width: 96%;
+    margin: 10px 2%;
+    .hint{
+      margin: 30px;
+    }
+  }
+}

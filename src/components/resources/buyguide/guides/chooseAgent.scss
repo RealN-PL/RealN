@@ -13,7 +13,7 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-
+  text-align: center;
   margin-top: 60px;
   align-items: center;
   h1,
@@ -43,5 +43,35 @@
   margin: 100px;
   h4{
     font-size: 25px;
+  }
+}
+
+@media (max-width: 900px){
+
+  .agent-article{
+    margin: 20px 4%;
+  }
+}
+
+@media (max-width: 500px){
+  .agent-header{
+    h1{
+      font-size: 25px;
+    }
+  }
+  .agent-article{
+    h1{
+      font-size: 20px;
+      margin-top: 40px;
+    }
+  }
+  .agent-searcher{
+    margin: 10px;
+    aside{
+      width: 100%;
+      input{
+        width: 96%;
+      }
+    }
   }
 }
