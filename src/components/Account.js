@@ -1,6 +1,7 @@
 import React, { createContext, useEffect, useState } from "react";
 import { CognitoUser, AuthenticationDetails } from "amazon-cognito-identity-js";
 import Pool from "../UserPool";
+import Parse from 'parse/dist/parse.min.js';
 
 const AccountContext = createContext();
 
@@ -24,10 +25,16 @@ const Account = (props) => {
     });
 }
 useEffect(() => {
-    getSession().then((session) => {
-      console.log("Session: ", session);
-      setStatus(true);
-    });
+  const currentUser = Parse.User.current();
+  if (currentUser !== null) {
+     setStatus(true);
+  } else {
+     setStatus(false);
+  }
+//    getSession().then((session) => {
+//      console.log("Session: ", session);
+//      setStatus(true);
+//    });
   }, []);
 
   const authenticate = async (Username, Password) => {

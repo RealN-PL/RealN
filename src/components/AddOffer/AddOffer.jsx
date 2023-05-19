@@ -14,6 +14,7 @@ import TextField from "@mui/material/TextField";
 import theme from "./styles";
 import { ThemeProvider } from "@mui/material/styles";
 import { motion } from "framer-motion";
+import Parse from 'parse/dist/parse.min.js';
 
 export default function AddOffer() {
   const [showMore, setShowMore] = useState(false);
@@ -53,7 +54,6 @@ export default function AddOffer() {
   const [description, setDescription] = useState("");
 
   const data = {
-    id: `${Date.now()}`,
     title: title,
     type: type,
     size: size,
@@ -90,6 +90,28 @@ export default function AddOffer() {
     description: description,
   };
   console.log(data)
+
+  const createOffer = async function(event) {
+    event.preventDefault();
+
+    const agentParse = Parse.Object.extend("Agents");
+    const query = new Parse.Query(agentParse);
+    query.equalTo("user", Parse.User.current());
+    const agent = await query.find();
+
+    let offer = new Parse.Object('Offers');
+    offer.set(data);   
+    offer.set("agent", (agent.length > 0) ? agent[0] : null);
+    try {
+      await offer.save();
+      alert('Success! Offer create!');
+      return true;
+    } catch (error) {
+      alert(`Error! ${error.message}`);
+      return false;
+    }
+    
+  };
 
   const transportChange = (event) => {
     event.preventDefault();
@@ -1332,7 +1354,8 @@ export default function AddOffer() {
             />
           </article>
 
-          <button className="add-offer-button">Dodaj ofertę</button>
+          <button className="add-offer-button"
+		        onClick={createOffer} >Dodaj ofertę</button>
         </form>
       </article>
  

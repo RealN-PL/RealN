@@ -6,6 +6,7 @@ import "./loginregister.scss";
 import { AccountContext } from "../Account";
 import { toast } from "react-toastify";
 import logo from "../../images/logo2.jpg";
+const Parse = require('parse/dist/parse.min.js');
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -38,6 +39,29 @@ export default function Login() {
   async function handleSubmit(e: any) {
     e.preventDefault();
 
+    try {
+        const loggedInUser = await Parse.User.logIn(email, password);
+	      alert(`Success! User ${loggedInUser.get('username')} has successfully signed in!`);
+        console.log("Logged in!", loggedInUser.get('username'));
+        try {
+          setError("");
+          setMessage("");
+          setLoading(true);
+          handleClose();
+          setMessage("Pomyślnie zalogowano!");
+          window.location.reload();
+
+          toast.success("Pomyślnie zalogowano!", { theme: "colored" });
+          navigate("/");
+        } catch {}
+	      setLoading(false);
+    } catch (error: any) {
+	      alert(`Error! ${error.message}`);
+//        err.message.includes("Incorrect") &&
+        setError("Nieprawidłowy email lub hasło");
+        toast.error("Sprawdź adres email lub hasło", { theme: "colored" });
+    }
+/*
     authenticate(email, password)
       .then((data: any) => {
         console.log("Logged in!", data);
@@ -59,6 +83,7 @@ export default function Login() {
           setError("Nieprawidłowy email lub hasło");
         toast.error("Sprawdź adres email lub hasło", { theme: "colored" });
       });
+*/
   }
 
   async function handleSubmitReset(e: any) {

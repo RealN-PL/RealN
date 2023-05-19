@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { MdExitToApp } from "react-icons/md";
 import "./loginregister.scss";
+const Parse = require('parse/dist/parse.min.js');
 
 export default function Logout() {
   const [error, setError] = useState("");
@@ -10,9 +11,13 @@ export default function Logout() {
 
   async function handleLogout() {
     try {
-      setError("");
-      setMessage("Pomyślnie wylogowano!");
-      navigate("/");
+      await Parse.User.logOut();
+      const currentUser = await Parse.User.current();
+      if (currentUser === null) {
+        setError("");
+        setMessage("Pomyślnie wylogowano!");
+        navigate("/");
+      }
     } catch {
       setError("Failed to log out");
     }

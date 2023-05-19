@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./searchpage.scss";
 import data from "../../../data.json";
 import Offercard from "./Offercard";
+const Parse = require('parse/dist/parse.min.js'); 
 
 class Searchpage extends Component {
   state = {
@@ -16,13 +17,19 @@ class Searchpage extends Component {
   };
 
   componentDidMount(): void {
-    const formattedData = Object.keys(data).map((key: number | any) => ({
-      ids: key,
-      ...data[key],
-    }));
-    this.setState({
-      offers: formattedData,
-    });
+    const offersParse = Parse.Object.extend("Offers");
+    const query = new Parse.Query(offersParse);
+    query.include("agent");
+    query.find().then((data2: any[])=>{
+      const data = data2.map(obj => obj.toJSON());
+      const formattedData = Object.keys(data).map((key: number | any) => ({
+        ids: key,
+        ...data[key],
+      }));
+      this.setState({
+        offers: formattedData,
+      });
+    });   
   }
 
   handlePriceMinChange = (priceMin: React.ChangeEvent<HTMLInputElement>) => {
