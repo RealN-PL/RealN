@@ -52,7 +52,10 @@ export default function AddOffer() {
   const [media, setMedia] = useState([]);
   const [direction, setDirection] = useState([]);
   const [description, setDescription] = useState("");
-
+  const [price, setPrice] = useState("");
+  const [priceM, setPriceM] = useState("");
+  const [transactionType, setTransactionType] = useState("");
+  
   const data = {
     title: title,
     type: type,
@@ -88,6 +91,10 @@ export default function AddOffer() {
     media: media,
     direction: direction,
     description: description,
+    price: price,
+    priceM: priceM,
+    transacionType: transactionType
+
   };
   console.log(data)
 
@@ -1353,6 +1360,30 @@ export default function AddOffer() {
               value={description}
             />
           </article>
+          <TextField
+              id="outlined-basic"
+              label="Cena"
+              variant="outlined"
+              value={price}
+              style={{ width: "48%", margin: "0px 1%", minWidth: "200px", alignSelf: "center" }}
+              onChange={(e) => setPrice(e.target.value)}
+            />
+          <TextField
+              id="outlined-basic"
+              label="Cena-m"
+              variant="outlined"
+              value={priceM}
+              style={{ width: "48%", margin: "0px 1%", minWidth: "200px", alignSelf: "center" }}
+              onChange={(e) => setPriceM(e.target.value)}
+            />
+          <TextField
+              id="outlined-basic"
+              label="Type transakcji"
+              variant="outlined"
+              value={transactionType}
+              style={{ width: "48%", margin: "0px 1%", minWidth: "200px", alignSelf: "center" }}
+              onChange={(e) => setTransactionType(e.target.value)}
+            />
 
           <button className="add-offer-button"
 		        onClick={createOffer} >Dodaj ofertę</button>

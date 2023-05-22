@@ -1,13 +1,36 @@
-import data from "../../../data.json";
+//import data from "../../../data.json";
 import { useParams } from "react-router-dom";
-
 import "./propertyDetails.scss";
+import { useEffect, useState } from "react";
+const Parse = require('parse/dist/parse.min.js'); 
 
 function PropertyDetails() {
   const { id }: any = useParams();
   const y: number = parseInt(id) - 1;
-  console.log(data[`${y}`]);
 
+  const [data, setData] = useState([]);
+
+  const fetchData = async () => {
+    const offersParse = Parse.Object.extend("Offers");
+    const query = new Parse.Query(offersParse);
+    query.include("agent");
+    const data2 = await query.find();
+    const data3 = data2.map((obj: { toJSON: () => any; }) => obj.toJSON());
+    const data4 = Object.keys(data3).map((key: number | any) => ({
+      ids: key,
+      ...data3[key],
+    }));
+    const { data }: any = data4;
+    setData(data);
+    console.log(data[`${y}`]);      
+  }
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+  if (!data) return (
+    <h1>loading...</h1>
+  );
   return (
     <>
       <div className="img-box">

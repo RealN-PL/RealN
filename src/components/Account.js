@@ -10,8 +10,10 @@ const AccountContext = createContext();
 const Account = (props) => {
   const getSession = async () => {
     return await new Promise((resolve, reject) => {
-      const user = Pool.getCurrentUser();
+      const user = Parse.User.current();
+//      const user = Pool.getCurrentUser();
       if (user) {
+/*
         user.getSession((err, session) => {
           if (err) {
             reject();
@@ -19,6 +21,8 @@ const Account = (props) => {
             resolve(session);
           }
         });
+*/
+        resolve();          
       } else {
         reject();
       }
