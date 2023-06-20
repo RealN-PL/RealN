@@ -1,0 +1,157 @@
+@import "../../../index.scss";
+.small{
+  display: none;
+}
+.desktop{
+  display: block;
+}
+.mobile{
+  display: none;
+}
+.login-box {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  width: 320px;
+  justify-content: space-evenly;
+  height: 520px;
+  overflow-y: hidden;
+  img{
+    height: 50px;
+    width: 150px;
+    align-self: center;
+    margin-top: 20px;
+  }
+  h3{
+    margin: 10px 0px 0px 0px;
+    text-align: center;
+  }
+  h2 {
+    padding: 10px;
+    font-size: 30px;
+    margin: 10px;
+  }
+  p{
+    font-size: 14px;
+    align-self: center;
+  }
+  form {
+    display: flex;
+    padding: 35px;
+    flex-direction: column;
+    justify-content: space-between;
+    input {
+      padding: 10px;
+      margin: 10px 0px;
+      border-radius: 15px;
+      border-color: rgba(247, 247, 247, 0.315);
+      background-color: rgba(247, 247, 247, 0.315);
+      -webkit-box-shadow: -1px 3px 18px -7px rgba(49, 49, 49, 0.3);
+      -moz-box-shadow: -1px 3px 18px -7px rgba(49, 49, 49, 0.3);
+      box-shadow: -1px 3px 18px -7px rgba(49, 49, 49, 0.3);
+    }
+    button {
+      width: 50%;
+      align-self: center;
+      padding: 10px;
+      background-color: $blue;
+      color: white;
+      font-weight: 700;
+      border: none;
+      border-radius: 10px;
+      margin: 15px 0px;
+      cursor: pointer;
+      &:hover {
+        background-color: $dark-blue;
+      }
+    }
+    p {
+      color: $dark-gray;
+      cursor: pointer;
+      transition: 0.2s ease-in-out;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.reset-box {
+  display: flex;
+  flex-direction: column;
+  h2 {
+    font-size: 25px;
+    text-align: center;
+    padding: 15px 0px 0px 0px;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 40px 40px 40px;
+    input {
+      padding: 10px;
+      margin: 10px 0px;
+    }
+    button {
+      padding: 10px;
+      background-color: $blue;
+      color: white;
+      font-weight: 700;
+      border: none;
+      margin: 15px 0px;
+      cursor: pointer;
+      &:hover {
+        background-color: $dark-blue;
+      }
+    }
+  }
+}
+.register-box {
+  width: 380px;
+  height: 480px;
+
+}
+
+@media (max-width: 1500px) {
+  .small{
+    display: block;
+    display: flex;
+    place-content: center;
+    align-items: center;
+  
+    svg{
+      font-size: 25px;
+    }
+  }
+
+  .desktop{
+    display: none;
+  }
+}
+
+
+@media (max-width: 900px) {
+  .mobile{
+    display: block;
+    display: flex;
+    place-content: center;
+    align-items: center;
+  
+    svg{
+      font-size: 25px;
+    }
+  }
+  .login-box, .register-box{
+    width: 80vw;
+    h2{
+      font-size: 24px;
+      text-align: center;
+      margin: 2px;
+      padding: 20px 0px 0px 0px;
+
+    }
+    form{
+      padding: 10px;
+    }
+  }
+}

@@ -1,0 +1,101 @@
+@import "../../../../index.scss";
+
+.afford-container {
+  margin: 50px 25% 100px 25%;
+  text-align: justify;
+  .afford-title {
+    font-size: 40px;
+    text-align: center;
+  }
+  h3 {
+    text-align: center;
+  }
+}
+.afford-nav {
+  width: 100%;
+  height: 60px;
+  background-color: $blue;
+}
+
+.calculator-box {
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  margin: 60px 0px;
+  h3 {
+    color: $dark-gray;
+    font-size: 14px;
+  }
+  .calculator-data {
+    width: 50%;
+    padding: 0px 50px;
+    display: flex;
+    flex-direction: column;
+
+    p {
+      font-size: 9px;
+      color: $dark-gray;
+      margin-top: 4px;
+    }
+    h4 {
+      font-size: 13px;
+      margin: 9px 0px;
+      color: $dark-gray;
+    }
+    input {
+      font-size: 15px;
+      height: 30px;
+      border: 1px solid $gray;
+      border-radius: 5px;
+      padding: 2px 5px;
+    }
+
+    button {
+      height: 40px;
+      margin-top: 20px;
+      background-color: $light-blue;
+      border: 1px solid $mid-gray;
+      border-radius: 5px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: 0.2s ease-in-out;
+      color: white;
+      cursor: pointer;
+      &:hover{
+        background-color: $blue;
+      }
+    }
+  }
+  .calculator {
+    width: 50%;
+    padding: 50px 20px;
+    display: flex;
+    height: 350px;
+    flex-direction: column;
+    position: sticky;
+    top: 300px;
+    text-align: center;
+    -webkit-box-shadow: 7px 8px 28px -14px rgba(66, 68, 90, 0.4);
+    -moz-box-shadow: 7px 8px 28px -14px rgba(66, 68, 90, 0.4);
+    box-shadow: 7px 8px 28px -14px rgba(66, 68, 90, 0.4);
+    h2 {
+      font-size: 20px;
+      margin-bottom: 30px;
+      color: $dark-gray;
+    }
+    h1 {
+      font-size: 40px;
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+    h3 {
+      font-size: 30px;
+      margin-bottom: 5px;
+      color: black;
+    }
+    p {
+      color: $dark-gray;
+      font-size: 20px;
+    }
+  }
+}

@@ -1,0 +1,119 @@
+@import "../../../../index.scss";
+
+.buy-or-rent-header {
+  margin-top: 60px;
+  width: 100%;
+  height: 400px;
+  background-image: url("../../../../images/sellrentbg.jpg");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  h1 {
+    font-size: 50px;
+    color: $dark-gray;
+    background-color: rgba($color: #fff, $alpha: 0.7);
+    padding: 100px 20%;
+}
+}
+
+.buyorrent-box {
+  padding: 60px;
+  margin: 0px 30%;
+  text-align: justify;
+  h1 {
+    font-size: 32px;
+    color: $dark-gray;
+    &:first-of-type {
+      font-size: 28px;
+    }
+  }
+
+  h3 {
+    color: $dark-gray;
+  }
+  p,
+  li {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+}
+
+.articles-box {
+  width: 80%;
+  height: auto;
+  background-color: $gray;
+  display: flex;
+  flex-direction: column;
+  padding: 10%;
+  text-align: center;
+  h1 {
+    margin: 0px 100px;
+    font-weight: 600;
+    color: $dark-gray;
+    margin-bottom: 60px;
+  }
+  div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    a{
+        width: 280px;
+        margin: 20px;
+        text-decoration: none;
+      div {
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        -webkit-box-shadow: -1px 3px 18px -7px rgba(49, 49, 49, 0.2);
+        -moz-box-shadow: -1px 3px 18px -7px rgba(49, 49, 49, 0.2);
+        box-shadow: -1px 3px 18px -7px rgba(49, 49, 49, 0.2);
+        text-align: left;
+        padding: 10px;
+        transition: all 0.2s ease-in-out;
+        &:hover{
+            -webkit-box-shadow: -1px 3px 18px -7px rgba(49, 49, 49, 1);
+            -moz-box-shadow: -1px 3px 18px -7px rgba(49, 49, 49, 1);
+            box-shadow: -1px 3px 18px -7px rgba(49, 49, 49, 1);
+        }
+        h2{
+            color: $dark-gray;
+            
+        }
+        p {
+          color: $light-blue;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 900px){
+  .buy-or-rent-header{
+    text-align: center;
+    h1{
+      width: 100%;
+      padding: 60px 2%;
+      font-size: 34px;
+    }
+  }
+  .buyorrent-box{
+    width: 90%;
+    margin: 20px 5%;
+    padding: 0px;
+    h1{
+      font-size: 24px;
+    }
+  }
+  .articles-box {
+    width: 90%;
+    padding: 5%;
+    h1{
+      margin: 20px 0px;
+    }
+  }
+}

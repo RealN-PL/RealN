@@ -1,0 +1,128 @@
+@import "../../../../index.scss";
+
+.event-header{
+    width: 100%;
+    height: 500px;
+    background-image: linear-gradient(
+        176deg,
+        rgba(52, 52, 52, 0.6) 100%,
+        rgba(0, 0, 0, 0.5) 0%
+      ), url("../../../../images/eventbg.jpg");
+    background-size: cover;
+    background-position-y: 40%;
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h1{
+        font-size: 44px;
+        color: $dark-gray;
+        text-align: center;
+        padding: 70px 100px;
+        background-color: rgba($color: white, $alpha: 0.9);
+    }
+}
+
+.event-container{
+    width: 70%;
+    padding: 100px 15%;
+    h3{
+        font-weight: 600;
+        font-size: 36px;
+        line-height: 1.7;
+        text-align: center;
+    }
+    p{
+        line-height: 1.6;
+        font-size: 18px;
+        text-align: justify;
+    }
+}
+
+.bottom-event__text{
+    padding: 100px 15%;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    line-height: 1.7;
+    h1{
+        font-size: 40px;
+    }
+    p{
+        font-size: 18px;
+    }
+}
+
+
+.event-searcher{
+    width: 70%;
+    background-color: $dark-gray;
+    height: 300px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0px 15%;
+    .event-input-holder{
+        height: 40px;
+        width: 70%;
+        border-color: white;
+        font-size: 20px;
+        display: flex;
+        input{
+            height: 38px;
+            width: 60%;
+        }
+    }
+    h2{
+        color: white;
+        font-size: 30px;
+        line-height: 1.7;
+    }
+}
+
+@media (max-width: 900px){
+    .event-header h1{
+        padding: 50px 0px;
+        width: 100%;
+        font-size: 30px;
+    }
+    .event-container{
+        width: 96%;
+        padding: 20px 2%;
+        h3{
+            font-size: 24px;
+        }
+    }
+    .event-searcher{
+        width: 96%;
+        padding: 10px 2%;
+        .event-input-holder{
+            width: 90%;
+            input{
+                width: 80%;
+            }
+        }
+        h2{
+            font-size: 20px;
+        }
+    }
+    .bottom-event__text{
+        width: 96%;
+        padding: 20px 2%;
+        h1{
+            font-size: 24px;
+        }
+        p{
+            font-size: 16px;
+        }
+        margin-bottom: -40px;
+    }
+
+   
+}
+@media (max-width:500px){
+    .event-searcher{
+        flex-direction: column-reverse;
+        text-align: center;
+        height: 220px;
+    }
+
+}

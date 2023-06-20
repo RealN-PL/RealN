@@ -1,0 +1,118 @@
+@import "../../../index.scss";
+
+.contact-header {
+  height: 500px;
+  background-image: url("../../../images/officebg.jpg");
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 60px;
+  justify-content: center;
+  align-items: center;
+  article {
+    display: flex;
+    flex-direction: column;
+    padding: 70px;
+    text-align: center;
+    background-color: rgba($color: white, $alpha: 0.9);
+    color: $dark-gray;
+    h1 {
+      font-size: 34px;
+    }
+    p {
+      font-size: 18px;
+    }
+  }
+}
+
+.contact-box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  width: 70%;
+  padding: 100px 15%;
+}
+
+.phone-box {
+  grid-area: 1 / 1 / 2 / 2;
+}
+.message-box {
+  grid-area: 1 / 2 / 2 / 3;
+}
+.connect-box {
+  grid-area: 1 / 3 / 2 / 4;
+}
+
+.phone-box,
+.message-box,
+.connect-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0px 50px;
+  i{
+    font-size: 30px;
+    color: $dark-gray;
+    padding-bottom: 20px;
+  }
+  a, h3{
+    font-size: 20px;
+    text-decoration: none;
+    color: $light-blue;
+    font-weight: 600;
+    margin: 10px;
+    padding-bottom: 20px;
+  }
+  p{
+    font-size: 14px;
+    color: $dark-gray;
+  }
+  
+}
+.contact-icons-holder{
+    i{
+        font-size: 24px;
+        padding: 15px;
+        color: gray;
+    }
+}
+
+@media (max-width: 500px){
+  .contact-header{
+    article{
+      padding: 20px 20px;
+      background-color:rgba($color: #000000, $alpha: 0.4);
+      color: white;
+      h1{
+        font-size: 20px;
+      }
+      p{
+        color: white;
+        font-size: 14px;
+      }
+    }
+  }
+  .contact-box{
+    display: flex;
+    flex-direction: column;
+    width: 96%;
+    padding: 20px 2%;
+    .phone-box, .message-box, .connect-box{
+      width: 100%;
+      padding: 0px;
+      i{
+        font-size: 24px;
+        padding-bottom: 10px;
+      };
+      a{
+        font-size: 20px;
+        margin: 0px;
+        padding-bottom: 5px;
+      }
+    }
+  }
+}
