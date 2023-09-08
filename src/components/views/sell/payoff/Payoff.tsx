@@ -1,5 +1,8 @@
 import { AiOutlineExclamation } from "react-icons/ai";
 import "./payoff.scss";
+import back2 from "../../../../goodimages/back2.jpg";
+import bulb from "../../../../images/icons/bulb.png";
+import { Link } from "react-router-dom";
 
 const payoff = () => {
   return (
@@ -110,6 +113,61 @@ const payoff = () => {
               opłaty.
             </h2>
           </div>
+        </div>
+      </div>
+      <div className="payoff-form">
+        <div className="payoff-form__text">
+          <h3>Porozmawiaj z lokalnym agentem RealN</h3>
+          <p>
+            Zrób pierwszy krok, rozmawiając z lokalnym agentem - nie ma presji
+            ani zobowiązań
+          </p>
+          <form>
+            <input />
+            <input />
+            <input />
+            <button type="submit">Wyślij</button>
+          </form>
+        </div>
+        <img src={back2} alt="payoff" />
+      </div>
+      <div className="payoff-links">
+        <h1>Narzędzia i zaasoby do sprzedaży domu</h1>
+        <div className="payoff-links__flexbox">
+          <Link to="/sell/how-much-is-it-worth">
+            <div>
+              <img src={bulb} alt="value" />
+              <h3>Oszacowanie wartości domu</h3>
+              <p>Sprawdź swoją wycenę i raport domu w RealN</p>
+            </div>
+          </Link>
+          <Link to="/sell/how-much-is-it-worth">
+            <div>
+              <img src={bulb} alt="value" />
+              <h3>Agenci RealN</h3>
+              <p>Znajdź najlepszych agentów nieruchomości w swojej okolicy.</p>
+            </div>
+          </Link>
+          <Link to="/sell/">
+            <div>
+              <img src={bulb} alt="value" />
+              <h3>Sprzedaż z RealN</h3>
+              <p>
+                Zobacz, jak agenci i technologia RealN zapewniają najlepsze
+                wyniki.
+              </p>
+            </div>
+          </Link>
+          <Link to="/sell/how-much-is-it-worth">
+            <div>
+              <img src={bulb} alt="value" />
+              <h3>Mapa domów na sprzedaż</h3>
+              <p>
+                Przeglądaj aktywne oferty i ostatnie sprzedaże w pobliżu Twojego
+                domu.
+              </p>
+            </div>
+          </Link>
         </div>
       </div>
     </>

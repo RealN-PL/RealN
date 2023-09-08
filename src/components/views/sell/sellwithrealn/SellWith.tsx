@@ -1,5 +1,6 @@
 import "./sellwith.scss";
 import pic5 from "../../../../images/pic5.jpg";
+import mock from "../../../../goodimages/mock.jpg";
 import { Link } from "react-router-dom";
 import { MdFaceRetouchingOff } from "react-icons/md";
 import {AiOutlineArrowRight} from "react-icons/ai";
@@ -66,7 +67,7 @@ export default function SellWith() {
           będzie fascynująca dla kupujących
         </h1>
         <div className="sellwith-ipad__gridbox">
-          <img src={pic5} alt="ipad"></img>
+          <img src={mock} alt="ipad"></img>
           <div>
             <h3>Więcej spojrzeń na Twój dom</h3>
             <p>

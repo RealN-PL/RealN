@@ -1,27 +1,30 @@
 import Dialog from "@mui/material/Dialog";
-import React, {  useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { MdPersonAdd } from "react-icons/md";
 import "./loginregister.scss";
 // import { toast } from "react-toastify";
+import logo from "../../../images/logo2.jpg";
 
 export default function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [phone, setPhone] = useState("");
   const [error, setError] = useState("");
+  const [agentId, setAgentId] = useState("");
   const [username, setUsername] = useState("");
   // const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
   const [open, setOpen] = React.useState(false);
+  const [agentRegister, setAgentRegister] = useState(false);
   const navigate = useNavigate();
   // const { getSession, status } = useContext(AccountContext);
 
   const handleClickOpen = () => {
     setOpen(true);
     setError("noerror");
-    setLoading(false)
-    navigate('/')
+    setLoading(false);
+    navigate("/");
   };
 
   const handleClose = () => {
@@ -51,16 +54,14 @@ export default function Signup() {
   }
   return (
     <>
+      <li onClick={handleClickOpen} className="desktop">
+        <MdPersonAdd style={{ marginRight: "5px" }} />
+        Rejestracja
+      </li>
 
-        <li onClick={handleClickOpen} className="desktop">
-          <MdPersonAdd style={{ marginRight: "5px" }} />
-          Rejestracja
-        </li>
-
-        <li onClick={handleClickOpen} className="small">
-          <MdPersonAdd />
-        </li>
-
+      <li onClick={handleClickOpen} className="small">
+        <MdPersonAdd />
+      </li>
 
       <Dialog
         open={open}
@@ -68,8 +69,10 @@ export default function Signup() {
         aria-labelledby="form-dialog-title"
       >
         <div className="login-box register-box">
+        <img src={logo} alt="logo realn" />
+
           <h2>Rejestracja</h2>
-          {error && <h3>{error}</h3>}
+          {error !== "noerror" && <h3>{error}</h3>}
           <form onSubmit={handleSubmit}>
             <input
               required
@@ -114,6 +117,20 @@ export default function Signup() {
               id="password-confirm"
               name="password-confirm"
             />
+            <div className="checkbox-box">
+              <input type="checkbox" onChange={()=>setAgentRegister(!agentRegister)}></input>
+              <span>Rejestruję się jako agent</span>
+            </div>
+           {agentRegister &&  
+           <input
+              required
+              placeholder="Agent ID"
+              type="text"
+              id="agentId"
+              name="agentId"
+              value={agentId}
+              onChange={(event) => setAgentId(event.target.value)}
+            />}
             <button disabled={loading} type="submit">
               Zarejestruj się
             </button>

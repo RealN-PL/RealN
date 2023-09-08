@@ -25,7 +25,7 @@ export default function AlertDialog({ id }: Props) {
     handleClose();
   };
   return (
-    <div>
+    <>
       <button className="add-offer_box__delete" onClick={handleClickOpen}>
         Usuń ofertę
       </button>
@@ -46,6 +46,6 @@ export default function AlertDialog({ id }: Props) {
           <Button onClick={() => deleteOffer()}>Tak</Button>
         </DialogActions>
       </Dialog>
-    </div>
+    </>
   );
 }

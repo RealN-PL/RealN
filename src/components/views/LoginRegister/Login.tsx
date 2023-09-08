@@ -68,10 +68,9 @@ export default function Login() {
         <div className="login-box">
           <img src={logo} alt="logo realn" />
           <h2>Witamy!</h2>
-          <p>Zaloguj się</p>
           <p>{loginError}</p>
           <form onSubmit={handleSubmit}>
-            <label>Email</label>
+            <label hidden>Email</label>
             <input
               required
               type="email"
@@ -81,7 +80,7 @@ export default function Login() {
               value={email}
               onChange={(event) => setEmail(event.target.value)}
             />
-            <label>Hasło</label>
+            <label hidden>Hasło</label>
             <input
               required
               type="password"
@@ -91,12 +90,13 @@ export default function Login() {
               value={password}
               onChange={(event) => setPassword(event.target.value)}
             />
+             <div onClick={() => handlePasswordOpen()} className="remember-password">
+              <p> Nie pamiętasz hasła? Kliknij tu!</p>
+            </div>
             <button disabled={loading} type="submit">
               Zaloguj się
             </button>
-            <div onClick={() => handlePasswordOpen()}>
-              <p> Nie pamiętasz hasła? Kliknij tu!</p>
-            </div>
+           
           </form>
         </div>
       </Dialog>

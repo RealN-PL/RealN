@@ -8,7 +8,6 @@ nav {
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  z-index: 3;
   img {
     height: 40px;
     margin: 5px 20px;
@@ -33,6 +32,9 @@ nav {
       &:hover {
         color: $mid-gray;
       }
+    }
+    .premium {
+      color: #9d8420;
     }
     .nav-login-bar {
       display: flex;
@@ -68,6 +70,7 @@ nav {
     }
   }
 }
+
 .buy-drop {
   z-index: 2;
   display: grid;
@@ -254,7 +257,7 @@ nav {
   p,
   a {
     margin: 2px;
-    font-size: 10px;
+    font-size: 12px;
     text-decoration: none;
     color: black;
     padding: 10px 4px;
@@ -302,18 +305,17 @@ nav {
 .phone-box {
   width: 90px;
 }
-.nav-user__greeting{
-font-size: 12px;
-color: white;
+.nav-user__greeting {
+  font-size: 12px;
+  color: white;
 }
-.nav-user{
+.nav-user {
   display: flex;
   flex-direction: column;
 
-  div{
+  div {
     display: flex;
     flex-direction: row;
-
   }
 }
 .nav2 {
@@ -342,6 +344,10 @@ color: white;
       &:hover {
         color: $mid-gray;
       }
+    }
+    .premium {
+      color: #9d8420;
+      font-weight: 600;
     }
     .nav-login-bar2 {
       li {
@@ -402,6 +408,7 @@ nav .nav-bar .nav-login-bar li.mobile {
 .nav2 .nav-bar2 .nav-login-bar2 li.small {
   display: none;
 }
+
 @media (max-width: 1500px) {
   .desktop {
     display: none;

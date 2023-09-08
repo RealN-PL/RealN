@@ -26,21 +26,6 @@ const offersAdapter = createEntityAdapter<any>({
   selectId: (allOffers) => allOffers[0],
 });
 
-// export const fetchOfferLength = createAsyncThunk<any>(
-//   "catalog/fetchOfferLength",
-//   async (_, thunkAPI) => {
-//     try {
-//       const query = new Parse.Query("Offers");
-//       const length = await query.find().then(function (results: any) {
-//         return results.length;
-//       });
-//       return length;
-//     } catch (error: any) {
-//       thunkAPI.rejectWithValue({ error: error.data });
-//     }
-//   }
-// );
-
 export const createOfferAsync = createAsyncThunk<any, { offerData: Offer }>(
   "catalog/createOfferAsync",
   async ({ offerData }, thunkAPI) => {
@@ -50,12 +35,14 @@ export const createOfferAsync = createAsyncThunk<any, { offerData: Offer }>(
       query.equalTo("user", Parse.User.current());
       const agent = await query.find();
       let offer = new Parse.Object("Offers");
+
       offer.set(offerData);
       offer.set("agent", agent.length > 0 ? agent[0] : null);
       offer.save();
 
       return true;
     } catch (error: any) {
+      console.log(error);
       return thunkAPI.rejectWithValue({ error: error.data });
     }
   }
@@ -86,9 +73,7 @@ export const fetchOffersAsync = createAsyncThunk<
   async ({ dispPage, displayLimit, filterValue }, thunkAPI) => {
     try {
       const query = new Parse.Query("Offers");
-
       query.descending("updatedAt");
-
       if (filterValue !== "") {
         query.matches("title", `.*${filterValue}.*`, "i");
       }
@@ -131,8 +116,9 @@ export const deleteOfferAsync = createAsyncThunk<any, any>(
     try {
       await item.destroy();
       alert("Usunięto");
-      window.location.reload();
       router.navigate("/catalog");
+      window.location.reload();
+
       return true;
     } catch (error: any) {
       return thunkAPI.rejectWithValue({ error: error.data });
@@ -150,7 +136,7 @@ export const catalogSlice = createSlice({
     data: [],
     offerAdding: false,
     dispPage: 1,
-    displayLimit: 2,
+    displayLimit: 20,
     count: 0,
     filterValue: "",
   }),
@@ -159,7 +145,7 @@ export const catalogSlice = createSlice({
       state.offersLoaded = false;
       state.dispPage = action.payload;
     },
-
+    
   },
   extraReducers: (builder) => {
     builder.addCase(fetchOffersAsync.fulfilled, (state, action) => {

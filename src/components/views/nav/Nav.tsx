@@ -271,6 +271,9 @@ const Nav = () => {
               </Link>
             </motion.div>
           )}
+          <Link to="/realn-premium" className="contact-link premium">
+            RealN Premium
+          </Link>
           <Link to="/contact" className="contact-link">
             Kontakt
           </Link>
