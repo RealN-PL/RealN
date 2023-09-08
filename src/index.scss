@@ -5,6 +5,8 @@ $dark-blue: rgba(6, 6, 58, 1);
 $gray: #eeeeee;
 $dark-gray: rgba(79, 79, 79, 1);
 $mid-gray: rgba(197, 197, 197, 0.8);
+$red: rgb(239, 35, 60);
+$alert-red: rgb(217, 4, 41);
 
 body {
     margin: 0px;
@@ -17,4 +19,10 @@ body {
 }
 .text-bold{
     font-weight: 700;
+}
+p{
+    line-height: 1.7;
+}
+a{
+    text-decoration: none;
 }

@@ -1,0 +1,71 @@
+@import "../../../../../index.scss";
+
+.steps-header {
+  height: 450px;
+  margin-top: 60px;
+  width: 100%;
+  background-image: url("../../../../../images/guidebg.jpg");
+  background-position-y: 60%;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .steps-text-box {
+    padding: 70px 100px;
+    color: $dark-gray;
+    background-color: rgba($color: white, $alpha: 0.9);
+    text-align: center;
+    h1 {
+      font-size: 40px;
+    }
+  }
+}
+.steps-text {
+  margin: 100px 25%;
+  .hint {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 70px 100px;
+    img {
+      height: 100px;
+    };
+    aside {
+      display: flex;
+      flex-direction: column;
+      text-align: justify;
+      h3{
+        margin: 5px 0px;
+      }
+      p{
+        margin: 5px 0px;
+      }
+    }
+  }
+}
+.guide-image-people{
+    width: 100%;
+    height: 400px;
+    position: center;
+    object-fit: cover;
+}
+
+
+@media (max-width: 900px) {
+  .steps-header{
+    .steps-text-box{
+      padding: 20px 5px;
+      width: 100%;
+      h1{
+        font-size: 24px;
+      }
+    }
+  }
+  .steps-text{
+    width: 96%;
+    margin: 10px 2%;
+    .hint{
+      margin: 30px;
+    }
+  }
+}

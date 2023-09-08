@@ -1,0 +1,194 @@
+@import "../../../../index.scss";
+
+.house-search-header {
+  article {
+    .input-holder {
+      display: flex;
+      input {
+        padding: 10px;
+        width: 70%;
+      }
+    }
+  }
+}
+.sellworth__container {
+  background-color: rgb(238, 238, 238);
+  width: 100%;
+  display: flex;
+  padding: 30px 0px;
+  justify-content: center;
+
+  .sellworth-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 0.5fr 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    width: 70%;
+    .sellworth-grid__box1 {
+      grid-area: 1 / 1 / 2 / 4;
+      padding: 0px 10px;
+    }
+    .sellworth-grid__box2 {
+      grid-area: 2 / 1 / 3 / 2;
+      padding: 10px;
+    }
+    .sellworth-grid__box3 {
+      grid-area: 2 / 2 / 3 / 3;
+      padding: 10px;
+    }
+    .sellworth-grid__box4 {
+      grid-area: 2 / 3 / 3 / 4;
+
+      padding: 10px;
+    }
+  }
+}
+.sellworth__subtitle {
+  width: 70vw;
+  margin: 40px 15%;
+  text-align: center;
+}
+.sellworth-grid__container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  width: 70%;
+  padding: 0px 15%;
+  justify-items: center;
+  a {
+    text-decoration: none;
+  }
+  .box1,
+  .box2,
+  .box3 {
+    width: 80%;
+    padding: 20px;
+    height: 100%;
+
+    p {
+      color: $light-blue;
+      font-size: 16px;
+    }
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.homevalue__header {
+  margin-top: 70px;
+  background-image: linear-gradient(
+      176deg,
+      rgba(52, 52, 52, 1) 0%,
+      rgba(0, 0, 0, 0) 67%
+    ),
+    url("../../../../goodimages/back2.jpg");
+  height: 450px;
+  background-size: cover;
+  width: 100%;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 26px;
+  flex-direction: column;
+  margin-bottom: 60px;
+
+  span{
+    display: block;
+    width: 100%;
+    border-top: 3px solid #FFF
+
+  }
+}
+.homevalue_flexbox{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  .homevalue__box{
+    width: 70%;
+   h2{
+    margin-top: 35px;
+    line-height: 1.5;
+    margin-bottom: 35px;
+    text-align: center;
+   }
+   ul{
+    list-style-type: decimal;
+    li, h3, p{
+      font-size: 16px;
+      line-height: 1.5;
+    }
+   }
+   h4{
+    line-height: 1.5;
+    
+   }
+  }
+}
+
+.fiveways__header {
+  margin-top: 70px;
+  background-image: linear-gradient(
+      176deg,
+      rgba(52, 52, 52, 1) 0%,
+      rgba(0, 0, 0, 0) 67%
+    ),
+    url("../../../../goodimages/back3.jpg");
+  height: 450px;
+  background-size: cover;
+  width: 100%;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  flex-direction: column;
+  margin-bottom: 60px;
+  h1{
+    font-size: 36px;
+    text-align: center;
+  }
+  span{
+    display: block;
+    width: 100%;
+    border-top: 3px solid #FFF
+
+  }
+}
+.tenadvices__header {
+  margin-top: 70px;
+  background-image: linear-gradient(
+      176deg,
+      rgba(52, 52, 52, 1) 0%,
+      rgba(0, 0, 0, 0) 67%
+    ),
+    url("../../../../goodimages/back4.jpg");
+  height: 450px;
+  background-size: cover;
+  width: 100%;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  flex-direction: column;
+  margin-bottom: 60px;
+  h1{
+    font-size: 36px;
+    text-align: center;
+  }
+  span{
+    display: block;
+    width: 100%;
+    border-top: 3px solid #FFF
+
+  }
+}

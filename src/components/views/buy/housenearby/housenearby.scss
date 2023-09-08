@@ -1,0 +1,139 @@
+@import "../../../../index.scss";
+
+.house-search-header {
+  height: 400px;
+  margin-top: 70px;
+  width: 60%;
+  padding: 0px 20%;
+  display: flex;
+  align-items: center;
+  article {
+    width: 50%;
+    padding-right: 10%;
+    display: flex;
+    flex-direction: column;
+    h1 {
+      font-size: 40px;
+      margin: 10px 0px;
+    }
+  }
+  img {
+    width: 40%;
+  }
+}
+
+.search-bar {
+  height: 100px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  .search-location,
+  .search-price {
+    padding-right: 20px;
+    p {
+      font-size: 12px;
+      color: $dark-gray;
+      margin-bottom: 5px;
+    }
+    input {
+      width: 300px;
+      height: 40px;
+      border: solid 1px $gray;
+    }
+  }
+  button {
+    width: 300px;
+    height: 44px;
+    margin-top: 31px;
+    background-color: $blue;
+    color: white;
+    border: none;
+    font-weight: 600;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+}
+
+.houses-container {
+  h1 {
+    padding: 0px 15%;
+    font-size: 32px;
+    margin-bottom: -50px;
+  }
+  border-bottom: 1px solid $gray;
+}
+
+.search-bar {
+  height: 100px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  .search-location,
+  .search-price {
+    padding-right: 20px;
+    display: flex;
+    flex-direction: column;
+    p {
+      font-size: 10px;
+      color: $dark-gray;
+      margin-bottom: 5px;
+    }
+    input {
+      width: 300px;
+      height: 40px;
+      border: solid 1px $gray;
+    }
+  }
+}
+@media (max-width: 1130px) {
+  .house-search-header {
+    width: 90%;
+    padding: 0px 5%;
+  }
+  .search-bar {
+    .search-price,
+    .search-location {
+      input {
+        width: 200px;
+      }
+    }
+    button {
+      width: 200px;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .search-bar {
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+    padding-bottom: 30px;
+
+    .search-price,
+    .search-location {
+      width: 100%;
+      align-items: center;
+      input {
+        width: 50%;
+        min-width: 250px;
+      }
+      .price-box {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+      }
+    }
+    button {
+      width: 50%;
+      min-width: 250px;
+    }
+  }
+}
+@media (max-width: 500px){
+  .house-search-header article h1{
+    font-size: 25px;
+  }
+  .houses-container h1{
+    margin-bottom: 0px;
+  }}
