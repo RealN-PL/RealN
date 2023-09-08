@@ -20,7 +20,7 @@ import {
   offersSelectors,
   updateOfferAsync,
 } from "./catalogSlice";
-import { ImageAsset, Offer } from "../../models/offer";
+import { Offer } from "../../models/offer";
 import Loader from "../utils/Loader";
 import AlertDialog from "../utils/AlertDialog";
 import ButtonGroup from "../AddOffer/components/ButtonGroup";
@@ -53,6 +53,7 @@ import {
 import SelectGroup from "../AddOffer/components/SelectGroup";
 import { onChange } from "../AddOffer/components/onChangefunc";
 import { resizeImage } from "../utils/resize";
+
 const Parse = require("parse/dist/parse.min.js");
 
 export default function CatalogEdit() {
@@ -65,8 +66,6 @@ export default function CatalogEdit() {
   );
   useEffect(() => {
     if (offer === undefined || !offerLoaded) dispatch(fetchOfferAsync(id!));
-
-    console.log(offer)
     if (offer) {
       setTitle(offer[1].title);
       setSize(offer[1].size);
@@ -102,7 +101,9 @@ export default function CatalogEdit() {
       setMedia(offer[1].media);
       setDirection(offer[1].direction);
       setDescription(offer[1].description);
-      setImageAsset(offer[1].imageAsset);
+      setImageAsset(Object.values(offer[1].imageAsset));
+      setPrice(offer[1].price);
+      setPriceM(offer[1].priceM);
     }
   }, [offerLoaded, dispatch, id, offer]);
 
@@ -124,36 +125,28 @@ export default function CatalogEdit() {
   const [rooms, setRooms] = useState("");
   const [condition, setCondition] = useState("");
   const [parking, setParking] = useState("");
-  const [transport, setTransport] = useState([""]);
-  const [education, setEducation] = useState([""]);
-  const [health, setHealth] = useState([""]);
-  const [recreation, setRecreation] = useState([""]);
-  const [others, setOthers] = useState([""]);
-  const [amenities, setAmenities] = useState([""]);
+  const [transport, setTransport] = useState([]);
+  const [education, setEducation] = useState([]);
+  const [health, setHealth] = useState([]);
+  const [recreation, setRecreation] = useState([]);
+  const [others, setOthers] = useState([]);
+  const [amenities, setAmenities] = useState([]);
   const [kitchen, setKitchen] = useState("");
-  const [kitchenAm, setKitchenAm] = useState([""]);
+  const [kitchenAm, setKitchenAm] = useState([]);
   const [bathroom, setBathroom] = useState("");
-  const [bathAm, setBathAm] = useState([""]);
+  const [bathAm, setBathAm] = useState([]);
   const [installation, setInstallation] = useState("");
   const [loudness, setLoudness] = useState("");
   const [windows, setWindows] = useState("");
-  const [furnitured, setFurnitured] = useState([""]);
-  const [energy, setEnergy] = useState([""]);
-  const [media, setMedia] = useState([""]);
-  const [direction, setDirection] = useState([""]);
+  const [furnitured, setFurnitured] = useState([]);
+  const [energy, setEnergy] = useState([]);
+  const [media, setMedia] = useState([]);
+  const [direction, setDirection] = useState([]);
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("0");
   const [priceM, setPriceM] = useState("0");
-  const [imageAsset, setImageAsset] = useState<ImageAsset | null>({
-    __type: "",
-    name: "",
-    url: "",
-    agent: "",
-    createdAt: "",
-    updatedAt: "",
-    objectId: "",
-  });
-  const [imgPrev, setImgPrev] = useState("");
+  const [imageAsset, setImageAsset] = useState<string[]>([]);
+  const [imageError, setImageError] = useState("");
 
   const offerData: Offer = {
     title: title,
@@ -192,28 +185,50 @@ export default function CatalogEdit() {
     description: description,
     price: price,
     priceM: priceM,
-    imageAsset: imageAsset,
+    imageAsset: { ...imageAsset },
   };
-
   const uploadImage = async (e: any) => {
     setIsLoading(true);
-    const imageFile = e.target.files[0];
-    const resizedImage = await resizeImage(imageFile);
-    const imageUrl = new Parse.File("image.jpg", { base64: resizedImage });
-    setImgPrev(URL.createObjectURL(imageFile));
-    setImageAsset(imageUrl);
-    setIsLoading(false);
+    try {
+      const files = Array.from(e.target.files || []);
+      if (files.length > 8) {
+        setImageError("Możesz dodać maksymalnie 8 zdjęć.");
+        return;
+      }
+
+      const processedImages = await Promise.all(
+        files.map(async (file: any) => {
+          const resizedImage = await resizeImage(file);
+          const image = new Parse.File("image.jpg", { base64: resizedImage });
+          await image.save();
+          const imageUrl = image.url();
+          return imageUrl;
+        })
+      );
+      setImageAsset((prevImageAsset) => [
+        ...prevImageAsset,
+        ...processedImages,
+      ]);
+    } catch (error) {
+      console.error("Error uploading images:", error);
+    } finally {
+      setIsLoading(false);
+    }
   };
-  const deleteImage = (e: any) => {
-    setImageAsset(null);
+  const deleteImage = (i: string) => {
+    setImageAsset(
+      imageAsset.filter(function (img) {
+        return img.toString() !== i.toString();
+      })
+    );
   };
+
   const handleShowMore = (e: any) => {
     e.preventDefault();
     setShowMore(!showMore);
   };
   const editOffer = () => {
     dispatch(updateOfferAsync({ offerData: offerData, id: id }));
-
   };
   if (status.includes("pending")) return <h1>Loading</h1>;
   if (!offer) return <h1 style={{ marginTop: "150px" }}>Not found</h1>;
@@ -224,7 +239,6 @@ export default function CatalogEdit() {
         <header>
           <h1>Edytuj ofertę</h1>
         </header>
-        <AlertDialog id={id} />
         <form>
           <article className="add-title">
             <h3>Tytuł Twojego ogłoszenia</h3>
@@ -236,8 +250,29 @@ export default function CatalogEdit() {
               id="outlined-basic"
               value={title || ""}
               variant="outlined"
+              style={{ margin: "0px 8px 4px" }}
               onChange={(e) => setTitle(e.target.value)}
             />
+            <div className="add-price">
+              <TextField
+                id="outlined-basic"
+                label="Cena"
+                variant="outlined"
+                type="number"
+                value={price || ""}
+                style={style}
+                onChange={(e: any) => setPrice(e.target.value)}
+              />
+              <TextField
+                id="outlined-basic"
+                label="Cena za metr kwadratowy"
+                variant="outlined"
+                type="number"
+                value={priceM || ""}
+                style={style}
+                onChange={(e: any) => setPriceM(e.target.value)}
+              />
+            </div>
           </article>
           <article>
             <h3>Podstawowe informacje </h3>
@@ -305,57 +340,43 @@ export default function CatalogEdit() {
           <article>
             <h3>Galeria zdjęć</h3>
             <div className="add-img-box">
-              {isLoading ? (
-                <Loader />
-              ) : (
-                <>
-                  {!imageAsset ? (
-                    <>
-                      <label>
-                        <div>
-                          <MdCloudUpload
-                            style={{ fontSize: "35px", color: "gray" }}
-                          />
-                          <p>Kliknij aby dodać zdjęcie</p>
-                        </div>
-                        <input
-                          type="file"
-                          name="uploadimage"
-                          accept="image/*"
-                          onChange={uploadImage}
-                        />
-                      </label>
-                    </>
-                  ) : !imgPrev ? (
-                    <>
-                      <div className="image-holder">
-                        <img src={imageAsset.url} alt="uploaded" />
-                        <button
-                          type="button"
-                          className="delete-button"
-                          onClick={deleteImage}
-                        >
-                          <MdDelete style={{ color: "white" }} />
-                        </button>
-                      </div>
-                    </>
+              {imageAsset.map((i) => (
+                <div className="image-holder" key={i.length}>
+                  <img src={i} alt="uploaded" />
+                  <button type="button" className="delete-button">
+                    <MdDelete
+                      style={{ color: "white" }}
+                      onClick={(e) => {
+                        deleteImage(i);
+                      }}
+                    />
+                  </button>
+                </div>
+              ))}
+              {imageAsset.length < 8 && (
+                <label className="add-img-but">
+                  {isLoading ? (
+                    <Loader />
                   ) : (
                     <>
-                      <div className="image-holder">
-                        <img src={imgPrev} alt="uploaded" />
-                        <button
-                          type="button"
-                          className="delete-button"
-                          onClick={deleteImage}
-                        >
-                          <MdDelete style={{ color: "white" }} />
-                        </button>
-                      </div>
+                      <MdCloudUpload
+                        style={{ fontSize: "35px", color: "gray" }}
+                      />
+                      <p>Kliknij aby dodać zdjęcie</p>
+                      <input
+                        type="file"
+                        name="uploadimage"
+                        accept="image/*"
+                        multiple
+                        style={{ display: "none" }}
+                        onChange={uploadImage}
+                      />
                     </>
                   )}
-                </>
+                </label>
               )}
             </div>
+            {imageError && <h3>{imageError}</h3>}
           </article>
           <article>
             <h3>Dodatkowe informacje</h3>
@@ -663,7 +684,7 @@ export default function CatalogEdit() {
           <article>
             <h3>Opis</h3>
             <p>Opis powinien zawierać minimalnie 30 znaków</p>
-            <p>Opis {description.length} / 4000</p>
+            {description && <p>Opis {description.length} / 4000</p>}
             <textarea
               maxLength={4000}
               minLength={30}
@@ -671,26 +692,14 @@ export default function CatalogEdit() {
               onChange={(e) => setDescription(e.target.value)}
               value={description || ""}
             />
+            <div className="add-buttons-holder">
+            <button onClick={() => editOffer()}>
+              Zapisz zmiany
+            </button>
+            <AlertDialog id={id} />
+          </div>
           </article>
-          <TextField
-            id="outlined-basic"
-            label="Cena"
-            variant="outlined"
-            value={price || "0"}
-            style={style}
-            onChange={(e: any) => setPrice(e.target.value)}
-          />
-          <TextField
-            id="outlined-basic"
-            label="Cena-m"
-            variant="outlined"
-            value={priceM || "0"}
-            style={style}
-            onChange={(e: any) => setPriceM(e.target.value)}
-          />
-          <button className="add-offer-button" onClick={() => editOffer()}>
-            Zapisz zmiany
-          </button>
+          
         </form>
       </article>
     </ThemeProvider>

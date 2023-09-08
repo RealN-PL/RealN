@@ -33,6 +33,7 @@ import TenAdvices from "./components/views/sell/sellworth/TenAdvices";
 import SellWith from "./components/views/sell/sellwithrealn/SellWith";
 import App from "./App";
 import HomePreparation from "./components/views/sell/homepreparation/HomePreparation";
+import Premium from "./components/views/premium/Premium";
 
 const router = createBrowserRouter([
   {
@@ -83,6 +84,7 @@ const router = createBrowserRouter([
       { path: "guides/buy-or-rent", element: <BuyOrRent /> },
       { path: "guides/rent-trends", element: <RentTrends /> },
       { path: "guides/tips-for-renters", element: <TipsForRenters /> },
+      { path: "realn-premium", element: <Premium /> },
       { path: "contact", element: <Contact /> },
       { path: "*", element: <Navigate replace to="/" /> },
 

@@ -1,9 +1,21 @@
 import Slider from "react-slick";
-import data from "../../../data.json";
-import Offer from "./Offer";
+import OfferCard from "./OfferCard";
 import "./slider.scss";
+import { useEffect } from "react";
+import { useAppSelector, useAppDispatch } from "../../store/configureStore";
+import { offersSelectors, fetchOffersAsync } from "../offers/catalogSlice";
+import { Offer } from "../../models/offer";
 
 export default function EstateSlider() {
+  const catalog = useAppSelector(offersSelectors.selectAll);
+  const { offersLoaded, dispPage, displayLimit, filterValue } =
+    useAppSelector((state) => state.catalog);
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    if (!offersLoaded)
+      dispatch(fetchOffersAsync({ dispPage, displayLimit, filterValue }));
+  }, [offersLoaded, dispatch, catalog, dispPage, displayLimit, filterValue]);
 
   const settings = {
     slidesToShow: 3,
@@ -46,11 +58,11 @@ export default function EstateSlider() {
     <div className="main-slider-container">
       <div className="slider-box">
         <Slider {...settings}>
-          {data.map((offer, i) => (
-            <Offer key={i + offer.id} offer={offer} />
+          {catalog.map((offer: [string, Offer], i: number) => (
+            <OfferCard key={i} offer={offer} />
           ))}
-        </Slider> 
-     <p className="check-button">Sprawdź wszystkie oferty</p>
+        </Slider>
+        <p className="check-button">Sprawdź wszystkie oferty</p>
       </div>
     </div>
   );

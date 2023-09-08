@@ -18,7 +18,6 @@ export default function Catalog() {
   const { offersLoaded, dispPage, displayLimit, count, filterValue } =
     useAppSelector((state) => state.catalog);
   const dispatch = useAppDispatch();
-  
 
   const type = ["Dom", "Mieszkanie", "Grunt"];
   const sortOptions = [
@@ -64,8 +63,11 @@ export default function Catalog() {
                     <p>{offer[1].title}</p>
                     <h4>{offer[1].price}</h4>
                     {offer[1].imageAsset && (
-                      <img src={offer[1].imageAsset.url} alt={offer[1].title} />
-                    )}{" "}
+                      <img
+                        src={offer[1].imageAsset[0]}
+                        alt={offer[1].title}
+                      />
+                    )}
                   </Box>
                 ))}
                 <Pagination

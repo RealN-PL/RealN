@@ -15,7 +15,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import { motion } from "framer-motion";
 import { useAppDispatch } from "../../store/configureStore";
 import { createOfferAsync } from "../offers/catalogSlice";
-import { ImageAsset, Offer } from "../../models/offer";
+import { Offer } from "../../models/offer";
 import router from "../../../Routes";
 import { toast } from "react-toastify";
 import Loader from "../utils/Loader";
@@ -53,7 +53,7 @@ const Parse = require("parse/dist/parse.min.js");
 
 export default function AddOffer() {
   const dispatch = useAppDispatch();
-
+  const [imageError, setImageError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [showMore, setShowMore] = useState(false);
   const [title, setTitle] = useState("");
@@ -72,36 +72,27 @@ export default function AddOffer() {
   const [rooms, setRooms] = useState("");
   const [condition, setCondition] = useState("");
   const [parking, setParking] = useState("");
-  const [transport, setTransport] = useState([""]);
-  const [education, setEducation] = useState([""]);
-  const [health, setHealth] = useState([""]);
-  const [recreation, setRecreation] = useState([""]);
-  const [others, setOthers] = useState([""]);
-  const [amenities, setAmenities] = useState([""]);
+  const [transport, setTransport] = useState([]);
+  const [education, setEducation] = useState([]);
+  const [health, setHealth] = useState([]);
+  const [recreation, setRecreation] = useState([]);
+  const [others, setOthers] = useState([]);
+  const [amenities, setAmenities] = useState([]);
   const [kitchen, setKitchen] = useState("");
-  const [kitchenAm, setKitchenAm] = useState([""]);
+  const [kitchenAm, setKitchenAm] = useState([]);
   const [bathroom, setBathroom] = useState("");
-  const [bathAm, setBathAm] = useState([""]);
+  const [bathAm, setBathAm] = useState([]);
   const [installation, setInstallation] = useState("");
   const [loudness, setLoudness] = useState("");
   const [windows, setWindows] = useState("");
-  const [furnitured, setFurnitured] = useState([""]);
-  const [energy, setEnergy] = useState([""]);
-  const [media, setMedia] = useState([""]);
-  const [direction, setDirection] = useState([""]);
+  const [furnitured, setFurnitured] = useState([]);
+  const [energy, setEnergy] = useState([]);
+  const [media, setMedia] = useState([]);
+  const [direction, setDirection] = useState([]);
   const [description, setDescription] = useState("");
-  const [price, setPrice] = useState("0");
-  const [priceM, setPriceM] = useState("0");
-  const [imageAsset, setImageAsset] = useState<ImageAsset>({
-    __type: "",
-    name: "",
-    url: "",
-    agent: "",
-    createdAt: "",
-    updatedAt: "",
-    objectId: "",
-  });
-  const [imgPrev, setImgPrev] = useState("");
+  const [price, setPrice] = useState("");
+  const [priceM, setPriceM] = useState("");
+  const [imageAsset, setImageAsset] = useState<string[]>([]);
 
   const offerData: Offer = {
     title: title,
@@ -140,7 +131,7 @@ export default function AddOffer() {
     description: description,
     price: price,
     priceM: priceM,
-    imageAsset: imageAsset,
+    imageAsset: { ...imageAsset },
   };
 
   const createOffer = async function (event: any) {
@@ -149,15 +140,41 @@ export default function AddOffer() {
     toast.success("Pomyślnie utworzono ofertę!");
     router.navigate("/catalog");
   };
-  
   const uploadImage = async (e: any) => {
     setIsLoading(true);
-    const imageFile = e.target.files[0];
-    const resizedImage = await resizeImage(imageFile);
-    const imageUrl = new Parse.File("image.jpg", { base64: resizedImage });
-    setImgPrev(URL.createObjectURL(imageFile));
-    setImageAsset(imageUrl);
-    setIsLoading(false);
+    try {
+      const files = Array.from(e.target.files || []);
+      if (files.length > 8) {
+        setImageError("Możesz dodać maksymalnie 8 zdjęć.");
+        return;
+      }
+
+      const processedImages = await Promise.all(
+        files.map(async (file: any) => {
+          const resizedImage = await resizeImage(file);
+          const image = new Parse.File("image.jpg", { base64: resizedImage });
+          await image.save();
+          const imageUrl = image.url();
+          return imageUrl;
+        })
+      );
+      setImageAsset((prevImageAsset) => [
+        ...prevImageAsset,
+        ...processedImages,
+      ]);
+    } catch (error) {
+      console.error("Error uploading images:", error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const deleteImage = (i: string) => {
+    setImageAsset(
+      imageAsset.filter(function (img) {
+        return img.toString() !== i.toString();
+      })
+    );
   };
 
   const handleShowMore = (e: any) => {
@@ -179,11 +196,32 @@ export default function AddOffer() {
               zawierać adresu e-mail oraz numeru telefonu.
             </p>
             <TextField
+              style={{ margin: "0px 8px" }}
               id="outlined-basic"
               label="Wpisz tytuł ogłoszenia"
               variant="outlined"
               onChange={(e) => setTitle(e.target.value)}
             />
+            <div className="add-price">
+              <TextField
+                id="outlined-basic"
+                label="Cena"
+                variant="outlined"
+                type="number"
+                value={price || ""}
+                style={style}
+                onChange={(e: any) => setPrice(e.target.value)}
+              />
+              <TextField
+                id="outlined-basic"
+                label="Cena za metr kwadratowy"
+                variant="outlined"
+                type="number"
+                value={priceM || ""}
+                style={style}
+                onChange={(e: any) => setPriceM(e.target.value)}
+              />
+            </div>
           </article>
           <article>
             <h3>Podstawowe informacje </h3>
@@ -251,40 +289,43 @@ export default function AddOffer() {
           <article>
             <h3>Galeria zdjęć</h3>
             <div className="add-img-box">
-              {isLoading ? (
-                <Loader />
-              ) : (
-                <>
-                  {imageAsset.url === "" ? (
-                    <>
-                      <label>
-                        <div>
-                          <MdCloudUpload
-                            style={{ fontSize: "35px", color: "gray" }}
-                          />
-                          <p>Kliknij aby dodać zdjęcie</p>
-                        </div>
-                        <input
-                          type="file"
-                          name="uploadimage"
-                          accept="image/*"
-                          onChange={uploadImage}
-                        />
-                      </label>
-                    </>
+              {imageAsset.map((i) => (
+                <div className="image-holder" key={i.length}>
+                  <img src={i} alt="uploaded" />
+                  <button type="button" className="delete-button">
+                    <MdDelete
+                      style={{ color: "white" }}
+                      onClick={(e) => {
+                        deleteImage(i);
+                      }}
+                    />
+                  </button>
+                </div>
+              ))}
+              {imageAsset.length < 8 && (
+                <label className="add-img-but">
+                  {isLoading ? (
+                    <Loader />
                   ) : (
                     <>
-                      <div className="image-holder">
-                        <img src={imgPrev} alt="uploaded" />
-                        <button type="button" className="delete-button">
-                          <MdDelete style={{ color: "white" }} />
-                        </button>
-                      </div>
+                      <MdCloudUpload
+                        style={{ fontSize: "35px", color: "gray" }}
+                      />
+                      <p>Kliknij aby dodać zdjęcie</p>
+                      <input
+                        type="file"
+                        name="uploadimage"
+                        accept="image/*"
+                        multiple
+                        style={{ display: "none" }}
+                        onChange={uploadImage}
+                      />
                     </>
                   )}
-                </>
+                </label>
               )}
             </div>
+            {imageError && <h3>{imageError}</h3>}
           </article>
           <article>
             <h3>Dodatkowe informacje</h3>
@@ -600,27 +641,11 @@ export default function AddOffer() {
               onChange={(e) => setDescription(e.target.value)}
               value={description || ""}
             />
-          </article>
-          <TextField
-            id="outlined-basic"
-            label="Cena"
-            variant="outlined"
-            value={price || "0"}
-            style={style}
-            onChange={(e: any) => setPrice(e.target.value)}
-          />
-          <TextField
-            id="outlined-basic"
-            label="Cena-m"
-            variant="outlined"
-            value={priceM || "0"}
-            style={style}
-            onChange={(e: any) => setPriceM(e.target.value)}
-          />
 
-          <button className="add-offer-button" onClick={createOffer}>
-            Dodaj ofertę
-          </button>
+            <button className="add-offer-button" onClick={createOffer}>
+              Dodaj ofertę
+            </button>
+          </article>
         </form>
       </article>
     </ThemeProvider>

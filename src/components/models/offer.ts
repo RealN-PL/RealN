@@ -35,15 +35,6 @@ export interface Offer {
     description: String,
     price: String,
     priceM: String,
-    imageAsset: ImageAsset | null
+    imageAsset: string[] | null
  }
 
- export interface ImageAsset {
-    __type? : String,
-    name?: String,
-    url: string,
-    agent?:null|String,
-    createdAt?: String,
-    updatedAt?: String,
-    objectId?: String
- }

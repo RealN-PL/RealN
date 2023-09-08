@@ -8,7 +8,6 @@ export default function TenAdvices() {
           10 niesamowitych porad dotyczących nieruchomości dla sprzedających
           domy
         </h1>
-        <span></span>
       </div>
       <div className="homevalue_flexbox">
         <div className="homevalue__box">

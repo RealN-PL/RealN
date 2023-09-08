@@ -203,7 +203,7 @@ export const windowList = [
 
 export const style={
     width: "48%",
-    margin: "0px 1%",
+    margin: "5px 1%",
     minWidth: "200px",
     alignSelf: "center",
 }
