@@ -20,11 +20,11 @@ const Footer = () => {
       <h1 className="footer-title2">O nas</h1>
       <div className="footer-text2">
         <Link to="/">Nasza misja</Link>
-        <Link to="/">O firmie</Link>
-        <Link to="/">Możliwości rozwoju</Link>
+        <Link to="/about">O firmie</Link>
+        <Link to="/possibilities">Możliwości rozwoju</Link>
         <Link to="/">Reklama</Link>
-        <Link to="/">Regulamin</Link>
-        <Link to="/">Polityka prywatności</Link>
+        <Link to="/statue">Regulamin</Link>
+        <Link to="/privacy-policy">Polityka prywatności</Link>
       </div>
       <h1 className="footer-title3">Znajdź nas</h1>
       <div className="footer-text3">

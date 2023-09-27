@@ -34,6 +34,10 @@ import SellWith from "./components/views/sell/sellwithrealn/SellWith";
 import App from "./App";
 import HomePreparation from "./components/views/sell/homepreparation/HomePreparation";
 import Premium from "./components/views/premium/Premium";
+import About from "./components/views/resources/about/About";
+import PrivacyPolicy from "./components/views/resources/privacypolicy/PrivacyPolicy";
+import Possibilities from "./components/views/resources/possibilities/Possibilities";
+import Statue from "./components/views/resources/statue/Statue";
 
 const router = createBrowserRouter([
   {
@@ -86,8 +90,11 @@ const router = createBrowserRouter([
       { path: "guides/tips-for-renters", element: <TipsForRenters /> },
       { path: "realn-premium", element: <Premium /> },
       { path: "contact", element: <Contact /> },
+      { path: "about", element: <About /> },
+      { path: "privacy-policy", element: <PrivacyPolicy /> },
+      { path: "possibilities", element: <Possibilities /> },
+      { path: "statue", element: <Statue /> },
       { path: "*", element: <Navigate replace to="/" /> },
-
     ],
   },
 ]);
