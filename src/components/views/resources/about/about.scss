@@ -23,6 +23,9 @@
   padding: 60px;
   margin: 0px 30%;
   text-align: center;
+  display: inline-grid;
+  gap: 30px;
+
   h1 {
     font-size: 32px;
     color: $dark-gray;
@@ -33,6 +36,7 @@
 
   h3 {
     color: $dark-gray;
+    margin-top: 30px;
   }
   p,
   li {

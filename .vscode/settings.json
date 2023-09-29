@@ -1,0 +1,16 @@
+{
+    "i18n-ally.localesPaths": [
+        "src/locales"
+    ],
+    "i18n-ally.keystyle": "nested",
+    "i18n-ally.extract.autoDetect": true,
+
+     // Default source language for translation.
+    "translation.source-language": "pl",
+
+    // Default target language for translation.
+    "translation.target-language": "en",
+
+    // Specifies how to display the result of simple translation.
+    "translation.simple-display-mode": "notification",
+}
