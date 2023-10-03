@@ -1,8 +1,10 @@
 import "./searchpage.scss";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
+import i18next from 'i18n';
 
 export default function Offercard(props: any) {
+  const t = i18next.t;
   const settings = {
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -21,13 +23,13 @@ export default function Offercard(props: any) {
       </Slider>
       <h1>{props.offer.price} zł</h1>
       <p>
-        {props.offer.rooms} pokoje, {props.offer.area} m2
+        {props.offer.rooms} {t("buy:rooms")}, {props.offer.area} m2
       </p>
       <p>
         {props.offer.city}, {props.offer.distriction}
       </p>
       <Link to={`${props.offer.id}`}>
-        <button className="btn">SZCZEGÓŁY</button>
+        <button className="btn">{t("buy:caps-details")}</button>
       </Link>
     </div>
   );

@@ -2,6 +2,7 @@ import i18next from 'i18next';
 import plAbout from './locales/pl/about.json';
 import plLists from './locales/pl/lists.json';
 import plAddOffer from './locales/pl/add-offer.json';
+import plBuy from './locales/pl/buy.json';
 
 export const defaultNS = 'ns1';
 export const fallbackNS = 'fallback';
@@ -14,7 +15,8 @@ i18next.init({
     pl: {
       about: plAbout,
       lists: plLists,
-      addOffer: plAddOffer
+      addOffer: plAddOffer,
+      buy: plBuy
     },
   },
 });

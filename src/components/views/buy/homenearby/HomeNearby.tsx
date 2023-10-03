@@ -2,42 +2,45 @@ import "../housenearby/housenearby.scss";
 import homebg from "../../../../images/icons/homebg.png";
 import EstateSlider from "../../utils/EstateSlider";
 import { Link } from "react-router-dom";
+import i18next from 'i18n';
+
 const HouseNearby = () => {
+  const t = i18next.t;
   return (
     <>
       <header className="house-search-header">
         <article>
-          <h1>Znajdź mieszkanie<br/> w okolicy</h1>
+          <h1>{t("buy:find-apartment")}<br/> {t("buy:in-the-area")}</h1>
           <p>
-            Znajdź mieszkanie w okolicy w odpowiednim dla Ciebie budżecie!
+          {t("buy:find-an-apartment")}
           </p>
         </article>
         <img src={homebg} alt="buy home background"></img>
       </header>
       <article className="search-bar">
         <div className="search-location">
-          <p>Lokalizacja</p>
+          <p>{t("buy:location")}</p>
 
-          <input type="text" placeholder="Miasto, adres, kod pocztowy"></input>
+          <input type="text" placeholder={t("buy:min-city-address-code")}></input>
         </div>
         <div className="search-price">
-          <p>Zakres cenowy</p>
+          <p>{t("buy:price-range")}</p>
           <div className="price-box"> 
-          <input type="number" placeholder="Cena minimalna"></input>
-          <input type="number" placeholder="Cena maksymalna"></input>
+          <input type="number" placeholder={t("buy:min-price")}></input>
+          <input type="number" placeholder={t("buy:max-price")}></input>
         </div></div>
-       <Link to ="/search">  <button type="button"> Szukaj</button></Link>
+       <Link to ="/search">  <button type="button"> {t("buy:search")}</button></Link>
       </article>
       <article className="houses-container">
-        <h1>Mieszkania w Gdańsku</h1>
+        <h1>{t("buy:gdansk-apartments")}</h1>
         <EstateSlider />
       </article>
       <article className="houses-container">
-        <h1>Mieszkania w Gdyni</h1>
+        <h1>{t("buy:gdynia-apartments")}</h1>
         <EstateSlider />
       </article>
       <article className="houses-container">
-        <h1>Mieszkania w Sopocie</h1>
+        <h1>{t("buy:sopot-apartments")}</h1>
         <EstateSlider />
       </article>
     </>

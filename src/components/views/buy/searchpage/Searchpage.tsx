@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import "./searchpage.scss";
 import Offercard from "./Offercard";
+import i18next from 'i18n';
+import { t } from "i18next";
+
 const Parse = require('parse/dist/parse.min.js'); 
 
 class Searchpage extends Component {
@@ -71,7 +74,7 @@ class Searchpage extends Component {
               this.handleCityChange(city);
             }}
           >
-            <option value="">Wszystkie miasta</option>
+            <option value="">{i18next.t("buy:all-cities")}</option>
             <option value="Gdańsk">Gdańsk</option>
             <option value="Gdynia">Gdynia</option>
             <option value="Sopot">Sopot</option>
@@ -82,11 +85,11 @@ class Searchpage extends Component {
             }}
           >
             <option value="">
-              Wszystkie nieruchomości
+              {i18next.t("buy:all-real-estate")}
             </option>
-            <option value="Mieszkanie">Mieszkanie</option>
-            <option value="Dom">Dom</option>
-            <option value="Działka">Działka</option>
+            <option value="Mieszkanie">{i18next.t("buy:apartment")}</option>
+            <option value="Dom">{i18next.t("buy:house")}</option>
+            <option value="Działka">{i18next.t("buy:plot")}</option>
           </select>
         </div>
 
