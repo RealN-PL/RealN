@@ -1,111 +1,81 @@
+import i18next from "i18n";
 import "./tipsforrenters.scss";
 import { Link } from "react-router-dom";
 
 const TipsForRenters = () => {
+  const t = i18next.t;
   return (
     <article>
       <div className="tips-head">
         <h1>
-          Porady dla najemców
+          {t("rent:advices")}
         </h1>
       </div>
       <article className="tips-text">
         <h2>
-          Niezależnie od tego, czy jesteś nowym najemcą czy doświadczonym
-          wynajmującym, znajdziesz tutaj przydatne wskazówki i informacje, które
-          pomogą Ci w wynajmie i utrzymaniu idealnego mieszkania. Niezależnie od
-          tego, czy szukasz porad dotyczących znalezienia odpowiedniego
-          mieszkania, negocjowania umowy najmu, zarządzania finansami czy
-          utrzymania dobrej relacji z właścicielem, jesteśmy tu po to, aby Ci
-          pomóc. Przeczytaj nasze porady i zyskaj pewność i wiedzę potrzebną do
-          udanego wynajmu nieruchomości.
+          {t("rent:regardless")}
         </h2>
-        <h1>1. Wybierz odpowiednie miejsce:</h1>
+        <h1>{t("rent:choose-right-place")}</h1>
         <p>
-          Przed wynajmem nieruchomości dokładnie zastanów się nad lokalizacją.
-          Określ, czy preferujesz bliskość szkół, centrów handlowych, transportu
-          publicznego lub innych udogodnień. Upewnij się, że wybrane miejsce
-          odpowiada Twoim potrzebom i stylowi życia.
+          {t("rent:choose-right-place-text")}
         </p>
-        <h1>2. Ustal budżet:</h1>
+        <h1>{t("rent:set-a-budget")}</h1>
         <p>
-          Określ realistyczny budżet na nieruchomości, uwzględniając czynsz,
-          opłaty za media i inne koszty związane z utrzymaniem nieruchomości.
-          Upewynajemwnij się, że masz wystarczające środki finansowe na pokrycie
-          miesięcznych opłat.
+          {t("rent:determine-budget")}
         </p>
 
-        <h1>3. Przeczytaj umowę najmu:</h1>
+        <h1>{t("rent:rental-agreement")}</h1>
         <p>
-          Przed podpisaniem umowy najmu dokładnie zapoznaj się z jej treścią.
-          Zwróć uwagę na warunki najmu, okres trwania umowy, obowiązki najemcy i
-          wynajmującego, zasady rozwiązania umowy i ewentualne dodatkowe
-          klauzule. Jeśli masz wątpliwości, skonsultuj się z prawnikiem.
+          {t("rent:rental-agreement-text")}
         </p>
 
-        <h1>4. Dokumentuj stan nieruchomości:</h1>
+        <h1>{t("rent:document")}</h1>
         <p>
-          Przy wprowadzaniu się do wynajmowanej nieruchomości wykonaj
-          szczegółowy inwentaryzacyjny spis stanu nieruchomości. Zrób zdjęcia
-          lub filmy, aby udokumentować ewentualne istniejące uszkodzenia lub
-          niedociągnięcia. To pomoże uniknąć nieporozumień w przyszłości.
+        {t("rent:document-text")}
         </p>
 
-        <h1>5. Płatności i terminy:</h1>
+        <h1>{t("rent:payments-deadlines")}</h1>
         <p>
-          Przestrzegaj ustalonych terminów płatności czynszu i innych opłat
-          zgodnie z umową najmu. Regularnie sprawdzaj stan swojego konta i
-          potwierdzaj dokonane płatności. W razie opóźnień w płatnościach,
-          skonsultuj się z wynajmującym i staraj się znaleźć rozwiązanie.
+        {t("rent:payments-deadlines-text")}
         </p>
 
-        <h1>6. Zgłaszaj awarie i naprawy:</h1>
+        <h1>{t("rent:report-breakdowns")}</h1>
         <p>
-          Jeśli wystąpią jakiekolwiek awarie lub potrzeba naprawy w
-          nieruchomości, niezwłocznie zgłoś to wynajmującemu. Zachowaj
-          dokumentację zgłoszeń i odpowiedzi, aby mieć udokumentowany ślad
-          komunikacji w przypadku sporów.
+        {t("rent:report-breakdowns-text")}
         </p>
-        <h1>7. Zachowaj porządek</h1>
+        <h1>{t("rent:stay-organized")}</h1>
         <p>
-          Dbaj o wynajmowaną nieruchomość i utrzymuj ją w czystości. Szanuj
-          mienie i przestrzeń wspólną, jeśli takie istnieją. Regularnie wykonuj
-          podstawowe prace konserwacyjne, takie jak czyszczenie, usuwanie
-          drobnych usterek czy pielęgnacja ogrodu.
+        {t("rent:stay-organized-text")}
         </p>
 
-        <h1>8. Rozwiązywanie sporów:</h1>
+        <h1>{t("rent:dispute-resolution")}</h1>
         <p>
-          Jeśli wystąpią jakiekolwiek problemy lub spory z wynajmującym, staraj
-          się rozwiązać je najpierw w sposób komunikacyjny i pokojowy
+        {t("rent:dispute-resolution-text")}
         </p>
 
         <h3>
-          Pamiętaj, że te porady mają na celu zapewnić Ci udany wynajem
-          nieruchomości i utrzymanie dobrej relacji z wynajmującym. Bądź
-          odpowiedzialnym najemcą i korzystaj z wynajmowanej nieruchomości z
-          szacunkiem i troską.
+          {t("rent:remember")}
         </h3>
       </article>
       <article className="articles-box">
-        <h2>Sprawdź więcej artykułów na temat wynajmu mieszkania</h2>
+        <h2>{t("rent:check-apartments")}</h2>
         <div>
           <Link to="/guides/how-to-rent-a-house">
             <div>
-              <h2>Chcę wynająć swoje mieszkanie</h2>
-              <p>Dowiedz się więcej</p>
+              <h2>{t("rent:rent")}</h2>
+              <p>{t("rent:find-out-more")}</p>
             </div>
           </Link>
           <Link to="/guides/rent-trends">
             <div>
-              <h2>Trendy rynku wynajmu</h2>
-              <p>Dowiedz się więcej</p>
+              <h2>{t("nav:market-trends")}</h2>
+              <p>{t("rent:find-out-more")}</p>
             </div>
           </Link>
           <Link to="/guides/buy-or-rent">
             <div>
-              <h2>Kupno czy wynajem? </h2>
-              <p>Dowiedz się więcej</p>
+              <h2>{t("rent:buying-or-renting")}</h2>
+              <p>{t("rent:find-out-more")}</p>
             </div>
           </Link>
         </div>

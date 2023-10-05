@@ -207,7 +207,7 @@ export default function AddOffer() {
             <div className="add-price">
               <TextField
                 id="outlined-basic"
-                label="Cena"
+                label={t("addOffer:price")}
                 variant="outlined"
                 type="number"
                 value={price || ""}
@@ -645,7 +645,7 @@ export default function AddOffer() {
             />
 
             <button className="add-offer-button" onClick={createOffer}>
-            {t("addOffer:add-offer")}
+              {t("addOffer:add-offer")}
             </button>
           </article>
         </form>

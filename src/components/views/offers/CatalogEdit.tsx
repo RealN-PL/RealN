@@ -53,12 +53,13 @@ import {
 import SelectGroup from "../AddOffer/components/SelectGroup";
 import { onChange } from "../AddOffer/components/onChangefunc";
 import { resizeImage } from "../utils/resize";
+import i18next from 'i18n';
 
 const Parse = require("parse/dist/parse.min.js");
 
 export default function CatalogEdit() {
   const { offerLoaded, status } = useAppSelector((state) => state.catalog);
-
+  const t = i18next.t;
   const { id } = useParams();
   const dispatch = useAppDispatch();
   const offer = useAppSelector((state) =>
@@ -192,7 +193,7 @@ export default function CatalogEdit() {
     try {
       const files = Array.from(e.target.files || []);
       if (files.length > 8) {
-        setImageError("Możesz dodać maksymalnie 8 zdjęć.");
+        setImageError(t("addOffer:max-photos"));
         return;
       }
 
@@ -230,21 +231,20 @@ export default function CatalogEdit() {
   const editOffer = () => {
     dispatch(updateOfferAsync({ offerData: offerData, id: id }));
   };
-  if (status.includes("pending")) return <h1>Loading</h1>;
-  if (!offer) return <h1 style={{ marginTop: "150px" }}>Not found</h1>;
+  if (status.includes("pending")) return <h1>{t("offers:loading")}</h1>;
+  if (!offer) return <h1 style={{ marginTop: "150px" }}>{t("offers:not-found")}</h1>;
 
   return (
     <ThemeProvider theme={theme}>
       <article className="add-offer_box">
         <header>
-          <h1>Edytuj ofertę</h1>
+          <h1>{t("offers:edit-offer")}</h1>
         </header>
         <form>
           <article className="add-title">
-            <h3>Tytuł Twojego ogłoszenia</h3>
+            <h3>{t("addOffer:the-title-of-your-ad")}</h3>
             <p>
-              Tytuł powinien zawierać maksymalnie 80 znaków, nie powinien
-              zawierać adresu e-mail oraz numeru telefonu.
+              {t("addOffer:title-max-char")}
             </p>
             <TextField
               id="outlined-basic"
@@ -256,7 +256,7 @@ export default function CatalogEdit() {
             <div className="add-price">
               <TextField
                 id="outlined-basic"
-                label="Cena"
+                label={t("addOffer:price")}
                 variant="outlined"
                 type="number"
                 value={price || ""}
@@ -265,7 +265,7 @@ export default function CatalogEdit() {
               />
               <TextField
                 id="outlined-basic"
-                label="Cena za metr kwadratowy"
+                label={t("addOffer:price-per-square")}
                 variant="outlined"
                 type="number"
                 value={priceM || ""}
@@ -275,10 +275,10 @@ export default function CatalogEdit() {
             </div>
           </article>
           <article>
-            <h3>Podstawowe informacje </h3>
+            <h3>{t("addOffer:basic-information")}</h3>
             <div className="flex-row">
               <FormControl style={style}>
-                <InputLabel id="type">Typ transakcji</InputLabel>
+                <InputLabel id="type">{t("addOffer:transaction-type")}</InputLabel>
                 <SelectGroup
                   value={type || ""}
                   name="typ transakcji"
@@ -288,17 +288,17 @@ export default function CatalogEdit() {
               </FormControl>
               <TextField
                 id="outlined-basic"
-                label="Powierzchnia w m2"
+                label={t("addOffer:area-in-m2")}
                 variant="outlined"
                 style={style}
                 value={size || ""}
                 onChange={(e) => setSize(e.target.value)}
               />
             </div>
-            <h3>Lokalizacja</h3>
+            <h3>{t("addOffer:location")}</h3>
             <TextField
               id="outlined-basic"
-              label="Miejscowość"
+              label={t("addOffer:town")}
               variant="outlined"
               value={city || ""}
               style={style}
@@ -306,7 +306,7 @@ export default function CatalogEdit() {
             />
             <TextField
               id="outlined-basic"
-              label="Województwo"
+              label={t("addOffer:province")}
               value={land || ""}
               variant="outlined"
               style={style}
@@ -314,7 +314,7 @@ export default function CatalogEdit() {
             />
             <TextField
               id="outlined-basic"
-              label="Dzielnica"
+              label={t("addOffer:district")}
               value={district || ""}
               style={style}
               variant="outlined"
@@ -323,7 +323,7 @@ export default function CatalogEdit() {
             <TextField
               id="outlined-basic"
               value={street || ""}
-              label="Ulica"
+              label={t("addOffer:street")}
               style={style}
               variant="outlined"
               onChange={(e) => setStreet(e.target.value)}
@@ -331,14 +331,14 @@ export default function CatalogEdit() {
             <TextField
               id="outlined-basic"
               value={stnum || ""}
-              label="Numer budynku"
+              label={t("addOffer:number-of-the-building")}
               style={style}
               variant="outlined"
               onChange={(e) => setStnum(e.target.value)}
             />
           </article>
           <article>
-            <h3>Galeria zdjęć</h3>
+            <h3>{t("addOffer:gallery")}</h3>
             <div className="add-img-box">
               {imageAsset.map((i) => (
                 <div className="image-holder" key={i.length}>
@@ -362,7 +362,7 @@ export default function CatalogEdit() {
                       <MdCloudUpload
                         style={{ fontSize: "35px", color: "gray" }}
                       />
-                      <p>Kliknij aby dodać zdjęcie</p>
+                      <p>{t("addOffer:click-add-photo")}</p>
                       <input
                         type="file"
                         name="uploadimage"
@@ -379,9 +379,9 @@ export default function CatalogEdit() {
             {imageError && <h3>{imageError}</h3>}
           </article>
           <article>
-            <h3>Dodatkowe informacje</h3>
+            <h3>{t("addOffer:extra-info")}</h3>
             <FormControl style={style}>
-              <InputLabel id="type">Piętro</InputLabel>
+              <InputLabel id="type">{t("addOffer:floor")}</InputLabel>
               <SelectGroup
                 value={floor || ""}
                 name="Piętro"
@@ -390,7 +390,7 @@ export default function CatalogEdit() {
               />
             </FormControl>
             <FormControl style={style}>
-              <InputLabel id="type"> Liczba pokoi</InputLabel>
+              <InputLabel id="type">{t("addOffer:count-rooms")}</InputLabel>
               <SelectGroup
                 value={rooms || ""}
                 name="Liczba pokoi"
@@ -399,7 +399,7 @@ export default function CatalogEdit() {
               />
             </FormControl>
             <FormControl style={style}>
-              <InputLabel id="type">Stan</InputLabel>
+              <InputLabel id="type">{t("addOffer:state")}</InputLabel>
               <SelectGroup
                 value={condition || ""}
                 name="Piętro"
@@ -408,7 +408,7 @@ export default function CatalogEdit() {
               />
             </FormControl>
             <FormControl style={style}>
-              <InputLabel id="type">Parking</InputLabel>
+              <InputLabel id="type">{t("addOffer:parking")}</InputLabel>
               <SelectGroup
                 value={parking || ""}
                 name="Parking"
@@ -417,7 +417,7 @@ export default function CatalogEdit() {
               />
             </FormControl>
             <FormControl style={style}>
-              <InputLabel id="type">Typ zabudowy</InputLabel>
+              <InputLabel id="type">{t("addOffer:type-of-development")}</InputLabel>
               <SelectGroup
                 value={buildType || ""}
                 name="Typ zabudowy"
@@ -426,7 +426,7 @@ export default function CatalogEdit() {
               />
             </FormControl>
             <FormControl style={style}>
-              <InputLabel id="type">Materiał budynku</InputLabel>
+              <InputLabel id="type">{t("addOffer:building-material")}</InputLabel>
               <SelectGroup
                 value={material || ""}
                 name="Materiał budynku"
@@ -436,7 +436,7 @@ export default function CatalogEdit() {
             </FormControl>
             <TextField
               id="outlined-basic"
-              label="Opłaty (czynsz administracyjny, media)"
+              label={t("addOffer:fees")}
               variant="outlined"
               value={costs || ""}
               style={style}
@@ -444,7 +444,7 @@ export default function CatalogEdit() {
             />
             <TextField
               id="outlined-basic"
-              label="Rok budowy"
+              label={t("addOffer:year-of-construction")}
               variant="outlined"
               value={year || ""}
               style={style}
@@ -456,7 +456,7 @@ export default function CatalogEdit() {
                   whileTap={{ scale: 0.75 }}
                   onClick={(e) => handleShowMore(e)}
                 >
-                  Pokaż więcej <MdOutlineKeyboardArrowDown />
+                  {t("addOffer:show-more")} <MdOutlineKeyboardArrowDown />
                 </motion.button>
               </div>
             )}
@@ -464,9 +464,9 @@ export default function CatalogEdit() {
           {showMore && (
             <>
               <article>
-                <p className="subtitle">Obiekty w pobliżu</p>
+                <p className="subtitle">{t("addOffer:facilities-nearby")}</p>
                 <ButtonGroup
-                  title={"Komunikacja"}
+                  title={t("addOffer:communication")}
                   classVal={transport}
                   values={transportList}
                   changeFunc={(e) =>
@@ -478,7 +478,7 @@ export default function CatalogEdit() {
                   }
                 />
                 <ButtonGroup
-                  title={"Edukacja"}
+                  title={t("addOffer:education")}
                   classVal={education}
                   values={educationList}
                   changeFunc={(e) =>
@@ -490,7 +490,7 @@ export default function CatalogEdit() {
                   }
                 />
                 <ButtonGroup
-                  title={"Zdrowie i uroda"}
+                  title={t("addOffer:health-and-beauty")}
                   classVal={health}
                   values={healthList}
                   changeFunc={(e) =>
@@ -502,7 +502,7 @@ export default function CatalogEdit() {
                   }
                 />
                 <ButtonGroup
-                  title={"Rekreacja"}
+                  title={t("addOffer:recreation")}
                   classVal={recreation}
                   values={recreationList}
                   changeFunc={(e) =>
@@ -514,7 +514,7 @@ export default function CatalogEdit() {
                   }
                 />
                 <ButtonGroup
-                  title={"Pozostałe"}
+                  title={t("addOffer:remaining")}
                   classVal={others}
                   values={othersList}
                   changeFunc={(e) =>
@@ -526,7 +526,7 @@ export default function CatalogEdit() {
                   }
                 />
                 <ButtonGroup
-                  title={"Udogodnienia"}
+                  title={t("addOffer:amenities")}
                   classVal={amenities}
                   values={amenitiesList}
                   changeFunc={(e) =>
@@ -539,10 +539,10 @@ export default function CatalogEdit() {
                 />
               </article>
               <article>
-                <h3>Kuchnia</h3>
+                <h3>{t("addOffer:kitchen")}</h3>
                 <div className="flex-row">
                   <FormControl style={style}>
-                    <InputLabel id="type">Stan kuchni</InputLabel>
+                    <InputLabel id="type">{t("addOffer:kitchen-condition")}</InputLabel>
                     <SelectGroup
                       value={kitchen || ""}
                       name="Stan kuchni"
@@ -552,7 +552,7 @@ export default function CatalogEdit() {
                   </FormControl>
                   <div style={style}>
                     <ButtonGroup
-                      title={"Forma kuchni"}
+                      title={t("addOffer:kitchen-form")}
                       classVal={kitchenAm}
                       values={kitchenList}
                       changeFunc={(e) =>
@@ -565,10 +565,10 @@ export default function CatalogEdit() {
                     />
                   </div>
                 </div>
-                <h3>Łazienka</h3>
+                <h3>{t("addOffer:bathroom")}</h3>
                 <div className="flex-row">
                   <FormControl style={style}>
-                    <InputLabel id="type">Stan łazienki</InputLabel>
+                    <InputLabel id="type">{t("addOffer:bathroom-state")}</InputLabel>
                     <SelectGroup
                       value={bathroom || ""}
                       name="Stan łazienki"
@@ -578,7 +578,7 @@ export default function CatalogEdit() {
                   </FormControl>
                   <div style={style}>
                     <ButtonGroup
-                      title={"Forma / wyposażenie łazienki"}
+                      title={t("addOffer:bathroom-details")}
                       classVal={bathAm}
                       values={bathroomList}
                       changeFunc={(e) =>
@@ -591,9 +591,9 @@ export default function CatalogEdit() {
                     />
                   </div>
                 </div>
-                <h3>Wnętrze</h3>
+                <h3>{t("addOffer:interior")}</h3>
                 <FormControl style={style}>
-                  <InputLabel id="type">Stan instalacji</InputLabel>
+                  <InputLabel id="type">{t("addOffer:installation-status")}</InputLabel>
                   <SelectGroup
                     value={installation || ""}
                     name="Stan instalacji"
@@ -602,7 +602,7 @@ export default function CatalogEdit() {
                   />
                 </FormControl>
                 <FormControl style={style}>
-                  <InputLabel id="type">Głośność</InputLabel>
+                  <InputLabel id="type">{t("addOffer:volume")}</InputLabel>
                   <SelectGroup
                     value={loudness || ""}
                     name="Głośność"
@@ -612,7 +612,7 @@ export default function CatalogEdit() {
                 </FormControl>
                 <div className="flex-row">
                   <FormControl style={style}>
-                    <InputLabel id="type">Okna</InputLabel>
+                    <InputLabel id="type">{t("addOffer:windows")}</InputLabel>
                     <SelectGroup
                       value={windows || ""}
                       name="Okna"
@@ -622,7 +622,7 @@ export default function CatalogEdit() {
                   </FormControl>{" "}
                   <div style={{ marginLeft: "5px" }}>
                     <ButtonGroup
-                      title={"Umeblowane"}
+                      title={t("addOffer:furnished")}
                       classVal={furnitured}
                       values={furnitureList}
                       changeFunc={(e) =>
@@ -636,7 +636,7 @@ export default function CatalogEdit() {
                   </div>
                 </div>
                 <ButtonGroup
-                  title={"Ogrzewanie"}
+                  title={t("addOffer:heating")}
                   classVal={energy}
                   values={energyList}
                   changeFunc={(e) =>
@@ -649,7 +649,7 @@ export default function CatalogEdit() {
                 />
 
                 <ButtonGroup
-                  title={"Media"}
+                  title={t("addOffer:media")}
                   classVal={media}
                   values={mediaList}
                   changeFunc={(e) =>
@@ -661,7 +661,7 @@ export default function CatalogEdit() {
                   }
                 />
                 <ButtonGroup
-                  title={"Usytuowanie względem stron świata"}
+                  title={t("addOffer:cardinal-directions")}
                   classVal={direction}
                   values={directionsList}
                   changeFunc={(e) =>
@@ -682,9 +682,9 @@ export default function CatalogEdit() {
             </>
           )}
           <article>
-            <h3>Opis</h3>
-            <p>Opis powinien zawierać minimalnie 30 znaków</p>
-            {description && <p>Opis {description.length} / 4000</p>}
+            <h3>{t("addOffer:description")}</h3>
+            <p>{t("addOffer:description-should-contain")}</p>
+            {description && <p>{t("addOffer:description")} {description.length} / 4000</p>}
             <textarea
               maxLength={4000}
               minLength={30}
@@ -694,12 +694,11 @@ export default function CatalogEdit() {
             />
             <div className="add-buttons-holder">
             <button onClick={() => editOffer()}>
-              Zapisz zmiany
+              {t("addOffer:add-offer")}
             </button>
             <AlertDialog id={id} />
           </div>
           </article>
-          
         </form>
       </article>
     </ThemeProvider>

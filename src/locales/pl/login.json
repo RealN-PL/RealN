@@ -1,0 +1,21 @@
+{
+    "login": "Logowanie",
+    "welcome": "Witamy!",
+    "email": "Email",
+    "enter-email": "Wpisz swój adres email.",
+    "enter-password": "Wpisz hasło",
+    "forget-password": "Nie pamiętasz hasła? Kliknij tu!",
+    "log-in": "Zaloguj się",
+    "reset-password": "Resetuj hasło",
+    "send": "Wyślij",
+    "logout": "Wyloguj się",
+    "successfully-logged-out": "Pomyślnie wylogowano!",
+    "registration": "Rejestracja",
+    "phone-number": "Numer telefonu",
+    "password": "Hasło",
+    "user-name": "Nazwa użytkownika",
+    "repeat-password": "Powtórz hasło",
+    "registering-as-agent": "Rejestruję się jako agent",
+    "agent-id": "Agent ID",
+    "register": "Register"
+}

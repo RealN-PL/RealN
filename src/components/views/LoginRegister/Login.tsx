@@ -6,8 +6,10 @@ import "./loginregister.scss";
 import logo from "../../../images/logo2.jpg";
 import { useAppDispatch, useAppSelector } from "../../store/configureStore";
 import { login } from "./accountSlice";
+import i18next from 'i18n';
 
 export default function Login() {
+  const t = i18next.t;
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -54,7 +56,7 @@ export default function Login() {
     <>
       <li onClick={handleClickOpen} className="desktop">
         <MdPerson style={{ marginRight: "5px" }} />
-        Logowanie
+        {t("login:login")}
       </li>
       <li onClick={handleClickOpen} className="small">
         <MdPerson />
@@ -67,7 +69,7 @@ export default function Login() {
       >
         <div className="login-box">
           <img src={logo} alt="logo realn" />
-          <h2>Witamy!</h2>
+          <h2>{t("login:welcome")}</h2>
           <p>{loginError}</p>
           <form onSubmit={handleSubmit}>
             <label hidden>Email</label>
@@ -75,7 +77,7 @@ export default function Login() {
               required
               type="email"
               id="fmail"
-              placeholder="Wpisz swój adres email."
+              placeholder={t("login:enter-email")}
               name="fmail"
               value={email}
               onChange={(event) => setEmail(event.target.value)}
@@ -86,15 +88,15 @@ export default function Login() {
               type="password"
               id="password"
               name="password"
-              placeholder="Wpisz swoje hasło"
+              placeholder={t("login:enter-password")}
               value={password}
               onChange={(event) => setPassword(event.target.value)}
             />
              <div onClick={() => handlePasswordOpen()} className="remember-password">
-              <p> Nie pamiętasz hasła? Kliknij tu!</p>
+              <p>{t("login:forget-password")}</p>
             </div>
             <button disabled={loading} type="submit">
-              Zaloguj się
+            {t("login:log-in")}
             </button>
            
           </form>
@@ -106,9 +108,9 @@ export default function Login() {
         aria-labelledby="form-dialog-title"
       >
         <div className="reset-box">
-          <h2>Resetuj hasło</h2>
+          <h2>{t("login:reset-password")}</h2>
           <form onSubmit={handleSubmitReset}>
-            <label>Wpisz swój adres email</label>
+            <label>{t("login:enter-email")}</label>
             <input
               required
               type="email"
@@ -118,7 +120,7 @@ export default function Login() {
               onChange={(event) => setEmail(event.target.value)}
             />
             <button disabled={loading} type="submit">
-              Wyślij
+            {t("login:send")}
             </button>
           </form>
         </div>
