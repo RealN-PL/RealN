@@ -9,6 +9,7 @@ import plNav from './locales/pl/nav.json';
 import plOffers from './locales/pl/offers.json';
 import plPremium from './locales/pl/premium.json';
 import plRent from './locales/pl/rent.json';
+import plResources from './locales/pl/resources.json';
 
 export const defaultNS = 'ns1';
 export const fallbackNS = 'fallback';
@@ -29,6 +30,7 @@ i18next.init({
       offers: plOffers,
       premium: plPremium,
       rent: plRent,
+      resources: plResources
     },
   },
 });
