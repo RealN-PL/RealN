@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./searchpage.scss";
 import Offercard from "./Offercard";
 import i18next from 'i18n';
-import { t } from "i18next";
 
 const Parse = require('parse/dist/parse.min.js'); 
 

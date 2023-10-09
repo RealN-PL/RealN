@@ -3,7 +3,7 @@ import eventsbg from "../../../../../images/icons/eventsbg.png";
 import "./UpcomingEvents.scss";
 import { Link } from "react-router-dom";
 import events from "../../../../../events.json";
-
+import i18next from "i18n";
 class UpcomingEvents extends Component {
   state = {
     events: [],
@@ -25,31 +25,31 @@ class UpcomingEvents extends Component {
         <header className="events-search-header">
           <article>
             <h1>
-              Znajdź wydarzenia
-              <br /> w okolicy
+              {i18next.t("resources:find-events")}
+              <br /> {i18next.t("resources:in-the-area")}
             </h1>
             <p>
-              Wyszukaj iteresujące Cię eventy i warsztaty. <br />
-              Pozaj terminy najblższych dni otwartych nieruchomości
+            {i18next.t("resources:search-workshop")} <br />
+            {i18next.t("resources:check-dates")}
             </p>
           </article>
           <img src={eventsbg} alt="buy house background"></img>
         </header>
         <article className="search-bar">
           <div className="search-location">
-            <p> Lokalizacja</p>
+            <p>{i18next.t("resources:location")}</p>
             <input
               type="text"
-              placeholder="Miasto, adres, kod pocztowy"
+              placeholder={i18next.t("resources:city-post-code")}
             ></input>
           </div>
           <div className="search-price">
-            <p>Rodzaj eventu</p>
-            <input type="text" placeholder="Rodzaj eventu"></input>
+            <p>{i18next.t("resources:type-of-event")}</p>
+            <input type="text" placeholder={i18next.t("resources:type-of-event")}></input>
           </div>
           <Link to="/search">
             {" "}
-            <button type="button"> Szukaj</button>
+            <button type="button"> {i18next.t("resources:search")}</button>
           </Link>
         </article>
         <div className="events-container">
@@ -59,7 +59,7 @@ class UpcomingEvents extends Component {
               <p>{event.location}</p>
               <img src={event.photo} alt={`Zdjęcie ${event.id}`}></img>
                 <p>{event.date}</p>
-                <button>Zapisz się</button>
+                <button>{i18next.t("resources:sing-up")}</button>
             </div>
           ))}
         </div>
