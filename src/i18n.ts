@@ -33,7 +33,7 @@ export const fallbackNS = 'fallback';
 
 i18next.init({
   debug: true,
-  fallbackLng: 'en',
+  fallbackLng: 'pl',
   defaultNS,
   resources: {
     en: {

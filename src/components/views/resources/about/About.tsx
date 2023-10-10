@@ -4,11 +4,11 @@ import i18next from 'i18n';
 export default function About() {
   const t = i18next.t;
   return (
-    <>
-      <header className="about-header">
+    <div className="about-container">
+      <header className="header">
         <h1>{t('about:who-we-are')}</h1>
       </header>
-      <div className="about-box">
+      <div className="box">
       <article>
         <h1>{t('about:the-best-agents')}</h1>
 
@@ -56,6 +56,6 @@ export default function About() {
         <p>{t('about:real-estate-transaction')}</p>
       </article>
       </div>
-    </>
+    </div>
   );
 }
