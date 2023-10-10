@@ -20,7 +20,7 @@ const LandNearby = () => {
         <div className="search-location">
           <p>{t("buy:location")}</p>
 
-          <input type="text" placeholder="Miasto, adres, kod pocztowy"></input>
+          <input type="text" placeholder={t("buy:city-address-code")}></input>
         </div>
         <div className="search-price">
           <p>{t("buy:price-range")}</p>

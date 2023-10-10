@@ -26,7 +26,7 @@ const Contact = () => {
         <div className="message-box">
           {" "}
           <i className="fa-regular fa-message"></i>
-          <a href="tel: 500-000-000">{t("main:write-to00-us")}</a>
+          <a href="tel: 500-000-000">{t("main:write-to-us")}</a>
           <p>{t("main:customer-service")}</p>
         </div>
         <div className="connect-box">

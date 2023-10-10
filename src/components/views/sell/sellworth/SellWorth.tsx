@@ -4,19 +4,22 @@ import { HiOutlineMagnifyingGlass } from "react-icons/hi2";
 import "../../nav/nav.scss";
 import "./sellworth.scss";
 import { Link } from "react-router-dom";
+import i18next from "i18n";
 
 const SellWorth = () => {
+  const t = i18next.t;
+
   return (
     <>
       <header className="house-search-header">
         <article>
-          <h1>Ile wart jest mój dom?</h1>
-          <p>Zobacz pobliskie trendy rynkowe sprzedaży.</p>
+          <h1>{t("sell:how-much-is-my-house")}</h1>
+          <p>{t("sell:view-nearby-sales")}</p>
 
           <aside className="input-holder">
             <input
               type="text"
-              placeholder="Miasto, adres, kod pocztowy"
+              placeholder={t("buy:city-address-code")}
             ></input>
             <HiOutlineMagnifyingGlass className="main-glass-icon" />
           </aside>
@@ -27,47 +30,42 @@ const SellWorth = () => {
       <div className="sellworth__container">
         <article className="sellworth-grid">
           <div className="sellworth-grid__box1">
-            <h1>Najdokładniejsza wycena domu online</h1>
+            <h1>{t("buy:accurate-valuation")}</h1>
             <p>
-              Aby obliczyć wartość nieruchomści RealN wycenia, łączy setki
-              punktów danych na temat rynku, okolicy i samego domu - wszystko po
-              to, aby zapewnić Ci najdokładniejsze narzędzia do wyceny domu.
+            {t("buy:to-count-realn")}
             </p>
           </div>
           <div className="sellworth-grid__box2">
-            <h3>Śledź wartość swojego domu</h3>
+            <h3>{t("buy:track-home-value")}</h3>
             <p>
-              Błyskawicznie poznaj wartość swojego domu i dowiedz się, za ile
-              można go sprzedać na dzisiejszym rynku.
+            {t("buy:know-value-instantly")}
             </p>
           </div>
           <div className="sellworth-grid__box3">
-            <h3>Zobacz lokalne trendy rynkowe</h3>
+            <h3>{t("buy:see-local-trends")}</h3>
             <p>
-              Bądź na bieżąco ze zmianami na rynku i dowiedz się, za ile
-              sprzedano domy podobne do Twojego w ciągu ostatniego roku.
+              {t("buy:stay-up-to-date")}
             </p>
           </div>
           <div className="sellworth-grid__box4">
-            <h3>Uzyskaj bezpłatny miesięczny raport</h3>
+            <h3>{t("buy:get-a-free-report")}</h3>
             <p>
-              Otrzymuj comiesięczne wiadomości e-mail z aktualizacjami
-              dotyczącymi wartości Twojego domu i jej zmian.
+            {t("buy:receive-monthly-email-updates")}
             </p>
           </div>
         </article>
       </div>
 
       <h1 className="sellworth__subtitle">
-        Więcej materiałów dla właścicieli domów
+        {t("buy:more-resources")}
       </h1>
       <div className="sellworth-grid__container">
         <Link to="/sell/how-much-is-it-worth/find-the-value">
           {" "}
           <div className="box1">
             <img src={homebg} alt="home"></img>
-            <h3>Jak obliczyć wartość domu?</h3>
-            <p> Czytaj dalej</p>
+            <h3>{t("buy:how-calculate")}</h3>
+            <p>{t("sell:continue")}</p>
           </div>
         </Link>
         <Link to="/sell/how-much-is-it-worth/five-ways">
@@ -75,9 +73,9 @@ const SellWorth = () => {
           <div className="box2">
             <img src={homebg} alt="home"></img>
             <h3>
-              5 sposobów na znalezienie porównywalnych nieruchomości w okolicy.
+              {t("sell:five-ways")}
             </h3>
-            <p> Czytaj dalej</p>
+            <p>{t("sell:continue")}</p>
           </div>
         </Link>
         <Link to="/sell/how-much-is-it-worth/ten-advices">
@@ -85,10 +83,9 @@ const SellWorth = () => {
           <div className="box3">
             <img src={homebg} alt="home"></img>
             <h3>
-              10 niesamowitych porad dotyczących nieruchomości dla sprzedających
-              domy!
+              {t("buy:10-amazing-tips")}
             </h3>
-            <p> Czytaj dalej</p>
+            <p>{t("sell:continue")}</p>
           </div>
         </Link>
       </div>

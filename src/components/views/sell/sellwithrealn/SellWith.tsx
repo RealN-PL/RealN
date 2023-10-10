@@ -25,7 +25,7 @@ export default function SellWith() {
           <div className="desktop">
             <input
               type="text"
-              placeholder="Miasto, adres, kod pocztowy"
+              placeholder={t("buy:city-address-code")}
             ></input>
             <Link to="/search">{t("sell:next")}  <AiOutlineArrowRight/></Link>
           </div>
@@ -104,7 +104,7 @@ export default function SellWith() {
           <div className="desktop">
             <input
               type="text"
-              placeholder="Miasto, adres, kod pocztowy"
+              placeholder={t("buy:city-address-code")}
             ></input>
             <Link to="/search">{t("sell:next")}</Link>
           </div>

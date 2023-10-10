@@ -1,0 +1,6 @@
+{
+    "loading": "Loading...",
+    "logged-in": "Logged in successfully!",
+    "session-expired": "The session has expired!",
+    "failed-to-log-in": "Failed to log in"
+}

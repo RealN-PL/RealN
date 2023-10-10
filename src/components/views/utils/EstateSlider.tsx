@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { useAppSelector, useAppDispatch } from "../../store/configureStore";
 import { offersSelectors, fetchOffersAsync } from "../offers/catalogSlice";
 import { Offer } from "../../models/offer";
+import i18next from "i18next";
 
 export default function EstateSlider() {
   const catalog = useAppSelector(offersSelectors.selectAll);
@@ -62,7 +63,7 @@ export default function EstateSlider() {
             <OfferCard key={i} offer={offer} />
           ))}
         </Slider>
-        <p className="check-button">Sprawdź wszystkie oferty</p>
+        <p className="check-button">{i18next.t("uils:check-all-oferts")}</p>
       </div>
     </div>
   );

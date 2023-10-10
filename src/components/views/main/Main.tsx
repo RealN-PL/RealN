@@ -55,7 +55,7 @@ const Main = () => {
           <div className="input-holder">
             <input
               type="text"
-              placeholder="Miasto, adres, kod pocztowy"
+              placeholder={t("main:city-address-code")}
             ></input>
             <HiOutlineMagnifyingGlass className="main-glass-icon" />
           </div>{" "}

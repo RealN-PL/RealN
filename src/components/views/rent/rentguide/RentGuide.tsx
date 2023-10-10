@@ -68,7 +68,7 @@ const RentGuide = () => {
           <aside className="input-holder">
             <input
               type="text"
-              placeholder="Miasto, adres, kod pocztowy"
+              placeholder={t("buy:city-address-code")}
             ></input>
             <HiOutlineMagnifyingGlass className="main-glass-icon" />
           </aside>
