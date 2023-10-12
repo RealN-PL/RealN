@@ -5,7 +5,10 @@ import { HiOutlineMagnifyingGlass } from "react-icons/hi2";
 import pic2 from "../../../goodimages/back6.webp";
 import pic5 from "../../../goodimages/back3.jpg";
 import SmallContact from "../utils/SmallContact";
+import i18next from 'i18n';
+
 const Main = () => {
+  const t = i18next.t;
   const [isBuyActive, setIsBuyActive] = useState(true);
   const [isLendActive, setIsLendActive] = useState(false);
   const [isSellActive, setIsSellActive] = useState(false);
@@ -14,8 +17,8 @@ const Main = () => {
       <div className="main-header">
         <header className="main-head-box">
           <h1>
-            Napędzana technologią najskuteczniejsza platforma
-            <br /> z branży nieruchomości.
+            {t("main:technology-driven")}
+            <br /> {t("main:from-real-estate")}
           </h1>
           <ul className="main-head-choice">
             <li
@@ -26,7 +29,7 @@ const Main = () => {
                 setIsSellActive(false);
               }}
             >
-              Kup
+              {t("main:buy")}
             </li>
             <li
               className={isLendActive ? "choice-active" : ""}
@@ -36,7 +39,7 @@ const Main = () => {
                 setIsSellActive(false);
               }}
             >
-              Wynajmij
+              {t("main:rent")}
             </li>
             <li
               className={isSellActive ? "choice-active" : ""}
@@ -46,13 +49,13 @@ const Main = () => {
                 setIsSellActive(true);
               }}
             >
-              Sprzedaj
+              {t("main:sell")}
             </li>
           </ul>
           <div className="input-holder">
             <input
               type="text"
-              placeholder="Miasto, adres, kod pocztowy"
+              placeholder={t("main:city-address-code")}
             ></input>
             <HiOutlineMagnifyingGlass className="main-glass-icon" />
           </div>{" "}
@@ -63,29 +66,29 @@ const Main = () => {
           <img src={pic5} alt="home for sell"></img>
           <aside>
             <h1>
-              Sprzedawaj mieszkania <br />
-              szybko i wygodnie
+            {t("main:sell-apartments")} <br />
+            {t("main:quickly-and-conveniently")}
             </h1>
             <p>
-              Agenci RealN pomogą Ci wycenić nieruchomość.
-              <br /> Zacznij od darmowej konsultacji.
+            {t("main:agents-help-you")}
+              <br /> {t("main:start-from")}
             </p>
             <aside className="main-top-searcher-box">
-              <input type="text" placeholder="Podaj swój adres email"></input>
-              <p>Dalej</p>
+              <input type="text" placeholder={t("main:enter-email")}></input>
+              <p>{t("main:next")}</p>
             </aside>
           </aside>
         </article>
         <article className="main-first">
           <aside>
             <h1>
-              Twoje wymarzone mieszkanie <br /> już tu czeka!
+            {t("main:dream-apartment")} <br /> {t("main:awaits")}
             </h1>
-            <p>Znajdź własny kąt korzystając z naszej wyszukiwarki</p>
+            <p>{t("main:find-own-corner")}</p>
             <aside className="main-top-searcher-box">
               <input
                 type="text"
-                placeholder="Miasto, adres, kod pocztowy"
+                placeholder={t("main:city-address-code")}
               ></input>
               <HiOutlineMagnifyingGlass className="main-glass-icon" />
             </aside>
@@ -94,7 +97,7 @@ const Main = () => {
         </article>
       </article>
       <article className="slider-title">
-        <h1> Sprawdź mieszkania w okolicy:</h1>
+        <h1> {t("main:check-apartments")}:</h1>
       </article>
       <EstateSlider />
 

@@ -13,8 +13,11 @@ import MobileMenu from "./MobileMenu";
 import { useAppDispatch, useAppSelector } from "../../store/configureStore";
 import Logout from "../LoginRegister/Logout";
 import { setPage } from "../../store/utilitySlice";
+import i18next from 'i18n';
 
 const Nav = () => {
+  const t = i18next.t;
+
   const dispatch = useAppDispatch();
   const { user } = useAppSelector((state) => state.account);
   const [isBuyActive, setIsBuyActive] = useState(false);
@@ -33,12 +36,12 @@ const Nav = () => {
           <img src={location.pathname === "/" ? logo : logo2} alt="logo"></img>
         </Link>
         {location.pathname === "/" ? (
-          <>{user && <p className="nav-user__greeting">Witaj {user[1]}</p>}</>
+          <>{user && <p className="nav-user__greeting">{t("nav:welcome")} {user[1]}</p>}</>
         ) : (
           <div className="desktop">
             <input
               type="text"
-              placeholder="Miasto, adres, kod pocztowy"
+              placeholder={t("nav:city-address-code")}
             ></input>
             <Link to="/search">
               <HiOutlineMagnifyingGlass className="nav-glass-icon" />
@@ -59,7 +62,7 @@ const Nav = () => {
               setIsRentActive(false);
             }}
           >
-            Kup
+            {t("nav:buy")}
           </li>
           {isBuyActive && (
             <motion.div
@@ -69,43 +72,43 @@ const Nav = () => {
               className="buy-drop"
               onMouseLeave={(e) => setIsBuyActive(false)}
             >
-              <h3 className="header1">Popularne</h3>
+              <h3 className="header1">{t("nav:popular")}</h3>
               <Link
                 to="/house-nearby"
                 className="buy-drop1"
                 onClick={() => menuControl()}
               >
-                Szukaj domu
+                {t("nav:search-for-a-house")}
               </Link>
               <Link
                 to="/home-nearby"
                 className="buy-drop2"
                 onClick={() => menuControl()}
               >
-                Szukaj mieszkania
+                {t("nav:search-for-an-apartment")}
               </Link>
               <Link
                 to="/land-nearby"
                 className="buy-drop3"
                 onClick={() => menuControl()}
               >
-                Szukaj gruntu
+                {t("nav:search-for-ground")}
               </Link>
-              <h3 className="header2">Opcje kupna</h3>
+              <h3 className="header2">{t("nav:purchase-options")}</h3>
               <Link
                 to="/why-buy"
                 className="buy-drop4"
                 onClick={() => menuControl()}
               >
-                Kup z RealN
+                {t("nav:buy-with-realn")}
               </Link>
-              <h3 className="header3">Środki na zakupy</h3>
+              <h3 className="header3">{t("nav:funds-for-purchases")}</h3>
               <Link
                 to="/can-i-afford"
                 className="buy-drop5"
                 onClick={() => menuControl()}
               >
-                Sprawdź budżet
+                {t("nav:check-budget")}
               </Link>
               <Link
                 to="/guides"
@@ -115,7 +118,7 @@ const Nav = () => {
                   dispatch(setPage("buy"));
                 }}
               >
-                Przewodnik kupna domu
+                {t("nav:home-buying-guide")}
               </Link>
               {/* <Link to="/find-services" className="buy-drop7"onClick={() => menuControl()}>
                 Szukaj firmy i usługi
@@ -125,13 +128,13 @@ const Nav = () => {
                 className="buy-drop7"
                 onClick={() => menuControl()}
               >
-                Szukaj warsztaty i eventy
+                {t("nav:search-for-worshop-events")}
               </Link>
               <a
                 href="https://nbp.pl/publikacje/cykliczne-materialy-analityczne-nbp/rynek-nieruchomosci/informacja-kwartalna/"
                 className="buy-drop8"
               >
-                Przegląd rynku mieszkaniowego w Polsce
+                {t("nav:overview")}
               </a>
             </motion.div>
           )}
@@ -142,7 +145,7 @@ const Nav = () => {
               setIsRentActive(false);
             }}
           >
-            Sprzedaż
+            {t("nav:sale")}
           </li>
           {isSellActive && (
             <motion.div
@@ -152,40 +155,40 @@ const Nav = () => {
               className="sell-drop"
               onMouseLeave={(e) => setIsSellActive(false)}
             >
-              <h3 className="sell-drop1">Mój dom</h3>
+              <h3 className="sell-drop1">{t("nav:my-house")}</h3>
               <Link
                 to="/sell/how-much-is-it-worth"
                 className="sell-drop2"
                 onClick={() => menuControl()}
               >
-                Ile warty jest mój dom?
+                {t("nav:house-worth")}
               </Link>
               {/* <Link to="/sell/dashboard" className="sell-drop3"onClick={() => menuControl()}>
                 Przegląd mojej nieruchomości
               </Link> */}
-              <h3 className="sell-drop4">Opcje sprzedaży</h3>
+              <h3 className="sell-drop4">{t("nav:sales-options")}</h3>
               <Link
                 to="/sell"
                 className="sell-drop5"
                 onClick={() => menuControl()}
               >
-                Sprzedaj z RealN
+                {t("nav:sell-with-realn")}
               </Link>
               <Link
                 to="/home-nearby"
                 className="sell-drop6"
                 onClick={() => menuControl()}
               >
-                Porównaj oferty
+                {t("nav:compare-offers")}
               </Link>
 
-              <h3 className="sell-drop8">Baza wiedzy</h3>
+              <h3 className="sell-drop8">{t("nav:knowledge-base")}</h3>
               <Link
                 to="/guides/will-selling-pay-off"
                 className="sell-drop9"
                 onClick={() => menuControl()}
               >
-                Czy sprzedaż się opłaci?
+                {t("nav:sale-profitable")}
               </Link>
 
               <Link
@@ -196,14 +199,14 @@ const Nav = () => {
                   dispatch(setPage("sell"));
                 }}
               >
-                Przewodnik sprzedaży domu
+                {t("nav:selling-guide")}
               </Link>
               <Link
                 to="/sell/how-much-is-it-worth/ten-advices"
                 className="sell-drop11"
                 onClick={() => menuControl()}
               >
-                Jak zwiększyć wartość nieruchomości
+                {t("nav:how-increase-property-value")}
               </Link>
             </motion.div>
           )}
@@ -214,7 +217,7 @@ const Nav = () => {
               setIsBuyActive(false);
             }}
           >
-            Wynajem
+            {t("nav:rent")}
           </li>
           {isRentActive && (
             <motion.div
@@ -224,58 +227,58 @@ const Nav = () => {
               className="rent-drop"
               onMouseLeave={(e) => setIsRentActive(false)}
             >
-              <h3 className="rent-drop1">Wyszukiwanie</h3>
+              <h3 className="rent-drop1">{t("nav:search")}</h3>
               <Link
                 to="/home-nearby"
                 className="rent-drop2"
                 onClick={() => menuControl()}
               >
-                Mieszkania na wynajem
+                {t("nav:apartments-for-rent")}
               </Link>
               <Link
                 to="/house-nearby"
                 className="rent-drop3"
                 onClick={() => menuControl()}
               >
-                Nieruchomości na wynajem
+                {t("nav:properties-for-rent")}
               </Link>
 
-              <h3 className="rent-drop4">Baza wiedzy</h3>
+              <h3 className="rent-drop4">{t("nav:knowledge-base")}</h3>
               <Link
                 to="/guides/how-to-rent-a-house"
                 className="rent-drop5"
                 onClick={() => menuControl()}
               >
-                Chcę wynająć swoją nieruchomość.
+                {t("nav:rent-my-property")}
               </Link>
               <Link
                 to="/guides/buy-or-rent"
                 className="rent-drop6"
                 onClick={() => menuControl()}
               >
-                Kupno czy wynajem?
+                {t("nav:buying-or-renting")}
               </Link>
               <Link
                 to="/guides/rent-trends"
                 className="rent-drop7"
                 onClick={() => menuControl()}
               >
-                Trendy rynku wynajmu
+                {t("nav:market-trends")}
               </Link>
               <Link
                 to="/guides/tips-for-renters"
                 className="rent-drop8"
                 onClick={() => menuControl()}
               >
-                Wskazówki dla najemców
+                {t("nav:tips-for-tenants")}
               </Link>
             </motion.div>
           )}
           <Link to="/realn-premium" className="contact-link premium">
-            RealN Premium
+            {t("nav:realn-premium")}
           </Link>
           <Link to="/contact" className="contact-link">
-            Kontakt
+            {t("main:contact")}
           </Link>
         </div>
         <ul
@@ -289,10 +292,10 @@ const Nav = () => {
             <div className="nav-user">
               <div>
                 <Link to="catalog">
-                  <li>Katalog Ofert</li>
+                  <li>{t("main:offer-catalogue")}</li>
                 </Link>
                 <Link to="/add-new-offer">
-                  <li>Dodaj ofertę</li>
+                  <li>{t("main:add-offer")}</li>
                 </Link>
                 <Logout />
               </div>

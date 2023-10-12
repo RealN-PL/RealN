@@ -1,28 +1,27 @@
 import "./premium.scss";
 import SmallContact from "../utils/SmallContact";
+import i18next from "i18next";
 
 export default function Premium() {
+  const t= i18next.t;
   return (
     <>
       <div className="premium-header">
-        <h1>RealN PREMIIM</h1>
+        <h1>{t("premium:realn-premium")}</h1>
         <h3>
-          Najwyższy poziom usług świadczonych przez najlepszych agetów RealN
+        {t("premium:highest-level-of-service")}
         </h3>
       </div>
       <div className="premium-search__box">
         <div className="premium-search__text">
-          <h3>Poznaj swojego lokalnego agenta luksusowych nieruchomości</h3>
+          <h3>{t("premium:local-luxury")}</h3>
           <p>
-            Dzięki RealN PREMIUM zostaniesz połączony z lokalnym agentem, który
-            ma wieloletnie doświadczenie w kupnie i sprzedaży luksusowych
-            nieruchomości. Tylko nasi najlepsi agenci kwalifikują się do
-            zostania agentami RealN PREMIUM.
+          {t("premium:thanks-premium")}
           </p>
         </div>
     <div className="premium-search__input">
         <input />
-        <button>Szukaj</button>
+        <button>{t("premium:search")}</button>
         </div>
       </div>
 

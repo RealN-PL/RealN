@@ -5,8 +5,10 @@ import { MdPersonAdd } from "react-icons/md";
 import "./loginregister.scss";
 // import { toast } from "react-toastify";
 import logo from "../../../images/logo2.jpg";
+import i18next from 'i18n';
 
 export default function Signup() {
+  const t = i18next.t;
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [phone, setPhone] = useState("");
@@ -56,7 +58,7 @@ export default function Signup() {
     <>
       <li onClick={handleClickOpen} className="desktop">
         <MdPersonAdd style={{ marginRight: "5px" }} />
-        Rejestracja
+        {t("login:registration")}
       </li>
 
       <li onClick={handleClickOpen} className="small">
@@ -71,12 +73,12 @@ export default function Signup() {
         <div className="login-box register-box">
         <img src={logo} alt="logo realn" />
 
-          <h2>Rejestracja</h2>
+          <h2>{t("login:registration")}</h2>
           {error !== "noerror" && <h3>{error}</h3>}
           <form onSubmit={handleSubmit}>
             <input
               required
-              placeholder="Email"
+              placeholder={t("login:email")}
               type="email"
               id="fmail"
               name="fmail"
@@ -85,7 +87,7 @@ export default function Signup() {
             />
             <input
               required
-              placeholder="Numer telefonu"
+              placeholder={t("login:phone-number")}
               type="number"
               id="fphone"
               name="fphone"
@@ -94,7 +96,7 @@ export default function Signup() {
             />
             <input
               required
-              placeholder="Hasło"
+              placeholder={t("login:password")}
               type="password"
               id="password"
               name="password"
@@ -103,7 +105,7 @@ export default function Signup() {
             />
             <input
               required
-              placeholder="Nazwa użytkownika"
+              placeholder={t("login:user-name")}
               type="text"
               id="username"
               name="username"
@@ -112,19 +114,19 @@ export default function Signup() {
             />
             <input
               required
-              placeholder="Powtórz hasło"
+              placeholder={t("login:repeat-password")}
               type="password"
               id="password-confirm"
               name="password-confirm"
             />
             <div className="checkbox-box">
               <input type="checkbox" onChange={()=>setAgentRegister(!agentRegister)}></input>
-              <span>Rejestruję się jako agent</span>
+              <span>{t("login:registering-as-agent")}</span>
             </div>
            {agentRegister &&  
            <input
               required
-              placeholder="Agent ID"
+              placeholder={t("login:agent-id")}
               type="text"
               id="agentId"
               name="agentId"
@@ -132,7 +134,7 @@ export default function Signup() {
               onChange={(event) => setAgentId(event.target.value)}
             />}
             <button disabled={loading} type="submit">
-              Zarejestruj się
+              {t("login:register")}
             </button>
           </form>
         </div>

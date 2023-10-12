@@ -20,6 +20,8 @@ import router from "../../../Routes";
 import { toast } from "react-toastify";
 import Loader from "../utils/Loader";
 import ButtonGroup from "./components/ButtonGroup";
+import i18next from 'i18n';
+
 import {
   transportList,
   educationList,
@@ -53,6 +55,7 @@ const Parse = require("parse/dist/parse.min.js");
 
 export default function AddOffer() {
   const dispatch = useAppDispatch();
+  const t = i18next.t;
   const [imageError, setImageError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [showMore, setShowMore] = useState(false);
@@ -137,7 +140,7 @@ export default function AddOffer() {
   const createOffer = async function (event: any) {
     event.preventDefault();
     dispatch(createOfferAsync({ offerData: offerData }));
-    toast.success("Pomyślnie utworzono ofertę!");
+    toast.success(t("addOffer:offer-created-successfully"));
     router.navigate("/catalog");
   };
   const uploadImage = async (e: any) => {
@@ -145,7 +148,7 @@ export default function AddOffer() {
     try {
       const files = Array.from(e.target.files || []);
       if (files.length > 8) {
-        setImageError("Możesz dodać maksymalnie 8 zdjęć.");
+        setImageError(t("addOffer:max-photos"));
         return;
       }
 
@@ -163,7 +166,7 @@ export default function AddOffer() {
         ...processedImages,
       ]);
     } catch (error) {
-      console.error("Error uploading images:", error);
+      console.error(t("addOffer:error-uploading-images"), error);
     } finally {
       setIsLoading(false);
     }
@@ -186,26 +189,25 @@ export default function AddOffer() {
     <ThemeProvider theme={theme}>
       <article className="add-offer_box">
         <header>
-          <h1>Dodaj swoją ofertę</h1>
+          <h1>{t("addOffer:add-your-offer")}</h1>
         </header>
         <form>
           <article className="add-title">
-            <h3>Tytuł Twojego ogłoszenia</h3>
+            <h3>{t("addOffer:the-title-of-your-ad")}</h3>
             <p>
-              Tytuł powinien zawierać maksymalnie 80 znaków, nie powinien
-              zawierać adresu e-mail oraz numeru telefonu.
+              {t("addOffer:title-max-char")}
             </p>
             <TextField
               style={{ margin: "0px 8px" }}
               id="outlined-basic"
-              label="Wpisz tytuł ogłoszenia"
+              label={t("addOffer:enter-the-title")}
               variant="outlined"
               onChange={(e) => setTitle(e.target.value)}
             />
             <div className="add-price">
               <TextField
                 id="outlined-basic"
-                label="Cena"
+                label={t("addOffer:price")}
                 variant="outlined"
                 type="number"
                 value={price || ""}
@@ -214,7 +216,7 @@ export default function AddOffer() {
               />
               <TextField
                 id="outlined-basic"
-                label="Cena za metr kwadratowy"
+                label={t("addOffer:price-per-square")}
                 variant="outlined"
                 type="number"
                 value={priceM || ""}
@@ -224,10 +226,10 @@ export default function AddOffer() {
             </div>
           </article>
           <article>
-            <h3>Podstawowe informacje </h3>
+            <h3>{t("addOffer:basic-information")}</h3>
             <div className="flex-row">
               <FormControl style={style}>
-                <InputLabel id="type">Typ transakcji</InputLabel>
+                <InputLabel id="type">{t("addOffer:transaction-type")}</InputLabel>
                 <SelectGroup
                   value={type || ""}
                   name="typ transakcji"
@@ -237,17 +239,17 @@ export default function AddOffer() {
               </FormControl>
               <TextField
                 id="outlined-basic"
-                label="Powierzchnia w m2"
+                label={t("addOffer:area-in-m2")}
                 variant="outlined"
                 value={size || ""}
                 style={style}
                 onChange={(e) => setSize(e.target.value)}
               />
             </div>
-            <h3>Lokalizacja</h3>
+            <h3>{t("addOffer:location")}</h3>
             <TextField
               id="outlined-basic"
-              label="Miejscowość"
+              label={t("addOffer:town")}
               variant="outlined"
               value={city || ""}
               style={style}
@@ -255,7 +257,7 @@ export default function AddOffer() {
             />
             <TextField
               id="outlined-basic"
-              label="Województwo"
+              label={t("addOffer:province")}
               value={land || ""}
               variant="outlined"
               style={style}
@@ -263,7 +265,7 @@ export default function AddOffer() {
             />
             <TextField
               id="outlined-basic"
-              label="Dzielnica"
+              label={t("addOffer:district")}
               value={district || ""}
               style={style}
               variant="outlined"
@@ -272,7 +274,7 @@ export default function AddOffer() {
             <TextField
               id="outlined-basic"
               value={street || ""}
-              label="Ulica"
+              label={t("addOffer:street")}
               style={style}
               variant="outlined"
               onChange={(e) => setStreet(e.target.value)}
@@ -280,14 +282,14 @@ export default function AddOffer() {
             <TextField
               id="outlined-basic"
               value={stnum || ""}
-              label="Numer budynku"
+              label={t("addOffer:number-of-the-building")}
               style={style}
               variant="outlined"
               onChange={(e) => setStnum(e.target.value)}
             />
           </article>
           <article>
-            <h3>Galeria zdjęć</h3>
+            <h3>{t("addOffer:gallery")}</h3>
             <div className="add-img-box">
               {imageAsset.map((i) => (
                 <div className="image-holder" key={i.length}>
@@ -311,7 +313,7 @@ export default function AddOffer() {
                       <MdCloudUpload
                         style={{ fontSize: "35px", color: "gray" }}
                       />
-                      <p>Kliknij aby dodać zdjęcie</p>
+                      <p>{t("addOffer:click-add-photo")}</p>
                       <input
                         type="file"
                         name="uploadimage"
@@ -328,9 +330,9 @@ export default function AddOffer() {
             {imageError && <h3>{imageError}</h3>}
           </article>
           <article>
-            <h3>Dodatkowe informacje</h3>
+            <h3>{t("addOffer:extra-info")}</h3>
             <FormControl style={style}>
-              <InputLabel id="type">Piętro</InputLabel>
+              <InputLabel id="type">{t("addOffer:floor")}</InputLabel>
               <SelectGroup
                 value={floor || ""}
                 name="Piętro"
@@ -339,7 +341,7 @@ export default function AddOffer() {
               />
             </FormControl>
             <FormControl style={style}>
-              <InputLabel id="type"> Liczba pokoi</InputLabel>
+              <InputLabel id="type">{t("addOffer:count-rooms")}</InputLabel>
               <SelectGroup
                 value={rooms || ""}
                 name="Liczba pokoi"
@@ -348,7 +350,7 @@ export default function AddOffer() {
               />
             </FormControl>
             <FormControl style={style}>
-              <InputLabel id="type">Stan</InputLabel>
+              <InputLabel id="type">{t("addOffer:state")}</InputLabel>
               <SelectGroup
                 value={condition || ""}
                 name="Piętro"
@@ -357,7 +359,7 @@ export default function AddOffer() {
               />
             </FormControl>
             <FormControl style={style}>
-              <InputLabel id="type">Parking</InputLabel>
+              <InputLabel id="type">{t("addOffer:parking")}</InputLabel>
               <SelectGroup
                 value={parking || ""}
                 name="Parking"
@@ -366,7 +368,7 @@ export default function AddOffer() {
               />
             </FormControl>
             <FormControl style={style}>
-              <InputLabel id="type">Typ zabudowy</InputLabel>
+              <InputLabel id="type">{t("addOffer:type-of-development")}</InputLabel>
               <SelectGroup
                 value={buildType || ""}
                 name="Typ zabudowy"
@@ -375,7 +377,7 @@ export default function AddOffer() {
               />
             </FormControl>
             <FormControl style={style}>
-              <InputLabel id="type">Materiał budynku</InputLabel>
+              <InputLabel id="type">{t("addOffer:building-material")}</InputLabel>
               <SelectGroup
                 value={material || ""}
                 name="Materiał budynku"
@@ -385,7 +387,7 @@ export default function AddOffer() {
             </FormControl>
             <TextField
               id="outlined-basic"
-              label="Opłaty (czynsz administracyjny, media)"
+              label={t("addOffer:fees")}
               variant="outlined"
               value={costs || ""}
               style={style}
@@ -393,7 +395,7 @@ export default function AddOffer() {
             />
             <TextField
               id="outlined-basic"
-              label="Rok budowy"
+              label={t("addOffer:year-of-construction")}
               variant="outlined"
               value={year || ""}
               style={style}
@@ -405,7 +407,7 @@ export default function AddOffer() {
                   whileTap={{ scale: 0.75 }}
                   onClick={(e) => handleShowMore(e)}
                 >
-                  Pokaż więcej <MdOutlineKeyboardArrowDown />
+                  {t("addOffer:show-more")} <MdOutlineKeyboardArrowDown />
                 </motion.button>
               </div>
             )}
@@ -413,9 +415,9 @@ export default function AddOffer() {
           {showMore && (
             <>
               <article>
-                <p className="subtitle">Obiekty w pobliżu</p>
+                <p className="subtitle">{t("addOffer:facilities-nearby")}</p>
                 <ButtonGroup
-                  title={"Komunikacja"}
+                  title={t("addOffer:communication")}
                   classVal={transport}
                   values={transportList}
                   changeFunc={(e) =>
@@ -427,7 +429,7 @@ export default function AddOffer() {
                   }
                 />
                 <ButtonGroup
-                  title={"Edukacja"}
+                  title={t("addOffer:education")}
                   classVal={education}
                   values={educationList}
                   changeFunc={(e) =>
@@ -439,7 +441,7 @@ export default function AddOffer() {
                   }
                 />
                 <ButtonGroup
-                  title={"Zdrowie i uroda"}
+                  title={t("addOffer:health-and-beauty")}
                   classVal={health}
                   values={healthList}
                   changeFunc={(e) =>
@@ -451,7 +453,7 @@ export default function AddOffer() {
                   }
                 />
                 <ButtonGroup
-                  title={"Rekreacja"}
+                  title={t("addOffer:recreation")}
                   classVal={recreation}
                   values={recreationList}
                   changeFunc={(e) =>
@@ -463,7 +465,7 @@ export default function AddOffer() {
                   }
                 />
                 <ButtonGroup
-                  title={"Pozostałe"}
+                  title={t("addOffer:remaining")}
                   classVal={others}
                   values={othersList}
                   changeFunc={(e) =>
@@ -475,7 +477,7 @@ export default function AddOffer() {
                   }
                 />
                 <ButtonGroup
-                  title={"Udogodnienia"}
+                  title={t("addOffer:amenities")}
                   classVal={amenities}
                   values={amenitiesList}
                   changeFunc={(e) =>
@@ -488,10 +490,10 @@ export default function AddOffer() {
                 />
               </article>
               <article>
-                <h3>Kuchnia</h3>
+                <h3>{t("addOffer:kitchen")}</h3>
                 <div className="flex-row">
                   <FormControl style={style}>
-                    <InputLabel id="type">Stan kuchni</InputLabel>
+                    <InputLabel id="type">{t("addOffer:kitchen-condition")}</InputLabel>
                     <SelectGroup
                       value={kitchen || ""}
                       name="Stan kuchni"
@@ -501,7 +503,7 @@ export default function AddOffer() {
                   </FormControl>
                   <div style={style}>
                     <ButtonGroup
-                      title={"Forma kuchni"}
+                      title={t("addOffer:kitchen-form")}
                       classVal={kitchenAm}
                       values={kitchenList}
                       changeFunc={(e) =>
@@ -514,10 +516,10 @@ export default function AddOffer() {
                     />
                   </div>
                 </div>
-                <h3>Łazienka</h3>
+                <h3>{t("addOffer:bathroom")}</h3>
                 <div className="flex-row">
                   <FormControl style={style}>
-                    <InputLabel id="type">Stan łazienki</InputLabel>
+                    <InputLabel id="type">{t("addOffer:bathroom-state")}</InputLabel>
                     <SelectGroup
                       value={bathroom || ""}
                       name="Stan łazienki"
@@ -527,7 +529,7 @@ export default function AddOffer() {
                   </FormControl>
                   <div style={style}>
                     <ButtonGroup
-                      title={"Forma / wyposażenie łazienki"}
+                      title={t("addOffer:bathroom-details")}
                       classVal={bathAm}
                       values={bathroomList}
                       changeFunc={(e) =>
@@ -540,9 +542,9 @@ export default function AddOffer() {
                     />
                   </div>
                 </div>
-                <h3>Wnętrze</h3>
+                <h3>{t("addOffer:interior")}</h3>
                 <FormControl style={style}>
-                  <InputLabel id="type">Stan instalacji</InputLabel>
+                  <InputLabel id="type">{t("addOffer:installation-status")}</InputLabel>
                   <SelectGroup
                     value={installation || ""}
                     name="Stan instalacji"
@@ -551,7 +553,7 @@ export default function AddOffer() {
                   />
                 </FormControl>
                 <FormControl style={style}>
-                  <InputLabel id="type">Głośność</InputLabel>
+                  <InputLabel id="type">{t("addOffer:volume")}</InputLabel>
                   <SelectGroup
                     value={loudness || ""}
                     name="Głośność"
@@ -561,7 +563,7 @@ export default function AddOffer() {
                 </FormControl>
                 <div className="flex-row">
                   <FormControl style={style}>
-                    <InputLabel id="type">Okna</InputLabel>
+                    <InputLabel id="type">{t("addOffer:windows")}</InputLabel>
                     <SelectGroup
                       value={windows || ""}
                       name="Okna"
@@ -571,7 +573,7 @@ export default function AddOffer() {
                   </FormControl>{" "}
                   <div style={{ marginLeft: "5px" }}>
                     <ButtonGroup
-                      title={"Umeblowane"}
+                      title={t("addOffer:furnished")}
                       classVal={furnitured}
                       values={furnitureList}
                       changeFunc={(e) =>
@@ -585,7 +587,7 @@ export default function AddOffer() {
                   </div>
                 </div>
                 <ButtonGroup
-                  title={"Ogrzewanie"}
+                  title={t("addOffer:heating")}
                   classVal={energy}
                   values={energyList}
                   changeFunc={(e) =>
@@ -598,7 +600,7 @@ export default function AddOffer() {
                 />
 
                 <ButtonGroup
-                  title={"Media"}
+                  title={t("addOffer:media")}
                   classVal={media}
                   values={mediaList}
                   changeFunc={(e) =>
@@ -610,7 +612,7 @@ export default function AddOffer() {
                   }
                 />
                 <ButtonGroup
-                  title={"Usytuowanie względem stron świata"}
+                  title={t("addOffer:cardinal-directions")}
                   classVal={direction}
                   values={directionsList}
                   changeFunc={(e) =>
@@ -624,16 +626,16 @@ export default function AddOffer() {
                 <br />
                 <div className="button-showmore">
                   <button onClick={(e) => handleShowMore(e)}>
-                    Zwiń <MdOutlineKeyboardArrowUp />
+                  {t("addOffer:collapse")} <MdOutlineKeyboardArrowUp />
                   </button>
                 </div>
               </article>
             </>
           )}
           <article>
-            <h3>Opis</h3>
-            <p>Opis powinien zawierać minimalnie 30 znaków</p>
-            <p>Opis {description.length} / 4000</p>
+            <h3>{t("addOffer:description")}</h3>
+            <p>{t("addOffer:description-should-contain")}</p>
+            <p>{t("addOffer:description")} {description.length} / 4000</p>
             <textarea
               maxLength={4000}
               minLength={30}
@@ -643,7 +645,7 @@ export default function AddOffer() {
             />
 
             <button className="add-offer-button" onClick={createOffer}>
-              Dodaj ofertę
+              {t("addOffer:add-offer")}
             </button>
           </article>
         </form>

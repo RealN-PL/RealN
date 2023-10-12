@@ -1,0 +1,5 @@
+@import "styles//mixins.scss";
+
+.about-container {
+  @include guide-page;
+}

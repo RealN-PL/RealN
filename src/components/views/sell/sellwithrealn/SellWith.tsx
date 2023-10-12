@@ -7,125 +7,112 @@ import {AiOutlineArrowRight} from "react-icons/ai";
 import {ImQuotesLeft, ImQuotesRight} from 'react-icons/im'
 import EstateSlider from "../../utils/EstateSlider";
 import SmallContact from "../../utils/SmallContact";
+import i18next from "i18n";
+
 export default function SellWith() {
+  const t = i18next.t;
   return (
     <>
       <div className="sellwith__container">
         <div className="sellwith-aside__text">
-          <h1>Sprzedawaj za więcej <br/>i oszczędzaj na opłatach</h1>
+          <h1>{t("sell:sell-for-more")} <br/>{t("sell:and-save")} </h1>
           <p>
-            Agenci RealN mają doświadczenie, aby sprzedać Twój dom za najwyższą
-            cenę, a przy zakupie i sprzedaży z nami zapłacisz niską opłatę w
-            wysokości 1%.
+            {t("sell:realn-agents-has-experience")} 
           </p>
           <p>
-            Aby rozpocząć, wprowadź swój adres poniżej. Odpowiesz na kilka
-            krótkich pytań, a my skontaktujemy się z Tobą w ciągu kilku godzin.
+            {t("sell:to-start")} 
           </p>
           <div className="desktop">
             <input
               type="text"
-              placeholder="Miasto, adres, kod pocztowy"
+              placeholder={t("buy:city-address-code")}
             ></input>
-            <Link to="/search">Dalej <AiOutlineArrowRight/></Link>
+            <Link to="/search">{t("sell:next")}  <AiOutlineArrowRight/></Link>
           </div>
         </div>
         <img src={pic5} alt="agent bg" />
       </div>
       <div className="sellwith-quest__container">
-        <h1>Dlaczego warto sprzedawać z RealN?</h1>
+        <h1>{t("sell:why-is-it-worth")} </h1>
         <div className="sellwith-quest__gridbox">
           <div>
             <MdFaceRetouchingOff />
-            <h3>Mamy najlepszych agentów na rynku</h3>
+            <h3>{t("sell:best-agents")}</h3>
             <p>
-              Agenci RealN znajdują się wśród 1% najlepszych agentów pracujących
-              w każdym ogólnokrajowym biurze pośrednictwa.
+            {t("sell:top-one")} 
             </p>
           </div>
           <div>
             <MdFaceRetouchingOff />
-            <h3>Mamy najlepszych agentów na rynku</h3>
+            <h3>{t("sell:best-agents")}</h3>
             <p>
-              Agenci RealN znajdują się wśród 1% najlepszych agentów pracujących
-              w każdym ogólnokrajowym biurze pośrednictwa.
+            {t("sell:top-one")} 
             </p>
           </div>
           <div>
             <MdFaceRetouchingOff />
-            <h3>Mamy najlepszych agentów na rynku</h3>
+            <h3>{t("sell:best-agents")}</h3>
             <p>
-              Agenci RealN znajdują się wśród 1% najlepszych agentów pracujących
-              w każdym ogólnokrajowym biurze pośrednictwa.
+            {t("sell:top-one")} 
             </p>
           </div>
         </div>
       </div>
       <div className="sellwith-ipad__container">
         <h1>
-          Uzyskaj pakiet marketingowy, który sprawi, że Twója nieruchomość
-          będzie fascynująca dla kupujących
+          {t("sell:get-a-marketing")} 
         </h1>
         <div className="sellwith-ipad__gridbox">
           <img src={mock} alt="ipad"></img>
           <div>
-            <h3>Więcej spojrzeń na Twój dom</h3>
+            <h3>{t("sell:more-eyes-on-house")} </h3>
             <p>
-              Gdy wystawisz ofertę na RealN, Twój dom będzie miał o 70% więcej
-              wyświetleń, co zwiększy szanse na znalezienie zainteresowanych
-              nabywców.
+              {t("sell:when-you-place-offer")}
             </p>
-            <h3>Preferowane miejsce w wynikach wyszukiwania</h3>
+            <h3>{t("sell:preffered-position")}</h3>
             <p>
-              Przez pierwszy tydzień Twoja oferta będzie wyświetlana na szczycie
-              wyszukiwań kupujących w witrynie i aplikacji RealN.
+              {t("sell:first-week")}
             </p>
-            <h3>Cyfrowe kampanie marketingowe</h3>
+            <h3>{t("sell:digital-campaigns")}</h3>
             <p>
-              Każda oferta RealN otrzymuje cyfrową kampanię marketingową
-              skierowaną do aktywnych nabywców.
+              {t("sell:each-offer")}
             </p>
-            <h3>Interaktywne wycieczki 3D</h3>
+            <h3>{t("sell:interactive-tours")}</h3>
             <p>
-              Każdy dom wymieniony w RealN otrzymuje oszałamiającą wycieczkę 3D,
-              dzięki czemu kupujący mogą go zwiedzać z dowolnego miejsca.
+              {t("sell:each-house")}
             </p>
           </div>
         </div>
       </div>
       <div className="sellwith-more__gridbox">
         <div>
-          <h3>Sprzedajesz wysokiej klasy dom?</h3>
+          <h3>{t("sell:high-qualiti-sale")}</h3>
           <p>
-            Możesz kwaifikować się do RealN Premium, naszego najwyższego poziomu
-            usług świadczonych przez naszych najlepszych agentów. Zostaniesz
-            połączony z lokalnym ekspertem, który ma wieloletnie doświadczenie w
-            sprzedaży luksusowych domów.
+          {t("sell:premium")}
           </p>
-          <button className="text-bold">Dowiedz się więcej</button>
+          <button className="text-bold">{t("sell:know-more")}</button>
         </div>
         <img src={pic5} alt="luxury apartment" />
       </div>
       <div className="sellwith-ready__gridbox">
         <img src={pic5} alt="luxury apartment" />
         <div>
-          <h3>Gotowy do rozpoczęcia?</h3>
+          <h3>{t("sell:ready-to-go")}</h3>
           <p>
-            Już dziś możemy połączyć Cię z agentem, który pomoże Ci zrozumieć
-            opcje sprzedaży i odpowie na wszystkie Twoje pytania.
+          {t("sell:today-connect-with-agent")}
           </p>
           <div className="desktop">
             <input
               type="text"
-              placeholder="Miasto, adres, kod pocztowy"
+              placeholder={t("buy:city-address-code")}
             ></input>
-            <Link to="/search">Dalej</Link>
+            <Link to="/search">{t("sell:next")}</Link>
           </div>
         </div>
       </div>
       <div className="sellwith-opinions">
         <ImQuotesLeft/>
-        <h3>Zobacz, co mówią nasi klienci:</h3>
+        <h3>{t("sell:opinions")}</h3>
         <p>
           "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates
           alias voluptatem accusamus temporibus voluptatum rerum labore

@@ -2,9 +2,10 @@ import { AiFillHeart, AiOutlineArrowLeft } from "react-icons/ai";
 import { FaShare } from "react-icons/fa";
 import "../propertyDetails.scss";
 import { useEffect, useState } from "react";
+import i18next from 'i18n';
 
 export default function PropNav() {
-
+  const t = i18next.t;
   const [isSticky, setIsSticky] = useState(false);
   const initialOffset = 70;
 
@@ -29,11 +30,11 @@ export default function PropNav() {
       <div>
         <a href="/catalog">
           <AiOutlineArrowLeft />
-          Do wyników wyszukiwania
+          {t("buy:to-search-results")}
         </a>
-        <a href="/">O obiekcie</a>
-        <a href="/">Szczegóły</a>
-        <a href="/">Dodatkowe informacje</a>
+        <a href="/">{t("buy:about-the-facility")}</a>
+        <a href="/">{t("buy:details")}</a>
+        <a href="/">{t("buy:additional-info")}</a>
       </div>
 
       <div className="property-icons">

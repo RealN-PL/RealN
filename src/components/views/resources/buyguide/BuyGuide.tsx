@@ -7,7 +7,11 @@ import choose from "../../../../images/icons/choose.png";
 import "./buyguide.scss";
 import { useAppDispatch, useAppSelector } from "../../../store/configureStore";
 import { setPage } from "../../../store/utilitySlice";
+import i18next from "i18n";
+
 export default function BuyGuide() {
+  const t= i18next.t;
+
   const { page } = useAppSelector((state) => state.utility);
   const dispatch = useAppDispatch();
 
@@ -16,11 +20,9 @@ export default function BuyGuide() {
     <div className="flex-container">
       <header className="guide-header">
         <aside>
-          <h1>Twój kompletny przewodnik na zakup czy sprzedaż nieruchomości</h1>
+          <h1>{t("resources:your-complete-guide")}</h1>
           <p>
-            Kupno bądź sprzedaż domu czy mieszkania może być stresujące, ale
-            jesteśmy tutaj, aby pomóc. Agenci RealN wspólnie z Wami przejdą tę
-            drogę, będą na każdym etapie tego procesu.
+            {t("resources:buying-or-selling")}
           </p>
         </aside>
         <img src={guide} alt="buy guide"></img>
@@ -32,7 +34,7 @@ export default function BuyGuide() {
           }}
           className={page === "buy" ? "choice-active" : " "}
         >
-          Przewodnik zakupu nieruchomości
+          {t("resources:real-estate-guide")}
         </p>
         <p
           onClick={() => {
@@ -40,7 +42,7 @@ export default function BuyGuide() {
           }}
           className={page === "sell" ? "choice-active" : " "}
         >
-          Przewodnik sprzedaży nieruchomości
+          {t("resources:sales-guide")}
         </p>
       </article>
       {page === "buy" ? (
@@ -48,34 +50,33 @@ export default function BuyGuide() {
           <div className="box1">
             <Link to="/guides/how-to-buy-a-house">
               <img src={steps} alt="steps"></img>
-              <h3>Jak kupić dom w 7 krokach</h3>
-              <h4>Czytaj dalej</h4>
+              <h3>{t("resources:buy-house-7-steps")}</h3>
+              <h4>{t("resources:continue")}</h4>
             </Link>{" "}
           </div>
           <div className="box2">
             <a href="https://www.biznes.gov.pl/pl/opisy-procedur/-/proc/209">
               <img src={foreign} alt="foreigner buy"></img>
               <h3>
-                Jak kupić nieruchomość w Polsce nie będąc obywatelem Polski
+                {t("resources:how-to-buy-real-estate")}
               </h3>
-              <h4>Czytaj dalej</h4>
+              <h4>{t("resources:continue")}</h4>
             </a>
           </div>
           <div className="box3">
             <Link to="/guides/how-to-choose-real-estate-agent">
               <img src={choose} alt="choose agent"></img>
               <h3>
-                Jak wybrać agenta nieruchomości - Top 15 pytań, które należy
-                zadać
+                {t("resources:how-to-choose")}
               </h3>
-              <h4>Czytaj dalej</h4>
+              <h4>{t("resources:continue")}</h4>
             </Link>
           </div>
           <div className="box4">
             <Link to="/guides/real-estate-commision">
               <img src={costs} alt="agent costs"></img>
-              <h3>O prowizji agenta nieruchomości</h3>
-              <h4>Czytaj dalej</h4>
+              <h3>{t("resources:about-real-estate")}</h3>
+              <h4>{t("resources:continue")}</h4>
             </Link>
           </div>
         </article>
@@ -84,34 +85,33 @@ export default function BuyGuide() {
           <div className="box1">
             <Link to="/guides/how-to-prepare-my-home">
               <img src={steps} alt="steps"></img>
-              <h3>Jak przygotować dom do sprzedaży</h3>
-              <h4>Czytaj dalej</h4>
+              <h3>{t("resources:how-to-prepare-to-sell")}</h3>
+              <h4>{t("resources:continue")}</h4>
             </Link>
           </div>
           <div className="box2">
             <a href="https://www.biznes.gov.pl/pl/opisy-procedur/-/proc/209">
               <img src={foreign} alt="foreigner buy"></img>
               <h3>
-                Jak sprzedać nieruchomość w Polsce nie będąc obywatelem Polski
+                {t("resources:sell-estate-in-poland")}
               </h3>
-              <h4>Czytaj dalej</h4>
+              <h4>{t("resources:continue")}</h4>
             </a>
           </div>
           <div className="box3">
             <Link to="/guides/how-to-choose-real-estate-agent">
               <img src={choose} alt="choose agent"></img>
               <h3>
-                Jak wybrać agenta nieruchomości - Top 15 pytań, które należy
-                zadać
+                {t("resources:how-to-choose-agent")}
               </h3>
-              <h4>Czytaj dalej</h4>
+              <h4>{t("resources:continue")}</h4>
             </Link>
           </div>
           <div className="box4">
             <Link to="/guides/real-estate-commision">
               <img src={costs} alt="agent costs"></img>
-              <h3>O prowizji agenta nieruchomości</h3>
-              <h4>Czytaj dalej</h4>
+              <h3>{t("resources:about-real-estate-agent-commission")}</h3>
+              <h4>{t("resources:continue")}</h4>
             </Link>
           </div>
         </article>

@@ -12,18 +12,20 @@ import {
   setPageNumber,
 } from "./catalogSlice";
 import { Offer } from "../../models/offer";
+import i18next from 'i18n';
 
 export default function Catalog() {
+  const t = i18next.t;
   const catalog = useAppSelector(offersSelectors.selectAll);
   const { offersLoaded, dispPage, displayLimit, count, filterValue } =
     useAppSelector((state) => state.catalog);
   const dispatch = useAppDispatch();
 
-  const type = ["Dom", "Mieszkanie", "Grunt"];
+  const type = [t("offers:house"), t("offers:apartment"), t("offers:land")];
   const sortOptions = [
-    { value: "name", label: "Alfabetycznie" },
-    { value: "priceDesc", label: "Cena malejąco" },
-    { value: "price", label: "Cena rosnąco" },
+    { value: "name", label: t("offers:alphabetically") },
+    { value: "priceDesc", label: t("offers:price-descending")},
+    { value: "price", label: t("offers:price-ascending") },
   ];
   useEffect(() => {
     if (!offersLoaded)
@@ -34,14 +36,14 @@ export default function Catalog() {
     <div className="catalog-flexbox">
       <div className="catalog-container">
         <div className="filters-box">
-          <h1>Fitruj oferty</h1>
+          <h1>{t("offers:filter-offers")}</h1>
           <SearchNameComponent
             dispPage={dispPage}
             displayLimit={displayLimit}
           />
-          <h3>Typ</h3>
+          <h3>{t("offers:type")}</h3>
           <CheckboxButtons items={type} onChange={() => console.log(type)} />
-          <h3>Sortuj</h3>
+          <h3>{t("offers:sort")}</h3>
           <RadioButtonGroup
             selectedValue={""}
             options={sortOptions}
@@ -84,12 +86,12 @@ export default function Catalog() {
                 />
               </div>
             ) : (
-              <h1>Loading</h1>
+              <h1>{t("offers:loading")}</h1>
             )}
           </>
         ) : (
           <div className="catalog-box">
-            <h1>Brak ofert</h1>
+            <h1>{t("offers:no-offers")}</h1>
           </div>
         )}
       </div>

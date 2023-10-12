@@ -1,0 +1,17 @@
+{
+    "house": "Dom",
+    "apartment": "Mieszkanie",
+    "land": "Grunt",
+    "alphabetically": "Alfabetycznie",
+    "price-descending": "Cena malejąco",
+    "price-ascending": "Cena rosnąco",
+    "filter-offers": "Fitruj oferty",
+    "type": "Typ",
+    "sort": "Sortuj",
+    "loading": "Ładowanie",
+    "no-offers": "Brak ofert",
+
+    "add-maximum-photos": "Możesz dodać maksymalnie 8 zdjęć.",
+    "not-found": "Nie znaleziono",
+    "edit-offer": "Edytuj ofertę"
+}

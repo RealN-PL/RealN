@@ -3,12 +3,14 @@ import { useState } from "react";
 import { deleteOfferAsync } from "../offers/catalogSlice";
 import { useAppDispatch } from "../../store/configureStore";
 import "../AddOffer/addoffer.scss";
+import i18next from "i18n";
 
 interface Props {
   id: String | undefined;
 }
 
 export default function AlertDialog({ id }: Props) {
+  const t = i18next.t;
   const [open, setOpen] = useState(false);
   const dispatch = useAppDispatch();
 
@@ -27,7 +29,7 @@ export default function AlertDialog({ id }: Props) {
   return (
     <>
       <button className="add-offer_box__delete" onClick={handleClickOpen}>
-        Usuń ofertę
+        {t("utils:delete-offer")}
       </button>
       <Dialog
         open={open}
@@ -36,14 +38,14 @@ export default function AlertDialog({ id }: Props) {
         aria-describedby="alert-dialog-description"
       >
         <DialogTitle id="alert-dialog-title">
-          {"Czy na pewno chcesz usunąć ofertę?"}
+          {t("utils:you-shure-to-delete")}
         </DialogTitle>
 
         <DialogActions>
           <Button onClick={handleClose} autoFocus>
-            Nie
+            {t("utils:no")}
           </Button>
-          <Button onClick={() => deleteOffer()}>Tak</Button>
+          <Button onClick={() => deleteOffer()}>{t("utils:yes")}</Button>
         </DialogActions>
       </Dialog>
     </>

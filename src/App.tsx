@@ -10,6 +10,7 @@ import { useCallback, useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "./components/store/configureStore";
 import { fetchCurrentUser } from "./components/views/LoginRegister/accountSlice";
 import { fetchOffersAsync } from "./components/views/offers/catalogSlice";
+import i18next from 'i18n';
 
 const App = () => {
   const location = useLocation();
@@ -33,7 +34,7 @@ const App = () => {
 
   if (loading)
   return <div><h1>
-    Ładowanie...
+    {i18next.t("app:loading")}
   </h1>
   </div>;
 

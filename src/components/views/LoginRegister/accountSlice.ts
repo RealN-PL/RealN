@@ -1,6 +1,8 @@
 import { createSlice, createAsyncThunk, isAnyOf } from "@reduxjs/toolkit";
 import router from "../../../Routes";
 import { toast } from "react-toastify";
+import i18next from 'i18n';
+
 
 const Parse = require("parse/dist/parse.min.js");
 
@@ -29,7 +31,7 @@ export const login = createAsyncThunk<
 >("account/login", async ({ email, password }, thunkAPI) => {
   try {
     const user = await Parse.User.logIn(email, password);
-    toast.success("Pomyślnie zalogowano!");
+    toast.success(i18next.t("app:logged-in"));
     return [user.id, user.attributes.username];
   } catch (error: any) {
     return thunkAPI.rejectWithValue(error.message);
@@ -71,7 +73,7 @@ export const accountSlice = createSlice({
       .addCase(fetchCurrentUser.rejected, (state) => {
         state.user = null;
         localStorage.removeItem("Parse/realn/currentUser");
-        toast.error("Sesja wygasła!");
+        toast.error(i18next.t("app:session-expired"));
         router.navigate("/");
       })
       .addMatcher(
@@ -82,7 +84,7 @@ export const accountSlice = createSlice({
       )
       .addMatcher(isAnyOf(login.rejected), (state, action) => {
         state.loginError = action.payload;
-        toast.error("Nie udało się zalogować");
+        toast.error(i18next.t("app:failed-to-log-in"));
       });
   },
 });

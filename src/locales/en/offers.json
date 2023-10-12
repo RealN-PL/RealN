@@ -1,0 +1,16 @@
+{
+    "house": "House",
+    "apartment": "Apartment",
+    "land": "Land",
+    "alphabetically": "Alphabetically",
+    "price-descending": "Price descending",
+    "price-ascending": "Price ascending",
+    "filter-offers": "Fitruj oferty",
+    "type": "Type",
+    "sort": "Sort",
+    "loading": "Loading",
+    "no-offers": "No offers",
+
+    "not-found": "Not found",
+    "edit-offer": "Edit offer"
+}

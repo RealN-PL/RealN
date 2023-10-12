@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import i18next from 'i18n';
 
 interface Props {
   menuControl: any;
@@ -8,6 +9,7 @@ interface Props {
 }
 
 export default function MobileMenu({ menuControl, menuActive }: Props) {
+  const t = i18next.t;
   const [isBuyActive, setIsBuyActive] = useState(false);
   const [isSellActive, setIsSellActive] = useState(false);
   const [isRentActive, setIsRentActive] = useState(false);
@@ -20,7 +22,7 @@ export default function MobileMenu({ menuControl, menuActive }: Props) {
     >
       <li>
         <Link to="/contact" onClick={() => menuControl()}>
-          Kontakt
+          {t("main:contact")}
         </Link>
       </li>
       <li
@@ -30,41 +32,41 @@ export default function MobileMenu({ menuControl, menuActive }: Props) {
           setIsRentActive(false);
         }}
       >
-        Kup
+        {t("main:buy")}
       </li>
       {isBuyActive && (
         <motion.div className="submenu"  initial={{ opacity: 0, y: -20 }}
         animate={menuActive ? { opacity: 1, y: 0 } : { opacity: 0.5, y: -20 }}
         transition={{  delayChildren: 0.2 }}>
           <Link to="/house-nearby" onClick={() => menuControl()}>
-            Szukaj domu
+            {t("nav:search-for-a-house")}
           </Link>
           <Link to="/home-nearby" onClick={() => menuControl()}>
-            Szukaj mieszkania
+            {t("nav:search-for-an-apartment")}
           </Link>
           <Link to="/land-nearby" onClick={() => menuControl()}>
-            Szukaj gruntu
+            {t("nav:search-for-ground")}
           </Link>
           <Link to="/why-buy" onClick={() => menuControl()}>
-            Kup z RealN
+            {t("nav:buy-with-realn")}
           </Link>
           <Link to="/can-i-afford" onClick={() => menuControl()}>
-            Sprawdź budżet
+            {t("nav:check-budget")}
           </Link>
           <Link to="/guides/buy" onClick={() => menuControl()}>
-            Przewodnik kupna domu
+            {t("nav:home-buying-guide")}
           </Link>
           <Link to="/find-lender" onClick={() => menuControl()}>
-            Szukaj agenta pożyczkowego
+            {t("nav:search-loan-agent")}
           </Link>
           <Link to="/find-agent" onClick={() => menuControl()}>
-            Szukaj rzeczoznawcę nieruchomości
+            {t("nav:search-appraiser")}
           </Link>
           <Link to="/find-events" onClick={() => menuControl()}>
-            Szukaj warsztaty i eventy
+            {t("nav:search-for-worshop-events")}
           </Link>
           <Link to="/housing-market" onClick={() => menuControl()}>
-            Przegląd rynku mieszkaniowego w Polsce
+            {t("nav:overview")}
           </Link>
         </motion.div>
       )}
@@ -82,31 +84,31 @@ export default function MobileMenu({ menuControl, menuActive }: Props) {
         animate={menuActive ? { opacity: 1, y: 0 } : { opacity: 0.5, y: -20 }}
         transition={{  delayChildren: 0.2 }}>
           <Link to="/sell/how-much-is-it-worth" onClick={() => menuControl()}>
-            Ile warty jest mój dom?
+            {t("nav:house-worth")}
           </Link>
-          <Link to="/sell/dashboard" onClick={() => menuControl()}>
+          {/* <Link to="/sell/dashboard" onClick={() => menuControl()}>
             Przegląd mojej nieruchomości
-          </Link>
+          </Link> */}
           <Link to="/why-buy" onClick={() => menuControl()}>
-            Sprzedaj z RealN
+            {t("nav:sell-with-realn")}
           </Link>
           <Link to="/home-nearby" onClick={() => menuControl()}>
-            Porównaj oferty
+            {t("nav:compare-offers")}
           </Link>
           <Link to="/find-agent" onClick={() => menuControl()}>
-            Znajdź agenta
+          {t("nav:find-agent")}
           </Link>
           <Link to="/guides/will-selling-pay-off" onClick={() => menuControl()}>
-            Czy sprzedaż się opłaci?
+            {t("nav:sale-profitable")}
           </Link>
           <Link to="/guides/sell" onClick={() => menuControl()}>
-            Przewodnik sprzedaży domu
+            {t("nav:selling-guide")}
           </Link>
           <Link to="/guides/home-improvement" onClick={() => menuControl()}>
-            Jak zwiększyć wartość nieruchomości
+            {t("nav:how-increase-property-value")}
           </Link>
           <Link to="/find-agent" onClick={() => menuControl()}>
-            Szukaj rzeczoznawcę nieruchomości
+          {t("nav:search-appraiser")}
           </Link>
         </motion.div>
       )}
@@ -117,27 +119,27 @@ export default function MobileMenu({ menuControl, menuActive }: Props) {
           setIsRentActive(!isRentActive);
         }}
       >
-        Wynajem
+        {t("nav:rent")}
       </li>
       {isRentActive && (
         <motion.div className="submenu"  initial={{ opacity: 0, y: -20 }}
         animate={menuActive ? { opacity: 1, y: 0 } : { opacity: 0.5, y: -20 }}
         transition={{  delayChildren: 0.2 }}>
           <Link to="/home-nearby" onClick={() => menuControl()}>
-            Mieszkania na wynajem
+           {t("nav:apartments-for-rent")}
           </Link>
 
           <Link to="/guides/how-to-rent-a-house" onClick={() => menuControl()}>
-            Chcę wynająć swoje mieszkanie.
+            {t("nav:rent-my-property")}
           </Link>
           <Link to="/guides/buy-or-rent" onClick={() => menuControl()}>
-            Kupno czy wynajem?
+            {t("nav:buying-or-renting")}
           </Link>
           <Link to="/guides/rent-trends" onClick={() => menuControl()}>
-            Trendy rynku wynajmu
+            {t("nav:market-trends")}
           </Link>
           <Link to="/guides/tips-for-renters" onClick={() => menuControl()}>
-            Wskazówki dla najemców
+            {t("nav:tips-for-tenants")}
           </Link>
         </motion.div>
       )}
