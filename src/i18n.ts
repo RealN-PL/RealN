@@ -14,6 +14,7 @@ import plSales from './locales/pl/sell.json';
 import plUtils from './locales/pl/utils.json';
 import plApp from './locales/pl/app.json';
 import plPrivacy from './locales/pl/privacy.json';
+import plStatue from './locales/pl/statue.json';
 import enAbout from './locales/en/about.json';
 import enLists from './locales/en/lists.json';
 import enAddOffer from './locales/en/add-offer.json';
@@ -29,13 +30,14 @@ import enSales from './locales/en/sell.json';
 import enUtils from './locales/en/utils.json';
 import enApp from './locales/en/app.json';
 import enPrivacy from './locales/en/privacy.json';
+import enStatue from './locales/en/statue.json';
 
 export const defaultNS = 'ns1';
 export const fallbackNS = 'fallback';
 
 i18next.init({
   debug: true,
-  fallbackLng: 'pl',
+  fallbackLng: 'en',
   defaultNS,
   resources: {
     en: {
@@ -53,7 +55,8 @@ i18next.init({
       sell: enSales,
       utils: enUtils,
       app: enApp,
-      privacy: enPrivacy
+      privacy: enPrivacy,
+      statue: enStatue
     },
     pl: {
       about: plAbout,
@@ -70,7 +73,8 @@ i18next.init({
       sell: plSales,
       utils: plUtils,
       app: plApp,
-      privacy: plPrivacy
+      privacy: plPrivacy,
+      statue: plStatue
     },
   },
 });
